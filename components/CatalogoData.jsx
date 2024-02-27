@@ -42,7 +42,7 @@ export const CatalogoData = ({ page }) => {
             <button className="bg-red-lth text-white text-sm w-full py-1 rounded-lg">
               Cotiza Ya
             </button>
-            <button className="bg-transparent transition-all duration-300 hover:border-transparent  text-gray-600 border-gray-600 border-solid border-2 text-sm font-bold w-full py-1 rounded-lg">
+            <button className="bg-transparent transition-all duration-300 more-info-button text-gray-600 border-gray-600 border-solid border-2 text-sm font-bold w-full py-0.5 rounded-lg">
               {" "}
               Más Informacion
             </button>
@@ -53,7 +53,11 @@ export const CatalogoData = ({ page }) => {
         <button
           onClick={() => setCurrentPage((prev) => prev - 1)}
           disabled={currentPage === 0}
-          className={`bg-red-lth cursor-pointer  rounded-full w-7 h-7 rotate-180 mr-5 ${currentPage === 0 ? "text-gray-300 rotate-180" : ""}`}
+          className={`rounded-full w-7 h-7 rotate-180 mr-5 transition-all duration-200 ${
+            currentPage === 0
+              ? "bg-transparent rotate-180"
+              : "bg-red-lth cursor-pointer"
+          }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -85,8 +89,10 @@ export const CatalogoData = ({ page }) => {
         <button
           onClick={() => setCurrentPage((prev) => prev + 1)}
           disabled={currentPage >= totalPages - 1}
-          className={`ml-5 bg-red-lth cursor-pointer  rounded-full w-7 h-7 ${
-            currentPage >= totalPages - 1 ? "text-gray-300" : ""
+          className={`ml-5 rounded-full w-7 h-7 transition-all duration-200 ${
+            currentPage >= totalPages - 1
+              ? "bg-transparent"
+              : "bg-red-lth cursor-pointer"
           }`}
         >
           <svg

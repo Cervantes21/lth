@@ -64,3 +64,8 @@ body {
   font-weight: 600;
   transition:all 0.3s;
 }
+
+.more-info-button:hover{
+  border: #b01325 2px solid !important;
+  color: #b01325 !important
+}
