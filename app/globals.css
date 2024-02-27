@@ -2,32 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.bg-blue-lth {
+  background-color: #061684;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.bg-red-lth {
+  background-color: #D3172E;
+  transition: all 0.3s;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.bg-red-lth:hover {
+  background-color: #b01325 !important;
+  transition: all 0.3s;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.bg-grey-lth {
+  background-color: #E6E8F3;
+}
+
+.text-blue-lth {
+  color: #061684;
+}
+
+.text-red-lth {
+  color: #D3172E;
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+}
+
+.main-form {
+  background-image: url('/form-background.jpg');
+  background-size: cover;
+}
+
+.more-info-card{
+  background-image: url('/background-card.jpg');
+  background-size: cover;
+  background-position: 0px 58%;
+  display: grid;
+  grid-template-rows: 46% 54%;
+}
+
+.arrow-back:hover > path{
+  fill: #b01325 !important;
+  transition: all 0.3s;
+}
+.menu-divs > p,
+.menu-divs{
+  transition:all 0.3s;
+}
+.menu-divs:hover > p,
+.menu-divs:hover{
+  color: #D3172E !important;
+  font-weight: 600;
+  transition:all 0.3s;
 }
