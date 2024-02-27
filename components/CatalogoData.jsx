@@ -38,7 +38,7 @@ export const CatalogoData = ({ page }) => {
                 className="w-36 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110"
               />
             </div>
-            <p className="font-bold text-lg my-1">{producto.BCI}</p>
+            <p className="font-bold text-md my-1 text-center">{producto.BCI}</p>
             <button className="bg-red-lth text-white text-sm w-full py-1 rounded-lg">
               Cotiza Ya
             </button>
