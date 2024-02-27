@@ -124,8 +124,8 @@ export const Cards = ({ page }) => {
           >
             {card.icon}
             <div className="flex flex-col items-center -translate-y-4">
-            <h2 className="text-lg font-semibold text-center">{card.title}</h2>
-            <p className="font-bold text-2xl">{card.description}</p>
+            <h2 className="text-md font-semibold text-center">{card.title}</h2>
+            <p className="font-bold text-xl">{card.description}</p>
             </div>
             {card.button && (
               <Link

@@ -1,4 +1,5 @@
 import { Cards } from "@/components/Cards";
+import { CatalogoData } from "@/components/CatalogoData";
 import { Whatsapp } from "@/components/Whatsapp";
 import Link from "next/link";
 
@@ -22,7 +23,7 @@ export default function Home() {
           />
         </svg>
       </Link>
-      <p>Placeholder de HITEC</p>
+      <CatalogoData page="HI-TEC" />
       <Cards page="all" />
       <Whatsapp />
     </>
