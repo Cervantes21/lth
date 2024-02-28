@@ -69,3 +69,13 @@ body {
   border: #b01325 2px solid !important;
   color: #b01325 !important
 }
+
+
+.option-form {
+   text-transform:lowercase
+}
+
+
+.option-form::first-letter {
+  text-transform: uppercase;
+}

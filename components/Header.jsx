@@ -118,7 +118,7 @@ export const Header = () => {
             width="1em"
             height="1em"
             viewBox="0 0 24 24"
-            className="w-10 h-10 m-3 arrow-back"
+            className="w-10 h-10 arrow-back"
           >
             <path
               className=" duration-300 transition-all"

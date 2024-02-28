@@ -5,13 +5,13 @@ import Link from "next/link";
 export default function Home() {
     return (
         <>
-            <Link href="/">
+            <Link href="/" className=" flex w-10 m-3 p-0 border-none outline-none">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="1em"
                     height="1em"
                     viewBox="0 0 24 24"
-                    className="w-10 h-10 m-3 arrow-back"
+                    className="w-10 h-10 arrow-back"
                 >
                     <path
                         className=" duration-300 transition-all"
