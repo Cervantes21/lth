@@ -2,6 +2,7 @@
 import { useState } from "react";
 import productos from "@/data/Catalogo";
 import Image from "next/image";
+import Link from "next/link";
 
 export const CatalogoData = ({ page }) => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -16,6 +17,15 @@ export const CatalogoData = ({ page }) => {
     currentPage * itemsPerPage,
     (currentPage + 1) * itemsPerPage
   );
+
+  const cotizar = (nombre, marca) => {
+    const message = `Hola, me gustaría cotizar ${nombre} de ${marca}`; // Mensaje para enviar por WhatsApp 
+    const urlMessage = encodeURIComponent(message); // Mensaje codificado para la URL
+    const whatsappURL = `https://api.whatsapp.com/send/?phone=${527776002745}&text=${urlMessage}&app_absent=0`;
+  
+    // Abrir la URL de WhatsApp en una nueva pestaña del navegador
+    window.open(whatsappURL, "_blank");
+  };
 
   return (
     <div>
@@ -35,17 +45,17 @@ export const CatalogoData = ({ page }) => {
                 alt={producto.BCI}
                 width={500}
                 height={300}
-                className="w-36 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110"
+                className="w-36 transition-all duration-300 ease-in-out transform hover:scale-110"
               />
             </div>
             <p className="font-bold text-md my-1 text-center">{producto.BCI}</p>
-            <button className="bg-red-lth text-white text-sm w-full py-1 rounded-lg">
+            <button onClick={() => cotizar(producto.BCI, producto.MARCA)} className="bg-red-lth text-white text-sm w-full py-1 rounded-lg">
               Cotiza Ya
-            </button>
-            <button className="bg-transparent transition-all duration-300 more-info-button text-gray-600 border-gray-600 border-solid border-2 text-sm font-bold w-full py-0.5 rounded-lg">
+            </button >
+            <Link href={`/${producto.BCI}`}  className=" text-center bg-transparent transition-all duration-300 more-info-button text-gray-600 border-gray-600 border-solid border-2 text-sm font-bold w-full py-0.5 rounded-lg">
               {" "}
               Más Informacion
-            </button>
+            </Link>
           </div>
         ))}
       </div>
@@ -69,8 +79,8 @@ export const CatalogoData = ({ page }) => {
             <path
               fill="none"
               stroke="white"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="m10 17l5-5l-5-5"
             />
           </svg>
@@ -105,8 +115,8 @@ export const CatalogoData = ({ page }) => {
             <path
               fill="none"
               stroke="white"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="m10 17l5-5l-5-5"
             />
           </svg>

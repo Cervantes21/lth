@@ -23,7 +23,7 @@ function Accordian({ children, value, onChange, ...props }) {
   );
 }
 
-function AccordianItem({ children, value, trigger, ...props }) {
+function AccordianItem({ children, value, trigger, className, ...props }) {
   const { selected, setSelected } = useContext(AccordianContext);
   const open = selected === value;
 
@@ -35,7 +35,7 @@ function AccordianItem({ children, value, trigger, ...props }) {
   };
 
   return (
-    <li className="border-b bg-white" {...props}>
+    <li className={`border-b bg-white ${className || ""}`} {...props}>
       <header
         role="button"
         onClick={() => setSelected(open ? null : value)}
@@ -82,22 +82,29 @@ export const Header = () => {
   return (
     <>
       <header className="bg-blue-lth header-grid  shadow-2xl">
-        <button onClick={handleMenu}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            viewBox="0 0 24 24"
-            className="w-8 h-8 ml-6 hover:opacity-70 transition-opacity duration-300 ease-in-out"
+        <div className="h-full items-center flex">
+          <button
+            className="ml-6 w-8 h-8"
+            onClick={handleMenu}
           >
-            <path fill="white" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" />
-          </svg>
-        </button>
-        <img
-          src="/logo.png"
-          alt="Logo"
-          className="h-[70px] w-[70px] mx-auto rounded-full my-1"
-        />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              viewBox="0 0 24 24"
+              className="w-8 h-8 hover:opacity-70 transition-opacity duration-300 ease-in-out"
+            >
+              <path fill="white" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" />
+            </svg>
+          </button>
+        </div>
+        <Link href="/" className="rounded-full my-1 h-[70px] w-[70px] mx-auto">
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="h-[70px] w-[70px] mx-auto rounded-full"
+          />
+        </Link>
       </header>
       <div
         className={`h-full transition-transform duration-500 bg-white fixed z-[100] top-0 w-[320px] ${
@@ -151,7 +158,7 @@ export const Header = () => {
                 onClick={() => handleButtonClick(linkRef3)}
                 className="cursor-pointer flex justify-between items-center pl-0 pt-4 pb-0 font-medium menu-divs"
               >
-                <p className="">LTH</p>
+                <p>LTH</p>
                 <ChevronDown className="-rotate-90" size={16} />
               </div>
 
