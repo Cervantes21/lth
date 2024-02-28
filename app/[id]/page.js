@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react"; // Importa useState
 import Image from "next/image";
 import { Cards } from "@/components/Cards";
-import { Whatsapp } from "@/components/Whatsapp";
+import { Whatsapp, cotizar } from "@/components/Whatsapp";
 
 const url = (MARCA) => {
     if (MARCA === "LTH") {
@@ -25,15 +25,6 @@ export default function Bateria() {
     const [bateria, setBateria] = useState(null); // Usa useState para manejar el estado de bateria
     const [lastUrl, setlastUrl] = useState("/"); // Usa useState para manejar el estado de bateria
     const [data, setData] = useState(null);
-
-    const cotizar = (nombre, marca) => {
-        const message = `Hola, me gustaría cotizar ${nombre} de ${marca}`; // Mensaje para enviar por WhatsApp 
-        const urlMessage = encodeURIComponent(message); // Mensaje codificado para la URL
-        const whatsappURL = `https://api.whatsapp.com/send/?phone=${527776002745}&text=${urlMessage}&app_absent=0`;
-      
-        // Abrir la URL de WhatsApp en una nueva pestaña del navegador
-        window.open(whatsappURL, "_blank");
-      };
 
     useEffect(() => {
         for (const producto of productos) {

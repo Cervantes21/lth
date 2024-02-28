@@ -1,7 +1,7 @@
 "use client";
 
 import { Cards } from "@/components/Cards";
-import { Whatsapp } from "@/components/Whatsapp";
+import { Whatsapp, cotizar } from "@/components/Whatsapp";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import productos from "@/data/Catalogo";

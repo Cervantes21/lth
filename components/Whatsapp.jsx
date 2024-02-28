@@ -9,3 +9,13 @@ export const Whatsapp = () => {
     </a>
   );
 };
+
+
+export const cotizar = (nombre, marca) => {
+  const message = `Hola, me gustaría cotizar ${nombre} de ${marca}`; // Mensaje para enviar por WhatsApp 
+  const urlMessage = encodeURIComponent(message); // Mensaje codificado para la URL
+  const whatsappURL = `https://api.whatsapp.com/send/?phone=${527776002745}&text=${urlMessage}&app_absent=0`;
+
+  // Abrir la URL de WhatsApp en una nueva pestaña del navegador
+  window.open(whatsappURL, "_blank");
+};
