@@ -68,11 +68,25 @@ export const Header = () => {
   const linkRef3 = useRef(null);
   const linkRef4 = useRef(null);
   const linkRef5 = useRef(null);
+  const menuRef = useRef(null);
 
   const handleMenu = () => {
     setOpen(!open);
     ref.current.click(); // Cierra el acordeón
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleButtonClick = (linkRef) => {
     setOpen(false); // Cierra el menú
@@ -107,11 +121,12 @@ export const Header = () => {
         </Link>
       </header>
       <div
+        ref={menuRef}
         className={`h-full transition-transform duration-500 bg-white fixed z-[100] top-0 w-[320px] ${
           open ? "" : "-translate-x-96"
         }`}
       >
-        <button onClick={handleMenu}>
+        <button className="mt-3 ml-3" onClick={handleMenu}>
           {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
