@@ -18,6 +18,10 @@ export const CatalogoData = ({ page }) => {
     (currentPage + 1) * itemsPerPage
   );
 
+  function replacePipeWithSlash(str) {
+    return str.replace(/\|/g, '/');
+  }
+
   const cotizar = (nombre, marca) => {
     const message = `Hola, me gustaría cotizar ${nombre} de ${marca}`; // Mensaje para enviar por WhatsApp 
     const urlMessage = encodeURIComponent(message); // Mensaje codificado para la URL
@@ -42,14 +46,14 @@ export const CatalogoData = ({ page }) => {
             <div className="min-h-40 overflow-hidden flex items-center">
               <Image
                 src={`/${producto.IMAGEN}`}
-                alt={producto.BCI}
+                alt={replacePipeWithSlash(producto.BCI)}
                 width={500}
                 height={300}
                 className="w-36 transition-all duration-300 ease-in-out transform hover:scale-110"
               />
             </div>
-            <p className="font-bold text-md my-1 text-center">{producto.BCI}</p>
-            <button onClick={() => cotizar(producto.BCI, producto.MARCA)} className="bg-red-lth text-white text-sm w-full py-1 rounded-lg">
+            <p className="font-bold text-md my-1 text-center">{replacePipeWithSlash(producto.BCI)}</p>
+            <button onClick={() => cotizar(replacePipeWithSlash(producto.BCI), producto.MARCA)} className="bg-red-lth text-white text-sm w-full py-1 rounded-lg">
               Cotiza Ya
             </button >
             <Link href={`/${producto.BCI}`}  className=" text-center bg-transparent transition-all duration-300 more-info-button text-gray-600 border-gray-600 border-solid border-2 text-sm font-bold w-full py-0.5 rounded-lg">

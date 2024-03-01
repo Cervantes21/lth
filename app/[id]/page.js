@@ -56,6 +56,10 @@ export default function Bateria() {
         }
     }, [bateria]);
 
+    function replacePipeWithSlash(str) {
+        return str.replace(/\|/g, '/');
+      }
+
     return (
         <>
             {bateria ?
@@ -80,13 +84,13 @@ export default function Bateria() {
                         </Link>
                         <Image
                             src={`/${bateria.IMAGEN}`}
-                            alt={bateria.BCI}
+                            alt={replacePipeWithSlash(bateria.BCI)}
                             width={500}
                             height={300}
                             className="w-36 mx-auto transition-all duration-300 ease-in-out transform hover:scale-110"
                         />
                         <h1 className="text-xl text-center font-bold mt-4">
-                            {bateria.BCI}
+                            {replacePipeWithSlash(bateria.BCI)}
                         </h1>
                     </div>
 
@@ -145,7 +149,7 @@ export default function Bateria() {
                         data ?
                             <>
                                 <div className="flex flex-col items-center gap-y-3 mt-10 px-5 text-blue-lth font-semibold">
-                                    <div className="bg-grey-lth flex flex-row justify-between items-center px-3 w-full"><p className="py-3">BCI:</p> <p>{data.bci}</p></div>
+                                    <div className="bg-grey-lth flex flex-row justify-between items-center px-3 w-full"><p className="py-3">BCI:</p> <p>{replacePipeWithSlash(data.bci)}</p></div>
                                     <div className="flex flex-row justify-between items-center px-3 w-full"><p className="py-3">Voltaje:</p> <p>{data.voltaje}</p></div>
                                     <div className="bg-grey-lth flex flex-row justify-between items-center px-3 w-full"><p className="py-3">CA:</p> <p>{data.ca}</p></div>
                                     <div className="flex flex-row justify-between items-center px-3 w-full"><p className="py-3">CCA:</p> <p>{data.cca}</p></div>

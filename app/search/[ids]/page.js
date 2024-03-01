@@ -10,10 +10,15 @@ import Image from "next/image";
 export default function Home() {
   const pathname = usePathname();
   const id = pathname.replace("/search/", "");
-  const ids = id.split(",");
+  const ids = id.split(",").map(id => decodeURIComponent(id)); // Decodifica cada ID
+  console.log(ids);
   const filteredProducts = productos.filter((producto) =>
     ids.includes(producto.BCI)
   );
+
+  function replacePipeWithSlash(str) {
+    return str.replace(/\|/g, '/');
+  }
 
   return (
     <>
@@ -47,13 +52,13 @@ export default function Home() {
             <div className="min-h-40 overflow-hidden flex items-center">
               <Image
                 src={`/${producto.IMAGEN}`}
-                alt={producto.BCI}
+                alt={replacePipeWithSlash(producto.BCI)}
                 width={500}
                 height={300}
                 className="w-36 transition-all duration-300 ease-in-out transform hover:scale-110"
               />
             </div>
-            <p className="font-bold text-md mt-1 text-center">{producto.BCI}</p>
+            <p className="font-bold text-md mt-1 text-center">{replacePipeWithSlash(producto.BCI)}</p>
             <p className="font-medium text-sm mb-2 text-center">{producto.MARCA}</p>
             <button
               onClick={() => cotizar(producto.BCI, producto.MARCA)}
