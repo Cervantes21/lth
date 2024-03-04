@@ -6,11 +6,13 @@ const cards = [
     icon: null,
     title: (
       <div className="mt-5">
-        <span className="block font-bold text-lg">HORARIOS DE OPERACIÓN: </span>
-        <br /> LUNES A VIERNES 8:30 A 18.00 HRS <br />
-        SABADOS 8:30 A 17:00 HRS <br />
-        DOMINGOS Y DIAS FESTIVOS <br />
-        10:00-15:00
+        <span className="block font-semibold text-lg">Horarios de operación: </span>
+        <br /> Lunes a viernes 8:30 a 18.00 hrs
+        <br />
+        Sabados 8:30 a 17:00 hrs <br />
+        Domingos y dias festivos
+        <br />
+        10:00 a 15:00 hrs
       </div>
     ),
     description: null,
@@ -118,7 +120,7 @@ const cards = [
     ),
     title: (
       <>
-        Conoce nuestro Servicio <br /> Eficaz y Profesional
+        Acerca de nosotros
       </>
     ),
     description: null,
@@ -132,13 +134,13 @@ export const Cards = ({ page }) => {
   return (
     <div className="mt-8 px-5 mb-8">
       <div className="flex flex-col items-center justify-between bg-grey-lth w-full h-52 p-4 my-3 rounded-xl">
-        <h2 className="text-md font-semibold text-center uppercase">
+        <h2 className="text-lg font-semibold text-center">
           Aceptamos todas las tarjetas <br /> de crédito
         </h2>
-        <div className="flex flex-row w-full justify-center gap-x-3">
-          <Image src="/visa-logo.png" width="110" height="75" />
-          <Image src="/mastercard-logo.png" width="110" height="75" />
-          <Image src="/amex-logo.png" width="110" height="75" />
+        <div className="grid grid-cols-3 gap-x-2">
+          <img src="/visa-logo.png" className="h-full" />
+          <img src="/mastercard-logo.png" className="h-full" />
+          <img src="/amex-logo.png" className="h-full" />
         </div>
       </div>
       {cards.map((card, index) =>
@@ -179,6 +181,21 @@ export const Cards = ({ page }) => {
           </div>
         )
       )}
+      <div className="flex flex-col items-center justify-between bg-grey-lth w-full p-4 my-3 rounded-xl">
+        <h2 className="text-lg font-semibold text-center">Cobertura:</h2>
+        <ul className="mt-3">
+          <li>-Cuernavaca</li>
+          <li>-Jiutepec</li>
+          <li>-Temixco</li>
+          <li>-Zapata</li>
+          <li>-Chiconcuac</li>
+          <li>-Tepoztlán</li>
+          <li>-Yautepec</li>
+          <li>-Oaxtepec</li>
+          <li>-Cocoyoc</li>
+          <li>-Xochitepec</li>
+        </ul>
+      </div>
     </div>
   );
 };
