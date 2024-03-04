@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <Link href="/">
+      <Link href="/" className=" flex w-10 m-3 p-0 border-none outline-none">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"

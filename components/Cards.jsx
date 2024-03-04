@@ -1,6 +1,22 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const cards = [
+  {
+    icon: null,
+    title: (
+      <div className="mt-5">
+        <span className="block font-bold text-lg">HORARIOS DE OPERACIÓN: </span>
+        <br /> LUNES A VIERNES 8:30 A 18.00 HRS <br />
+        SABADOS 8:30 A 17:00 HRS <br />
+        DOMINGOS Y DIAS FESTIVOS <br />
+        10:00-15:00
+      </div>
+    ),
+    description: null,
+    button: null,
+    exeption: "none",
+  },
   {
     icon: (
       <svg
@@ -18,7 +34,7 @@ const cards = [
     ),
     title: (
       <>
-        ¡Contactanos! <br /> Nos podes llamar o enviar un WhatsApp
+        ¡CONTÁCTANOS! <br /> Llámanos o envíanos un whatsapp
       </>
     ),
     description: `7776002745`,
@@ -40,7 +56,7 @@ const cards = [
         />
       </svg>
     ),
-    title: <>Busca tu betería</>,
+    title: <>Busca tu batería</>,
     description: null,
     button: "Buscar",
     buttonLink: "/",
@@ -77,7 +93,7 @@ const cards = [
     ),
     title: (
       <>
-        Beteria en Casa es la empresa <br /> creada para ti
+        Batería en Casa es la empresa <br /> creada para ti
       </>
     ),
     description: null,
@@ -112,10 +128,19 @@ const cards = [
   },
 ];
 
-
 export const Cards = ({ page }) => {
   return (
     <div className="mt-8 px-5 mb-8">
+      <div className="flex flex-col items-center justify-between bg-grey-lth w-full h-52 p-4 my-3 rounded-xl">
+        <h2 className="text-md font-semibold text-center uppercase">
+          Aceptamos todas las tarjetas <br /> de crédito
+        </h2>
+        <div className="flex flex-row w-full justify-center gap-x-3">
+          <Image src="/visa-logo.png" width="110" height="75" />
+          <Image src="/mastercard-logo.png" width="110" height="75" />
+          <Image src="/amex-logo.png" width="110" height="75" />
+        </div>
+      </div>
       {cards.map((card, index) =>
         card.exeption === page ? null : (
           <div
@@ -124,8 +149,10 @@ export const Cards = ({ page }) => {
           >
             {card.icon}
             <div className="flex flex-col items-center -translate-y-4">
-            <h2 className="text-md font-semibold text-center">{card.title}</h2>
-            <p className="font-bold text-xl">{card.description}</p>
+              <h2 className="text-md font-semibold text-center">
+                {card.title}
+              </h2>
+              <p className="font-bold text-xl">{card.description}</p>
             </div>
             {card.button && (
               <Link
