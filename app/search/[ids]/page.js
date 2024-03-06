@@ -43,7 +43,7 @@ export default function Home() {
       <h1 className="text-xl font-bold text-blue-lth uppercase w-full text-center mb-10">Buscador</h1>
       <p className="mt-10 mb-16 w-96 mx-auto text-center text-lg font-light">Estos son los productos que mejor se ajusatan a su búsqueda</p>
 
-      <div className=" w-full px-4 grid grid-cols-2 gap-3 mb-40">
+      <div className=" w-full px-4 grid grid-cols-2 lg:grid-cols-4 lg:px-16 gap-3 mb-40">
         {filteredProducts.map((producto, index) => (
           <div
             className=" bg-grey-lth flex flex-col gap-y-3 items-center p-4 rounded-xl"
