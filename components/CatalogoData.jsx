@@ -1,12 +1,33 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import productos from "@/data/Catalogo";
 import Image from "next/image";
 import Link from "next/link";
 
 export const CatalogoData = ({ page }) => {
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 4; // Número de elementos por página
+  const [itemsPerPage, setItemsPerPage] = useState(4); // Inicialmente 4 elementos por página
+
+  useEffect(() => {
+    // Función para actualizar itemsPerPage basado en el ancho de la ventana
+    const updateItemsPerPage = () => {
+      if (window.innerWidth > 1024) {
+        setItemsPerPage(12); // Si la ventana es más ancha que 1024px, mostrar 12 elementos por página
+      } else {
+        setItemsPerPage(4); // Si la ventana es más estrecha que 1024px, mostrar 4 elementos por página
+      }
+    };
+
+    // Actualizar itemsPerPage cuando el componente se monta
+    updateItemsPerPage();
+
+    // Agregar un event listener para el evento resize
+    window.addEventListener("resize", updateItemsPerPage);
+
+    // Limpiar el event listener cuando el componente se desmonta
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []); // Dependencias vacías, por lo que este efecto se ejecuta solo una vez
+
 
   const filteredProducts = productos.filter(
     (producto) => producto.MARCA === page
@@ -37,7 +58,7 @@ export const CatalogoData = ({ page }) => {
         CATÁLOGO
       </h1>
       <h2 className="text-center font-bold text-2xl mb-10">{page}</h2>
-      <div className=" w-full px-4 grid grid-cols-2 gap-3">
+      <div className=" w-full px-4 lg:px-16 grid grid-cols-2 lg:grid-cols-4 gap-3">
         {paginatedProducts.map((producto, index) => (
           <div
             className=" bg-grey-lth flex flex-col gap-y-3 items-center p-4 rounded-xl"

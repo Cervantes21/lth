@@ -48,9 +48,9 @@ export const MainForm = () => {
       .filter(Boolean)
       .join(",");
 
-      console.log(opciones);
-  
-      window.location.href = `/search/${opciones}`;
+    console.log(opciones);
+
+    window.location.href = `/search/${opciones}`;
   };
 
   const getUniqueBrandsForYear = (year) => {
@@ -106,65 +106,67 @@ export const MainForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="main-form flex flex-col items-center pt-20 gap-y-8 pb-14 translate-y-36 z-10 rounded-b-2xl"
+      className="main-form pt-20 pb-14 translate-y-36 z-10 rounded-b-2xl"
     >
-      <select
-        value={tipoVehiculo}
-        onChange={(e) => setTipoVehiculo(e.target.value)}
-        className="p-2 w-3/4 h-14 border rounded-xl outline-none"
-      >
-        <option value="">Tipo</option>
-        <option value="auto">Auto</option>
-      </select>
+      <div className="flex flex-col items-center justify-center gap-y-8 mx-auto max-w-[700px]">
+        <select
+          value={tipoVehiculo}
+          onChange={(e) => setTipoVehiculo(e.target.value)}
+          className="p-2 w-3/4 h-14 border rounded-xl outline-none"
+        >
+          <option value="">Tipo</option>
+          <option value="auto">Auto</option>
+        </select>
 
-      <select
-        value={anoVehiculo}
-        disabled={!tipoVehiculo}
-        onChange={handleYearChange}
-        className="p-2 w-3/4 h-14 border rounded-xl outline-none"
-      >
-        <option value="">Año</option>
-        {[...Array(14)].map((_, i) => (
-          <option key={i} value={2023 - i}>
-            {2023 - i}
-          </option>
-        ))}
-      </select>
+        <select
+          value={anoVehiculo}
+          disabled={!tipoVehiculo}
+          onChange={handleYearChange}
+          className="p-2 w-3/4 h-14 border rounded-xl outline-none"
+        >
+          <option value="">Año</option>
+          {[...Array(14)].map((_, i) => (
+            <option key={i} value={2023 - i}>
+              {2023 - i}
+            </option>
+          ))}
+        </select>
 
-      <select
-        value={marcaVehiculo}
-        disabled={!anoVehiculo}
-        onChange={handleBrandChange}
-        className="p-2 w-3/4 h-14 border rounded-xl outline-none"
-      >
-        <option value="">Marca</option>
-        {uniqueBrands.map((brand, index) => (
-          <option key={index} value={brand}>
-            {brand}
-          </option>
-        ))}
-      </select>
+        <select
+          value={marcaVehiculo}
+          disabled={!anoVehiculo}
+          onChange={handleBrandChange}
+          className="p-2 w-3/4 h-14 border rounded-xl outline-none"
+        >
+          <option value="">Marca</option>
+          {uniqueBrands.map((brand, index) => (
+            <option key={index} value={brand}>
+              {brand}
+            </option>
+          ))}
+        </select>
 
-      <select
-        value={modeloVehiculo}
-        disabled={!marcaVehiculo}
-        onChange={handleModelChange}
-        className="p-2 w-3/4 h-14 border rounded-xl outline-none"
-      >
-        <option value="">Modelo</option>
-        {uniqueModels.map((model, index) => (
-          <option key={index} value={model}>
-            {model}
-          </option>
-        ))}
-      </select>
+        <select
+          value={modeloVehiculo}
+          disabled={!marcaVehiculo}
+          onChange={handleModelChange}
+          className="p-2 w-3/4 h-14 border rounded-xl outline-none"
+        >
+          <option value="">Modelo</option>
+          {uniqueModels.map((model, index) => (
+            <option key={index} value={model}>
+              {model}
+            </option>
+          ))}
+        </select>
 
-      <button
-        type="submit"
-        className="p-2 h-12 w-56 bg-red-lth text-white rounded-xl"
-      >
-        Buscar
-      </button>
+        <button
+          type="submit"
+          className="p-2 h-12 w-56 bg-red-lth text-white rounded-xl"
+        >
+          Buscar
+        </button>
+      </div>
     </form>
   );
 };
