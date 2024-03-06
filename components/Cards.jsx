@@ -132,8 +132,8 @@ const cards = [
 
 export const Cards = ({ page }) => {
   return (
-    <div className="mt-8 px-5 mb-8">
-      <div className="flex flex-col items-center justify-between bg-grey-lth w-full h-52 p-4 my-3 rounded-xl">
+    <div className="mt-8 px-5 mb-8 lg:flex lg:flex-row lg:flex-wrap lg:justify-center lg:gap-x-10">
+      <div className="flex flex-col items-center justify-between bg-grey-lth w-full h-52 p-4 my-3 rounded-xl lg:max-w-[550px]">
         <h2 className="text-lg font-semibold text-center">
           Aceptamos todas las tarjetas <br /> de crédito
         </h2>
@@ -147,7 +147,7 @@ export const Cards = ({ page }) => {
         card.exeption === page ? null : (
           <div
             key={index}
-            className="flex flex-col items-center justify-between bg-grey-lth w-full h-52 p-4 my-3 rounded-xl"
+            className="flex flex-col items-center justify-between bg-grey-lth w-full h-52 p-4 my-3 rounded-xl lg:max-w-[550px]"
           >
             {card.icon}
             <div className="flex flex-col items-center -translate-y-4">
@@ -181,7 +181,7 @@ export const Cards = ({ page }) => {
           </div>
         )
       )}
-      <div className="flex flex-col items-center justify-between bg-grey-lth w-full p-4 my-3 rounded-xl">
+      <div className="flex flex-col items-center justify-between bg-grey-lth w-full p-4 my-3 rounded-xl lg:max-w-[550px]">
         <h2 className="text-lg font-semibold text-center">Cobertura:</h2>
         <ul className="mt-3">
           <li>-Cuernavaca</li>
