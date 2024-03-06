@@ -106,7 +106,7 @@ export const MainForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="main-form pt-20 pb-14 translate-y-36 z-10 rounded-b-2xl"
+      className="main-form pt-20 pb-14 translate-y-36 lg:translate-y-56 z-10 rounded-b-2xl"
     >
       <div className="flex flex-col items-center justify-center gap-y-8 mx-auto max-w-[700px]">
         <select
