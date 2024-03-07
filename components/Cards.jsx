@@ -183,7 +183,7 @@ export const Cards = ({ page }) => {
       )}
       <div className="flex flex-col items-center justify-between bg-grey-lth w-full p-4 my-3 rounded-xl lg:max-w-[550px]">
         <h2 className="text-lg font-semibold text-center">Cobertura:</h2>
-        <ul className="mt-3">
+        <ul className="mt-3 grid-cols-2 grid gap-x-8 text-center">
           <li>-Cuernavaca</li>
           <li>-Jiutepec</li>
           <li>-Temixco</li>
