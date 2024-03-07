@@ -44,7 +44,6 @@ export const MainForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!tipoVehiculo || !anoVehiculo || !marcaVehiculo || !modeloVehiculo) {
-      console.log("testing")
       return;
     }
     let opciones = result

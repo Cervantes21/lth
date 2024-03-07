@@ -28,7 +28,6 @@ export const CatalogoData = ({ page }) => {
     return () => window.removeEventListener("resize", updateItemsPerPage);
   }, []); // Dependencias vacías, por lo que este efecto se ejecuta solo una vez
 
-
   const filteredProducts = productos.filter(
     (producto) => producto.MARCA === page
   );
@@ -40,14 +39,14 @@ export const CatalogoData = ({ page }) => {
   );
 
   function replacePipeWithSlash(str) {
-    return str.replace(/\|/g, '/');
+    return str.replace(/\|/g, "/");
   }
 
   const cotizar = (nombre, marca) => {
-    const message = `Hola, me gustaría cotizar ${nombre} de ${marca}`; // Mensaje para enviar por WhatsApp 
+    const message = `Hola, me gustaría cotizar ${nombre} de ${marca}`; // Mensaje para enviar por WhatsApp
     const urlMessage = encodeURIComponent(message); // Mensaje codificado para la URL
     const whatsappURL = `https://api.whatsapp.com/send/?phone=${527776002745}&text=${urlMessage}&app_absent=0`;
-  
+
     // Abrir la URL de WhatsApp en una nueva pestaña del navegador
     window.open(whatsappURL, "_blank");
   };
@@ -61,26 +60,38 @@ export const CatalogoData = ({ page }) => {
       <div className=" w-full px-4 lg:px-16 grid grid-cols-2 lg:grid-cols-4 gap-3">
         {paginatedProducts.map((producto, index) => (
           <div
-            className=" bg-grey-lth flex flex-col gap-y-3 items-center p-4 rounded-xl"
+            className=" bg-grey-lth flex flex-col justify-between gap-y-3 items-center p-4 rounded-xl"
             key={index}
           >
             <div className="min-h-40 overflow-hidden flex items-center">
               <Image
                 src={`/${producto.IMAGEN}`}
                 alt={replacePipeWithSlash(producto.BCI)}
-                width={500}
+                width={600}
                 height={300}
-                className="w-36 transition-all duration-300 ease-in-out transform hover:scale-110"
+                className="w-36 transition-all duration-300 ease-in-out transform hover:scale-110 lg:w-48"
               />
             </div>
-            <p className="font-bold text-md my-1 text-center">{replacePipeWithSlash(producto.BCI)}</p>
-            <button onClick={() => cotizar(replacePipeWithSlash(producto.BCI), producto.MARCA)} className="bg-red-lth text-white text-sm w-full py-1 rounded-lg">
-              Cotiza Ya
-            </button >
-            <Link href={`/${producto.BCI}`}  className=" text-center bg-transparent transition-all duration-300 more-info-button text-gray-600 border-gray-600 border-solid border-2 text-sm font-bold w-full py-0.5 rounded-lg">
-              {" "}
-              Más Informacion
-            </Link>
+            <p className="lg:text-xl font-bold text-md my-1 text-center">
+              {replacePipeWithSlash(producto.BCI)}
+            </p>
+            <div className="w-full flex flex-col gap-y-5">
+              <button
+                onClick={() =>
+                  cotizar(replacePipeWithSlash(producto.BCI), producto.MARCA)
+                }
+                className="lg:text-lg bg-red-lth text-white text-sm w-full py-1 rounded-lg"
+              >
+                Cotiza Ya
+              </button>
+              <Link
+                href={`/${producto.BCI}`}
+                className="lg:text-lg text-center bg-transparent transition-all duration-300 more-info-button text-gray-600 border-gray-600 border-solid border-2 text-sm font-bold w-full py-0.5 rounded-lg"
+              >
+                {" "}
+                Más Informacion
+              </Link>
+            </div>
           </div>
         ))}
       </div>
