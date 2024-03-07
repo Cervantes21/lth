@@ -20,9 +20,9 @@ export const Location = () => {
   ];
 
   return (
-    <div>
+    <div className="lg:mt-10">
       {direcciones.map((direccion) => (
-        <div className="mb-5 flex">
+        <div className="mb-5 flex lg:w-[700px] lg:mx-auto">
           <svg
             width="30"
             height="30"
@@ -39,8 +39,8 @@ export const Location = () => {
             />
           </svg>
           <div>
-            <h2 className="text-lg font-medium">{direccion.nombre}</h2>
-            <p className="text-lg font-light">{direccion.direccion}</p>
+            <h2 className="text-lg font-medium lg:text-2xl">{direccion.nombre}</h2>
+            <p className="text-lg font-light lg:mb-5 lg:text-xl">{direccion.direccion}</p>
           </div>
         </div>
       ))}

@@ -69,8 +69,9 @@ export const MoreInfoCard = ({ page, text }) => {
           />
         </svg>
       </Link>
+
       <div className="w-full px-5">
-        <div className="more-info-card rounded-xl min-h-60">
+        <div className="more-info-card rounded-xl min-h-60 lg:h-[500px]">
           <div className=" h-20 w-20 flex rounded-full mx-auto -translate-y-10 bg-white">
             {cards.map((card) => {
               if (card.exeption === page) {
@@ -85,7 +86,7 @@ export const MoreInfoCard = ({ page, text }) => {
               }})}
           </div>
           <div className="h-full w-full bg-grey-lth rounded-b-xl flex items-center justify-center translate-y-0.5">
-            <p className=" w-60 mx-auto text-xl text-center font-semibold">
+            <p className=" w-60 mx-auto text-xl text-center font-semibold lg:w-10/12 lg:text-3xl">
               {text}
             </p>
           </div>

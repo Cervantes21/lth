@@ -43,13 +43,14 @@ export const MainForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!tipoVehiculo || !anoVehiculo || !marcaVehiculo || !modeloVehiculo) {
+      console.log("testing")
+      return;
+    }
     let opciones = result
-      .flatMap((item) => [item["OPCIÓN 1"], item["OPCIÓN 2"], item["OPCIÓN 3"]])
-      .filter(Boolean)
-      .join(",");
-
-    console.log(opciones);
-
+    .flatMap((item) => [item["OPCIÓN 1"], item["OPCIÓN 2"], item["OPCIÓN 3"]])
+    .filter(Boolean)
+    .join(",");
     window.location.href = `/search/${opciones}`;
   };
 
@@ -75,7 +76,7 @@ export const MainForm = () => {
     );
     setResultBrands(itemsForYearAndBrand);
     const models = itemsForYearAndBrand.map((item) =>
-      item.MODELO.toUpperCase()
+      typeof item.MODELO === 'string' ? item.MODELO.toUpperCase() : item.MODELO
     );
     const uniqueModels = [...new Set(models)];
     return uniqueModels;
@@ -93,12 +94,12 @@ export const MainForm = () => {
 
   const handleModelChange = (e) => {
     setModeloVehiculo(e.target.value);
-
+  
     const itemsForYearBrandAndModel = resultBrands.filter(
       (item) =>
         item.AÑO == anoVehiculo &&
         item.MARCA.toUpperCase() == marcaVehiculo.toUpperCase() &&
-        item.MODELO.toUpperCase() == e.target.value.toUpperCase()
+        (typeof item.MODELO === 'string' ? item.MODELO.toUpperCase() : item.MODELO) == String(e.target.value).toUpperCase()
     );
     setResult(itemsForYearBrandAndModel);
   };

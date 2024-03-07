@@ -95,7 +95,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="bg-blue-lth header-grid  shadow-2xl">
+      <header className="bg-blue-lth header-grid  shadow-2xl lg:hidden">
         <div className="h-full items-center flex">
           <button
             className="ml-6 w-8 h-8"
