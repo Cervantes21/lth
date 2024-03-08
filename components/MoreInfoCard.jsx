@@ -24,7 +24,7 @@ const cards = [
   },
   {
     icon: (
-      <img className="w-12 h-12" src="/card-logo.png" alt="logo-in-card"></img>
+      <img className="w-16 h-16" src="/card-logo.png" alt="logo-in-card"></img>
     ),
     exeption: "nosotros",
   },
