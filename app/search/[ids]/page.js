@@ -40,8 +40,8 @@ export default function Home() {
         </svg>
       </Link>
 
-      <h1 className="text-xl font-bold text-blue-lth uppercase w-full text-center mb-10">Buscador</h1>
-      <p className="mt-10 mb-16 w-96 mx-auto text-center text-lg font-light">Estos son los productos que mejor se ajusatan a su búsqueda</p>
+      <h1 className="text-xl font-bold text-blue-lth uppercase w-full text-center mb-10 lg:text-3xl">Buscador</h1>
+      <p className="mt-10 mb-16 w-96 mx-auto text-center text-lg font-light lg:font-medium lg: lg:w-full lg:text-xl">Estos son los productos que mejor se ajustan a su búsqueda</p>
 
       <div className=" w-full px-4 grid grid-cols-2 lg:grid-cols-4 lg:px-16 gap-3 mb-40">
         {filteredProducts.map((producto, index) => (
@@ -71,7 +71,7 @@ export default function Home() {
               className=" text-center bg-transparent transition-all duration-300 more-info-button text-gray-600 border-gray-600 border-solid border-2 text-sm font-bold w-full py-0.5 rounded-lg"
             >
               {" "}
-              Más Informacion
+              Más Información
             </Link>
           </div>
         ))}

@@ -43,26 +43,33 @@ body {
 }
 
 .main-form {
-  background-image: url('/form-background.jpg');
+  background-image: url('/background-form.png');
   background-size: cover;
 }
 
 .more-info-card {
-  background-image: url('/background-card.jpg');
+  background-image: url('/3.jpg');
   background-size: cover;
-  background-position: 0px 58%;
+  background-position: 0px -90px;
   display: grid;
   grid-template-rows: 46% 54%;
 }
 
 @media screen and (min-width: 1024px) {
   .more-info-card {
-    background-image: url('/background-card.jpg');
+    background-image: url('/3.jpg');
     background-size: cover;
     background-position: 0px 58%;
     display: grid;
     grid-template-rows: 80% 20%;
   }
+
+  .main-form {
+    background-image: url('/background-form.png');
+    background-size:cover;
+    background-position: 0px -350px;
+  }
+
 }
 
 .arrow-back:hover>path {

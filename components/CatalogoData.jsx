@@ -89,7 +89,7 @@ export const CatalogoData = ({ page }) => {
                 className="lg:text-lg text-center bg-transparent transition-all duration-300 more-info-button text-gray-600 border-gray-600 border-solid border-2 text-sm font-bold w-full py-0.5 rounded-lg"
               >
                 {" "}
-                Más Informacion
+                Más Información
               </Link>
             </div>
           </div>
