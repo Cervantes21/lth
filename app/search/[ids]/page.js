@@ -22,7 +22,7 @@ export default function SearchIds() {
 
 const handleCall = () => {
   // Número de teléfono al que se va a llamar
-  const phoneNumber = "527776002745";
+  const phoneNumber = "+527776002745";
   // Abrir la aplicación de teléfono para realizar una llamada
   window.location.href = `tel:${phoneNumber}`;
 };
