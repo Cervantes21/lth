@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import productos from "@/data/Catalogo";
 import Image from "next/image";
 
-export default function Home() {
+export default function SearchIds() {
   const pathname = usePathname();
   const id = pathname.replace("/search/", "");
   const ids = id.split(",").map(id => decodeURIComponent(id)); // Decodifica cada ID
@@ -18,7 +18,14 @@ export default function Home() {
 
   function replacePipeWithSlash(str) {
     return str.replace(/\|/g, '/');
-  }
+}
+
+const handleCall = () => {
+  // Número de teléfono al que se va a llamar
+  const phoneNumber = "527776002745";
+  // Abrir la aplicación de teléfono para realizar una llamada
+  window.location.href = `tel:${phoneNumber}`;
+};
 
   return (
     <>
@@ -41,9 +48,21 @@ export default function Home() {
       </Link>
 
       <h1 className="text-xl font-bold text-blue-lth uppercase w-full text-center mb-10 lg:text-3xl">Buscador</h1>
-      <p className="mt-10 mb-16 w-96 mx-auto text-center text-lg font-light lg:font-medium lg: lg:w-full lg:text-xl">Estos son los productos que mejor se ajustan a su búsqueda</p>
+
+      {
+        filteredProducts.length === 0 ? (
+          <div className="flex flex-col items-center">
+            <h2 className="text-xl font-bold text-red-lth uppercase w-full text-center lg:text-xl">No se encontraron productos</h2>
+            <p className="text-center font-light lg:text-xl mt-4">No te preocupes, llámanos</p>
+            <button onClick={handleCall} className="bg-red-lth mt-10 p-2 px-6 rounded-xl text-white text-lg">Llamar ahora</button>
+          </div>
+        ) : (
+          <p className="mt-10 mb-16 w-96 mx-auto text-center text-lg font-light lg:font-medium lg: lg:w-full lg:text-xl">Estos son los productos que mejor se ajustan a su búsqueda</p>
+        )
+      }
 
       <div className=" w-full px-4 grid grid-cols-2 lg:grid-cols-4 lg:px-16 gap-3 mb-40">
+
         {filteredProducts.map((producto, index) => (
           <div
             className=" bg-grey-lth flex flex-col gap-y-3 items-center p-4 rounded-xl"

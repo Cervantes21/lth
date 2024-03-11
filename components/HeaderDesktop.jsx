@@ -9,7 +9,6 @@ export const HeaderDesktop = () => {
   const url = usePathname();
   const catalogRef = useRef();
 
-  console.log(url);
 
   const [catalogOpen, setCatalogOpen] = useState(false);
 

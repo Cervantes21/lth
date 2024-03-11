@@ -27,7 +27,6 @@ function AccordianItem({ children, value, trigger, className, ...props }) {
   const { selected, setSelected } = useContext(AccordianContext);
   const open = selected === value;
 
-  ref = useRef(null);
 
   const handleChildClick = (e) => {
     e.stopPropagation(); // Previene que el evento se propague al header
