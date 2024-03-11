@@ -47,7 +47,7 @@ export const HeaderDesktop = () => {
               onClick={handleCatalogOpen}
               className="hover:text-red-600 transition-colors duration-300 flex items-center"
             >
-              Catalogo{" "}
+              Catálogo{" "}
               <ChevronDown
                 size={19}
                 className={`transition-transform duration-200 ${

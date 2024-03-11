@@ -127,7 +127,7 @@ export default function Bateria() {
                                         LTH AGM tiene una AVANZADA TECNOLOGÍA que la hace más confiable, duradera y poderosa, asegurando el mejor desempeño para los vehículos actuales. Para automóviles con tecnología Start-Stop.
                                     </p>
                                     <h3 className="uppercase text-blue-lth font-semibold text-xl text-center lg:text-3xl">Beneficios</h3>
-                                    <ul className=" mt-5 flex flex-col items-center px-5 lg:text-lg">
+                                    <ul className=" mt-5 flex flex-col w-fit mx-auto px-5 lg:text-lg">
                                         <li className="list-disc">6 Años de garantía.</li>
                                         <li className="list-disc">18 MESES de reemplazo sin costo.</li>
                                         <li className="list-disc">Accesorios equipados.</li>
@@ -140,10 +140,10 @@ export default function Bateria() {
                         {
                             bateria.MARCA === "LTH" ?
                                 <>
-                                    <p className="mt-5 mb-10 w-11/12 mx-auto text-center text-lg font-normal lg:text-xl lg:max-w-[1300px]">
+                                    <p className="mt-5 mb-10 w-11/12 mx-auto text-center text-lg font-normal lg:text-xl">
                                         Más de 85 años siendo la marca líder, la más recomendada por los consumidores, podemos ofrecerte el RESPALDO que ninguna otra puede                                </p>
                                     <h3 className="uppercase text-blue-lth font-semibold text-xl text-center lg:text-3xl">Beneficios</h3>
-                                    <ul className=" mt-5 flex flex-col items-center px-5 lg:text-lg">
+                                    <ul className=" mt-5 flex flex-col w-fit mx-auto px-5 lg:text-lg">
                                         <li className="list-disc">4 Años de garantía.</li>
                                         <li className="list-disc">12 MESES de reemplazo sin costo.</li>
                                         <li className="list-disc">Cobertura del 99% de las aplicaciones vehiculares.</li>
@@ -158,7 +158,7 @@ export default function Bateria() {
                                     <p className="mt-5 mb-10 w-11/12 mx-auto text-center text-lg font-normal lg:text-xl lg:max-w-[1300px]">
                                         En las baterías LTH HI-TEC se ve reflejada la constante innovación tecnológica de LTH. Su CALIDAD SUPERIOR ofrece energía y potencia adicional para un alto desempeño.                                </p>
                                     <h3 className="uppercase text-blue-lth font-semibold text-xl text-center lg:text-3xl">Beneficios</h3>
-                                    <ul className=" mt-5 flex flex-col items-center px-5 lg:text-lg">
+                                    <ul className=" mt-5 flex flex-col w-fit mx-auto px-5 lg:text-lg">
                                         <li className="list-disc">5 Años de garantía.</li>
                                         <li className="list-disc">12 MESES de reemplazo sin costo.</li>
                                         <li className="list-disc">Mayor potencia y desempeño.</li>

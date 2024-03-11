@@ -40,7 +40,7 @@ export default function Home() {
           <li className="list-disc">Nuestro servicio es profesional y eficiente.</li>
           <li className="list-disc">Puedes pagar con tarjeta, efectivo o transferencia al término de la instalación y/o diagnóstico.</li>
         </ul>
-        <p className="mt-10 italic">Pregunta por métodos alternos de pago</p>
+        <p className="mt-10 italic">*Pregunta por métodos alternos de pago</p>
       </div>
       <Cards page="service" />
       <Whatsapp />
