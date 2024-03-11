@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 
@@ -67,6 +68,7 @@ const cards = [
     description: `7776002745`,
     button: null,
     exeption: "none",
+    llamda: true, 
   },
   {
     icon: (
@@ -131,13 +133,20 @@ const cards = [
 ];
 
 export const Cards = ({ page }) => {
+  const handleCall = () => {
+    // Número de teléfono al que se va a llamar
+    const phoneNumber = "+527776002745";
+    // Abrir la aplicación de teléfono para realizar una llamada
+    window.location.href = `tel:${phoneNumber}`;
+  };
   return (
     <div className="mt-8 px-5 mb-8 lg:flex lg:flex-row lg:flex-wrap lg:justify-center lg:gap-x-10">
       {cards.map((card, index) =>
         card.exeption === page ? null : (
           <div
             key={index}
-            className="flex flex-col items-center justify-between bg-grey-lth w-full h-52 p-4 my-3 rounded-xl lg:max-w-[550px]"
+            onClick={card.llamda ? handleCall : null}
+            className={`flex flex-col items-center justify-between bg-grey-lth w-full h-52 p-4 my-3 rounded-xl lg:max-w-[550px] ${card.llamda ? "cursor-pointer hover:bg-slate-300 transition-all duration-300" : ""}`}
           >
             {card.icon}
             <div className="flex flex-col items-center -translate-y-4">
