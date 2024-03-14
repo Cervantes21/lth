@@ -2,7 +2,7 @@ export const Location = () => {
   const direcciones = [
     {
       nombre: "CENTRO DE SERVICIO VENTA LTH VICENTE GUERRERO:",
-      direccion: "v. Vicente Guerrero 100, Zona 1, Tezontepec, 62450, Cuernavaca, Mor.",
+      direccion: "Av. Vicente Guerrero 100, Zona 1, Tezontepec, 62450, Cuernavaca, Mor.",
       url: "https://maps.app.goo.gl/uBnyqJQYzVUvwCa48",
     },
     {

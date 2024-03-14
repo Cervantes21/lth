@@ -5,7 +5,7 @@ import { saveAs } from 'file-saver';
 export const BotonGarantia = () => {
   const handleDownloadPDF = () => {
     // Ruta del archivo PDF dentro del proyecto
-    const pdfURL = "/data/Garantias-LTH.pdf";
+    const pdfURL = process.env.PUBLIC_URL + '/data/Garantias-LTH.pdf';
     saveAs(pdfURL, 'Garantias-LTH.pdf');
   };
   return (
