@@ -795,7 +795,7 @@ const productos = [
     "IMAGEN": "AGM/lth_auto_agm_35-650_front.png"
   },
   {
-    "BCI": "L-47-660 AGM",
+    "BCI": "L-47(LN2)-660 AGM",
     "VOLTAJE": "12 Voltios",
     "CA": "825 Amp",
     "CCA": "660 Amp",

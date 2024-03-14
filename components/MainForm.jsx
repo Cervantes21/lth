@@ -162,7 +162,7 @@ export const MainForm = () => {
 
         <button
           type="submit"
-          className="p-2 h-12 w-56 bg-red-lth text-white rounded-xl"
+          className="p-2 h-12 w-56 bg-red-lth text-white rounded-xl shadow-xl shadow-black"
         >
           Buscar
         </button>

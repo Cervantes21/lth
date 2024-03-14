@@ -18,14 +18,14 @@ export default function SearchIds() {
 
   function replacePipeWithSlash(str) {
     return str.replace(/\|/g, '/');
-}
+  }
 
-const handleCall = () => {
-  // Número de teléfono al que se va a llamar
-  const phoneNumber = "+527776002745";
-  // Abrir la aplicación de teléfono para realizar una llamada
-  window.location.href = `tel:${phoneNumber}`;
-};
+  const handleCall = () => {
+    // Número de teléfono al que se va a llamar
+    const phoneNumber = "+527776002745";
+    // Abrir la aplicación de teléfono para realizar una llamada
+    window.location.href = `tel:${phoneNumber}`;
+  };
 
   return (
     <>
@@ -54,7 +54,7 @@ const handleCall = () => {
           <div className="flex flex-col items-center">
             <h2 className="text-xl font-bold text-red-lth uppercase w-full text-center lg:text-xl">No se encontraron productos</h2>
             <p className="text-center font-light lg:text-xl mt-4">No te preocupes, llámanos</p>
-            <button onClick={handleCall} className="bg-red-lth mt-10 p-2 px-6 rounded-xl text-white text-lg">Llamar ahora</button>
+            <button onClick={handleCall} className="bg-red-lth mt-10 p-2 px-6 rounded-xl text-white text-lg">¡Llamaa ahora!</button>
           </div>
         ) : (
           <p className="mt-10 mb-16 w-96 mx-auto text-center text-lg font-light lg:font-medium lg: lg:w-full lg:text-xl">Estos son los productos que mejor se ajustan a su búsqueda</p>
@@ -74,21 +74,19 @@ const handleCall = () => {
                 alt={replacePipeWithSlash(producto.BCI)}
                 width={500}
                 height={300}
-                className="w-36 transition-all duration-300 ease-in-out transform hover:scale-110"
-              />
+                className="w-36 transition-all duration-300 ease-in-out transform hover:scale-110 lg:w-48" />
             </div>
-            <p className="font-bold text-md mt-1 text-center">{replacePipeWithSlash(producto.BCI)}</p>
-            <p className="font-medium text-sm mb-2 text-center">{producto.MARCA}</p>
+            <p className="lg:text-xl font-bold text-md my-1 text-center text-blue-lth">{replacePipeWithSlash(producto.BCI)}</p>
+            <p className="lg:text-xl font-bold text-md my-1 text-center">{producto.MARCA}</p>
             <button
               onClick={() => cotizar(producto.BCI, producto.MARCA)}
-              className="bg-red-lth text-white text-sm w-full py-1 rounded-lg"
+              className="lg:text-lg bg-red-lth text-white text-sm w-full py-1 rounded-lg"
             >
               Cotiza Ya
             </button>
             <Link
               href={`/${producto.BCI}`}
-              className=" text-center bg-transparent transition-all duration-300 more-info-button text-gray-600 border-gray-600 border-solid border-2 text-sm font-bold w-full py-0.5 rounded-lg"
-            >
+              className="lg:text-lg text-center bg-transparent transition-all duration-300 more-info-button text-gray-600 border-gray-600 border-solid border-2 text-sm font-bold w-full py-0.5 rounded-lg"            >
               {" "}
               Más Información
             </Link>

@@ -123,12 +123,12 @@ export default function Bateria() {
                         {
                             bateria.MARCA === "LTH AGM" ?
                                 <>
-                                    <p className="mt-5 mb-10 w-11/12 mx-auto text-center text-lg font-normal lg:text-xl lg:max-w-[1300px]">
-                                        LTH AGM tiene una AVANZADA TECNOLOGÍA que la hace más confiable, duradera y poderosa, asegurando el mejor desempeño para los vehículos actuales. Para automóviles con tecnología Start-Stop.
+                                    <p className="mt-5 mb-10 w-11/12 mx-auto text-center text-lg font-normal lg:text-xl lg:max-w-[1300px] italic">
+                                        "LTH AGM tiene una AVANZADA TECNOLOGÍA que la hace más confiable, duradera y poderosa, asegurando el mejor desempeño para los vehículos actuales. Para automóviles con tecnología Start-Stop."
                                     </p>
                                     <h3 className="uppercase text-blue-lth font-semibold text-xl text-center lg:text-3xl">Beneficios</h3>
                                     <ul className=" mt-5 flex flex-col w-fit mx-auto px-5 lg:text-lg">
-                                        <li className="list-disc">6 Años de garantía.</li>
+                                        <li className="list-disc">5 Años de garantía.</li>
                                         <li className="list-disc">18 MESES de reemplazo sin costo.</li>
                                         <li className="list-disc">Accesorios equipados.</li>
                                         <li className="list-disc">Alta demanda eléctrica en vehículos premium.</li>
@@ -140,8 +140,8 @@ export default function Bateria() {
                         {
                             bateria.MARCA === "LTH" ?
                                 <>
-                                    <p className="mt-5 mb-10 w-11/12 mx-auto text-center text-lg font-normal lg:text-xl">
-                                        Más de 85 años siendo la marca líder, la más recomendada por los consumidores, podemos ofrecerte el RESPALDO que ninguna otra puede                                </p>
+                                    <p className="mt-5 mb-10 w-11/12 mx-auto text-center text-lg font-normal lg:text-xl italic">
+                                        "Más de 85 años siendo la marca líder, la más recomendada por los consumidores, podemos ofrecerte el RESPALDO que ninguna otra puede."</p>
                                     <h3 className="uppercase text-blue-lth font-semibold text-xl text-center lg:text-3xl">Beneficios</h3>
                                     <ul className=" mt-5 flex flex-col w-fit mx-auto px-5 lg:text-lg">
                                         <li className="list-disc">4 Años de garantía.</li>
@@ -155,8 +155,9 @@ export default function Bateria() {
                         }                    {
                             bateria.MARCA === "HI-TEC" ?
                                 <>
-                                    <p className="mt-5 mb-10 w-11/12 mx-auto text-center text-lg font-normal lg:text-xl lg:max-w-[1300px]">
-                                        En las baterías LTH HI-TEC se ve reflejada la constante innovación tecnológica de LTH. Su CALIDAD SUPERIOR ofrece energía y potencia adicional para un alto desempeño.                                </p>
+                                    <p className="mt-5 mb-10 w-11/12 mx-auto text-center text-lg font-normal lg:text-xl lg:max-w-[1300px] italic">
+                                        "En las baterías LTH HI-TEC se ve reflejada la constante innovación tecnológica de LTH. Su CALIDAD SUPERIOR ofrece energía y potencia adicional para un alto desempeño."
+                                    </p>
                                     <h3 className="uppercase text-blue-lth font-semibold text-xl text-center lg:text-3xl">Beneficios</h3>
                                     <ul className=" mt-5 flex flex-col w-fit mx-auto px-5 lg:text-lg">
                                         <li className="list-disc">5 Años de garantía.</li>
@@ -169,7 +170,6 @@ export default function Bateria() {
                                 </> : ""
                         }
                     </div>
-                    <p className="italic text-center mt-10 font-semibold">Para términos y condiciones consulta la póliza de garantía.</p>
                     <div>
                         {
                             data ?
@@ -187,10 +187,10 @@ export default function Bateria() {
                                         <div className="flex flex-row justify-between items-center px-3 w-full"><p className="py-3">Alto:</p> <p>{data.alto} mm</p></div>
                                         <div className="bg-grey-lth flex flex-row justify-between items-center px-3 w-full"><p className="py-3">Ancho:</p> <p>{data.ancho} mm</p></div>
                                     </div>
-                                    <button onClick={() => cotizar(data.bci, bateria.MARCA)} className="bg-red-lth text-white text-sm w-52 mt-10 mb-20 mx-auto flex justify-center py-2 rounded-lg lg:text-xl">
-                                        Cotiza ya
+                                    <button onClick={() => cotizar(data.bci, bateria.MARCA)} className="bg-red-lth text-white text-sm w-52 mt-10 mb-10 mx-auto flex justify-center py-2 rounded-lg lg:text-xl">
+                                        ¡Cotiza ya!
                                     </button>
-
+                                    <Link href={"/garantias-y-ajustes"} className="italic text-center mt-10 mb-20 font-semibold mx-auto w-fit block hover:text-blue-700 underline transition-colors duration-150">Para términos y condiciones consulta la póliza de garantía.</Link>
 
                                 </>
                                 : ""
