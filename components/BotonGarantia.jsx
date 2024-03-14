@@ -1,12 +1,24 @@
-'use client'
+"use client";
 import React from "react";
-import { saveAs } from 'file-saver';
+import { saveAs } from "file-saver";
+import productos from "@/data/Catalogo";
 
 export const BotonGarantia = () => {
-  const handleDownloadPDF = () => {
+  const handleDownloadPDF = async () => {
     // Ruta del archivo PDF dentro del proyecto
-    const pdfURL = process.env.PUBLIC_URL + '/data/Garantias-LTH.pdf';
-    saveAs(pdfURL, 'Garantias-LTH.pdf');
+    const pdfURL = "/Garantias-LTH.pdf"; // Asegúrate de que el archivo está en la carpeta public/data
+  
+    // Obtén el archivo como un Blob
+    const response = await fetch(pdfURL);
+  
+    // Comprueba si la solicitud fue exitosa
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+  
+    const blob = await response.blob();
+  
+    saveAs(blob, "Garantias-LTH.pdf");
   };
   return (
     <button
