@@ -26,7 +26,7 @@ function Accordian({ children, value, onChange, ...props }) {
 function AccordianItem({ children, value, trigger, className, ...props }) {
   const { selected, setSelected } = useContext(AccordianContext);
   const open = selected === value;
-
+  const ref = useRef(null); // Crea una referencia única para este componente
 
   const handleChildClick = (e) => {
     e.stopPropagation(); // Previene que el evento se propague al header

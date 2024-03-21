@@ -22,7 +22,7 @@ export default function Home() {
                     />
                 </svg>
             </Link>
-            <h1 className="text-xl font-bold text-blue-lth uppercase w-full text-center mb-10 lg:text-3xl">Recomendacion de clientes</h1>
+            <h1 className="text-xl font-bold text-blue-lth uppercase w-full text-center mb-10 lg:text-3xl">Recomendación de clientes</h1>
             <Cards page="all" />
             <Whatsapp />
         </>

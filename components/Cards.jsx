@@ -185,9 +185,9 @@ export const Cards = ({ page }) => {
           Aceptamos todas las tarjetas <br /> de crédito
         </h2>
         <div className="grid grid-cols-3 gap-x-2 overflow-hidden max-w-[400px]">
-          <img src="/visa-logo.png" className="h-full" />
-          <img src="/mastercard-logo.png" className="h-full" />
-          <img src="/amex-logo.png" className="h-full" />
+          <img src="/visa-logo.png" className="h-[70px] md:h-full" />
+          <img src="/mastercard-logo.png" className="h-[70px] md:h-full" />
+          <img src="/meli.jpg" className="h-[70px] md:h-full" />
         </div>
       </div>
       <div className="flex flex-col items-center justify-between bg-grey-lth w-full p-4 my-3 rounded-xl lg:max-w-[550px]">
