@@ -2,15 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.asd{
-  border: 2px solid red;
-}
-
-
+/* Estilos globales */
 body {
   background-color: #F5F5F5;
 }
 
+/* Colores personalizados */
 .bg-blue-lth {
   background-color: #061684;
 }
@@ -37,16 +34,39 @@ body {
   color: #D3172E;
 }
 
+/* Utilidades generales */
+.asd {
+  border: 2px solid red;
+}
+
+/* Header */
 .header-grid {
   display: grid;
   grid-template-columns: 50px auto 50px;
 }
 
+/* Estilos de formulario principal */
 .main-form {
   background-image: url('/background-form.png');
-  background-size: cover;
+  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  min-height: 100vh; /* Se asegura que ocupe al menos el alto de la pantalla */
 }
 
+/* Media queries */
+@media screen and (min-width: 1024px) {
+  .main-form {
+    background-position: 0px -350px; /* Ajuste para pantallas grandes */
+  }
+
+  .more-info-card {
+    background-position: 0px 58%; /* Ajuste para pantallas grandes */
+    grid-template-rows: 80% 20%;
+  }
+}
+
+/* Tarjeta de información adicional */
 .more-info-card {
   background-image: url('/3.jpg');
   background-size: cover;
@@ -55,50 +75,34 @@ body {
   grid-template-rows: 46% 54%;
 }
 
-@media screen and (min-width: 1024px) {
-  .more-info-card {
-    background-image: url('/3.jpg');
-    background-size: cover;
-    background-position: 0px 58%;
-    display: grid;
-    grid-template-rows: 80% 20%;
-  }
-
-  .main-form {
-    background-image: url('/background-form.png');
-    background-size:cover;
-    background-position: 0px -350px;
-  }
-
+/* Botones */
+.more-info-button:hover {
+  border: #b01325 2px solid !important;
+  color: #b01325 !important;
 }
 
-.arrow-back:hover>path {
+/* Animaciones */
+.arrow-back:hover > path {
   fill: #b01325 !important;
   transition: all 0.3s;
 }
 
-.menu-divs>p,
+.menu-divs > p,
 .menu-divs {
   transition: all 0.3s;
 }
 
-.menu-divs:hover>p,
+.menu-divs:hover > p,
 .menu-divs:hover {
   color: #D3172E !important;
   font-weight: 600;
   transition: all 0.3s;
 }
 
-.more-info-button:hover {
-  border: #b01325 2px solid !important;
-  color: #b01325 !important
-}
-
-
+/* Formulario: Opciones de selección */
 .option-form {
-  text-transform: lowercase
+  text-transform: lowercase;
 }
-
 
 .option-form::first-letter {
   text-transform: uppercase;
