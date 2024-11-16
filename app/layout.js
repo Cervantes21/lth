@@ -16,8 +16,10 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Header />
         <HeaderDesktop />
-        {children}
-        </body>
+        <main className="pt-[100px] lg:pt-[80px]"> {/* Ajusta los valores según la altura del header */}
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

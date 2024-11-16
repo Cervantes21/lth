@@ -5,25 +5,25 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "react-feather";
 
+// Header principal para la vista de escritorio
 export const HeaderDesktop = () => {
   const url = usePathname();
   const catalogRef = useRef();
-
-
   const [catalogOpen, setCatalogOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
+  // Manejar apertura y cierre del catálogo
   const handleCatalogOpen = () => {
     setCatalogOpen(!catalogOpen);
   };
 
-  // Función para manejar el click fuera del catálogo
+  // Cerrar catálogo al hacer clic fuera
   const handleClickOutside = (event) => {
     if (catalogRef.current && !catalogRef.current.contains(event.target)) {
       setCatalogOpen(false);
     }
   };
 
-  // Agregar el event listener cuando el componente se monta y limpiarlo cuando se desmonta
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -31,78 +31,61 @@ export const HeaderDesktop = () => {
     };
   }, []);
 
+  // Manejar la posición sticky del header al hacer scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="hidden lg:flex bg-blue-lth h-24">
-      <div className="w-full max-w-[1300px] mx-auto flex flex-row justify-between items-center">
+    <header
+      className={`hidden lg:block bg-blue-lth transition-opacity duration-300 ease-in-out ${
+        isSticky ? "fixed top-0 left-0 w-full shadow-lg z-40 opacity-90" : "opacity-80"
+      }`}
+    >
+      <div className="max-w-[1300px] mx-auto flex justify-between items-center">
         <Link href="/">
-          <img
-            src="/logo.png"
-            alt="Logo"
-            className="h-[80px] rounded-full my-2"
-          />
+          <img src="/logo.png" alt="Logo" className="h-[80px] rounded-full my-2" />
         </Link>
-        <nav className="flex gap-x-10 text-white font-medium text-lg transition-colors duration-300">
-          <div ref={catalogRef} className="flex flex-col">
-            <button
-              onClick={handleCatalogOpen}
-              className="hover:text-red-600 transition-colors duration-300 flex items-center"
-            >
-              Catálogo{" "}
+
+        <nav className="flex gap-x-10 text-white font-medium text-lg">
+          <div ref={catalogRef} className="relative">
+            <button onClick={handleCatalogOpen} className="flex items-center">
+              Catálogo
               <ChevronDown
-                size={19}
-                className={`transition-transform duration-200 ${
-                    catalogOpen ? "rotate-0" : "-rotate-90"
+                className={`ml-1 transition-transform duration-200 ${
+                  catalogOpen ? "rotate-0" : "-rotate-90"
                 }`}
               />
             </button>
-            <div
-              className={`absolute ${
-                catalogOpen ? "flex" : "hidden"
-              } flex-col translate-y-[45px] -translate-x-3 bg-blue-lth p-4 gap-y-4 z-50 w-32`}
-              onClick={() => setCatalogOpen(false)}
-            >
-              <Link
-                className="hover:text-red-600 transition-colors duration-300"
-                href="/lth"
-              >
-                LTH
-              </Link>
-              <Link
-                className="hover:text-red-600 transition-colors duration-300"
-                href="/hitec"
-              >
-                HI-TEC
-              </Link>
-              <Link
-                className="hover:text-red-600 transition-colors duration-300"
-                href="/agm"
-              >
-                AGM
-              </Link>
-            </div>
+            {catalogOpen && (
+              <ul className="absolute mt-2 border rounded shadow-lg bg-white text-blue-lth">
+                <Link href="/agm" className="block p-2 hover:bg-gray-100">
+                  AGM
+                </Link>
+                <Link href="/hitec" className="block p-2 hover:bg-gray-100">
+                  HITEC
+                </Link>
+              </ul>
+            )}
           </div>
-          <Link
-            className="hover:text-red-600 transition-colors duration-300"
-            href="/recomendaciones"
-          >
+
+          <Link href="/recomendaciones" className="hover:text-red-600">
             Recomendaciones
           </Link>
-          <Link
-            className="hover:text-red-600 transition-colors duration-300"
-            href="/garantias-y-ajustes"
-          >
-            Garantias
+          <Link href="/garantias-y-ajustes" className="hover:text-red-600">
+            Garantías
           </Link>
-          <Link
-            className="hover:text-red-600 transition-colors duration-300"
-            href="/centros"
-          >
+          <Link href="/centros" className="hover:text-red-600">
             Centros
           </Link>
-          <Link
-            className="hover:text-red-600 transition-colors duration-300"
-            href="/servicio"
-          >
+          <Link href="/servicio" className="hover:text-red-600">
             Nosotros
           </Link>
         </nav>

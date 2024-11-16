@@ -5,49 +5,55 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const CatalogoData = ({ page }) => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(4); // Inicialmente 4 elementos por página
+  const [currentPage, setCurrentPage] = useState(0); // Estado para la página actual de la paginación
+  const [itemsPerPage, setItemsPerPage] = useState(4); // Estado para definir la cantidad de elementos por página, con valor inicial de 4
 
   useEffect(() => {
-    // Función para actualizar itemsPerPage basado en el ancho de la ventana
+    // Función para actualizar itemsPerPage según el ancho de la ventana
     const updateItemsPerPage = () => {
       if (window.innerWidth > 1024) {
-        setItemsPerPage(12); // Si la ventana es más ancha que 1024px, mostrar 12 elementos por página
+        setItemsPerPage(12); // Si el ancho de la ventana es mayor a 1024px, mostrar 12 elementos por página
       } else {
-        setItemsPerPage(4); // Si la ventana es más estrecha que 1024px, mostrar 4 elementos por página
+        setItemsPerPage(4); // Si es menor o igual a 1024px, mostrar 4 elementos por página
       }
     };
 
-    // Actualizar itemsPerPage cuando el componente se monta
+    // Ejecutar la función una vez al montar el componente para establecer itemsPerPage inicial
     updateItemsPerPage();
 
-    // Agregar un event listener para el evento resize
+    // Escuchar cambios en el tamaño de la ventana para ajustar itemsPerPage dinámicamente
     window.addEventListener("resize", updateItemsPerPage);
 
-    // Limpiar el event listener cuando el componente se desmonta
+    // Limpiar el event listener al desmontar el componente para evitar fugas de memoria
     return () => window.removeEventListener("resize", updateItemsPerPage);
-  }, []); // Dependencias vacías, por lo que este efecto se ejecuta solo una vez
+  }, []); // Efecto ejecutado solo una vez al montar el componente
 
+  // Filtrar productos por marca seleccionada
   const filteredProducts = productos.filter(
     (producto) => producto.MARCA === page
   );
+
+  // Calcular el número total de páginas según la cantidad de productos filtrados y los itemsPerPage
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
+  // Seleccionar productos a mostrar en la página actual
   const paginatedProducts = filteredProducts.slice(
     currentPage * itemsPerPage,
     (currentPage + 1) * itemsPerPage
   );
 
+  // Función para reemplazar el carácter "|" con "/" en un string (por ejemplo, en el nombre de un producto)
   function replacePipeWithSlash(str) {
     return str.replace(/\|/g, "/");
   }
 
+  // Función para generar y abrir un mensaje de WhatsApp para cotización de productos
   const cotizar = (nombre, marca) => {
-    const message = `Hola, me gustaría cotizar ${nombre} de ${marca}`; // Mensaje para enviar por WhatsApp
-    const urlMessage = encodeURIComponent(message); // Mensaje codificado para la URL
+    const message = `Hola, me gustaría cotizar ${nombre} de ${marca}`; // Mensaje personalizado para enviar por WhatsApp
+    const urlMessage = encodeURIComponent(message); // Codificación para URL
     const whatsappURL = `https://api.whatsapp.com/send/?phone=${527776002745}&text=${urlMessage}&app_absent=0`;
 
-    // Abrir la URL de WhatsApp en una nueva pestaña del navegador
+    // Abrir la URL de WhatsApp en una nueva pestaña
     window.open(whatsappURL, "_blank");
   };
 
@@ -57,12 +63,15 @@ export const CatalogoData = ({ page }) => {
         CATÁLOGO
       </h1>
       <h2 className="text-center font-bold text-2xl mb-10">{page}</h2>
-      <div className=" w-full px-4 lg:px-16 grid grid-cols-2 lg:grid-cols-4 gap-3">
+
+      {/* Contenedor para mostrar productos en formato de grid */}
+      <div className="w-full px-4 lg:px-16 grid grid-cols-2 lg:grid-cols-4 gap-3">
         {paginatedProducts.map((producto, index) => (
           <div
-            className=" bg-grey-lth flex flex-col justify-between gap-y-3 items-center p-4 rounded-xl"
+            className="bg-grey-lth flex flex-col justify-between gap-y-3 items-center p-4 rounded-xl"
             key={index}
           >
+            {/* Mostrar imagen del producto */}
             <div className="min-h-40 overflow-hidden flex items-center">
               <Image
                 src={`/${producto.IMAGEN}`}
@@ -72,9 +81,11 @@ export const CatalogoData = ({ page }) => {
                 className="w-36 transition-all duration-300 ease-in-out transform hover:scale-110 lg:w-48"
               />
             </div>
+            {/* Nombre del producto */}
             <p className="lg:text-xl font-bold text-md my-1 text-center">
               {replacePipeWithSlash(producto.BCI)}
             </p>
+            {/* Botones de acción: cotización y más información */}
             <div className="w-full flex flex-col gap-y-5">
               <button
                 onClick={() =>
@@ -88,14 +99,16 @@ export const CatalogoData = ({ page }) => {
                 href={`/${producto.BCI}`}
                 className="lg:text-lg text-center bg-transparent transition-all duration-300 more-info-button text-gray-600 border-gray-600 border-solid border-2 text-sm font-bold w-full py-0.5 rounded-lg"
               >
-                {" "}
                 Más Información
               </Link>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Controles de paginación */}
       <div className="flex w-full items-center justify-center gap-x-4 mt-10 mb-20">
+        {/* Botón de página anterior */}
         <button
           onClick={() => setCurrentPage((prev) => prev - 1)}
           disabled={currentPage === 0}
@@ -121,6 +134,8 @@ export const CatalogoData = ({ page }) => {
             />
           </svg>
         </button>
+
+        {/* Botones para cada número de página */}
         {[...Array(totalPages).keys()].map((num) => (
           <button
             key={num}
@@ -132,6 +147,8 @@ export const CatalogoData = ({ page }) => {
             {num + 1}
           </button>
         ))}
+
+        {/* Botón de página siguiente */}
         <button
           onClick={() => setCurrentPage((prev) => prev + 1)}
           disabled={currentPage >= totalPages - 1}
