@@ -10,7 +10,7 @@ import Image from "next/image";
 export default function SearchIds() {
   const pathname = usePathname();
   const id = pathname.replace("/search/", "");
-  const ids = id.split(",").map(id => decodeURIComponent(id)); // Decodifica cada ID
+  const ids = id.split(",").map((id) => decodeURIComponent(id)); // Decodifica cada ID
   console.log(ids);
 
   const filteredProducts = productos.filter((producto) =>
@@ -50,6 +50,17 @@ export default function SearchIds() {
         Buscador
       </h1>
 
+      {/* Imagen */}
+      <div className="flex justify-center mb-10">
+        <Image
+          src="/bec-animation.png"
+          alt="BEC Animation"
+          width={300}
+          height={300}
+          className="w-36 h-auto md:w-60"
+        />
+      </div>
+
       {/* Mensaje cuando no se encuentran productos */}
       {filteredProducts.length === 0 ? (
         <div className="flex flex-col items-center">
@@ -67,7 +78,7 @@ export default function SearchIds() {
           </button>
         </div>
       ) : (
-        <p className="mt-10 mb-16 w-96 mx-auto text-center text-lg font-light lg:font-medium lg:w-full lg:text-xl">
+        <p className="mt-10 mb-16 w-11/12 mx-auto text-center text-base font-light sm:text-lg md:w-4/5 lg:w-3/4 lg:text-xl xl:w-2/3 xl:text-2xl">
           Estos son los productos que mejor se ajustan a su búsqueda
         </p>
       )}

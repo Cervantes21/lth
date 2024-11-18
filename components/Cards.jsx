@@ -94,7 +94,7 @@ const cards = [
     ),
     title: <>Acerca de nosotros</>,
     description: null,
-    button: "Ver más información",
+    button: "Conócenos",
     buttonLink: "/servicio",
     exeption: "service",
   },
