@@ -1,13 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { filtros } from "@/data/filtros";
 
-export const MainForm = () => {
+const MainForm = () => {
   const [tipoVehiculo, setTipoVehiculo] = useState("");
   const [anoVehiculo, setAnoVehiculo] = useState("");
   const [marcaVehiculo, setMarcaVehiculo] = useState("");
   const [modeloVehiculo, setModeloVehiculo] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [step, setStep] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   const [uniqueBrands, setUniqueBrands] = useState([]);
   const [uniqueModels, setUniqueModels] = useState([]);
@@ -78,7 +79,7 @@ export const MainForm = () => {
     setResult(itemsForYearBrandAndModel);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!tipoVehiculo || !anoVehiculo || !marcaVehiculo || !modeloVehiculo) {
       setErrorMessage("Por favor, completa todos los campos.");
@@ -91,12 +92,46 @@ export const MainForm = () => {
     }
 
     setErrorMessage("");
-    let opciones = result
-      .flatMap((item) => [item["OPCIÓN 1"], item["OPCIÓN 2"], item["OPCIÓN 3"]])
-      .filter(Boolean)
-      .join(",");
+    setLoading(true);
 
-    window.location.href = `/search/${opciones}`;
+    const baterias = result.map((item) => ({
+      tipoBateria: item.BATERIA,
+      opciones: [item["OPCIÓN 1"], item["OPCIÓN 2"], item["OPCIÓN 3"]].filter(Boolean),
+    }));
+
+    const dataToSend = {
+      tipoVehiculo,
+      anoVehiculo: parseInt(anoVehiculo),
+      marcaVehiculo,
+      modeloVehiculo,
+      baterias,
+    };
+
+    try {
+      const response = await fetch("/api/formSelection", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dataToSend),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        console.log("Datos guardados correctamente:", result);
+
+        // Redirigir con las opciones al final
+        const opciones = baterias
+          .flatMap((bateria) => bateria.opciones)
+          .join(",");
+        window.location.href = `/search/${opciones}`;
+      } else {
+        setErrorMessage(result.message || "Error al guardar los datos.");
+      }
+    } catch (error) {
+      console.error("Error al enviar los datos:", error);
+      setErrorMessage("Hubo un problema al enviar los datos.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -137,7 +172,7 @@ export const MainForm = () => {
             <select
               value={tipoVehiculo}
               onChange={(e) => setTipoVehiculo(e.target.value)}
-              className={`${commonSelectClass}`}
+              className={commonSelectClass}
             >
               <option value="">Tipo</option>
               <option value="auto">Auto</option>
@@ -150,7 +185,7 @@ export const MainForm = () => {
             <select
               value={anoVehiculo}
               onChange={handleYearChange}
-              className={`${commonSelectClass}`}
+              className={commonSelectClass}
             >
               <option value="">Año</option>
               {[...Array(14)].map((_, i) => (
@@ -167,7 +202,7 @@ export const MainForm = () => {
             <select
               value={marcaVehiculo}
               onChange={handleBrandChange}
-              className={`${commonSelectClass}`}
+              className={commonSelectClass}
             >
               <option value="">Marca</option>
               {uniqueBrands.map((brand, index) => (
@@ -184,7 +219,7 @@ export const MainForm = () => {
             <select
               value={modeloVehiculo}
               onChange={handleModelChange}
-              className={`${commonSelectClass}`}
+              className={commonSelectClass}
             >
               <option value="">Modelo</option>
               {uniqueModels.map((model, index) => (
@@ -201,9 +236,14 @@ export const MainForm = () => {
             <button
               type="button"
               onClick={handleSubmit}
-              className="p-3 h-16 w-full bg-red-600 text-white font-semibold rounded-xl shadow-md transform hover:scale-105 transition-all"
+              className={`p-3 h-16 w-full text-white font-semibold rounded-xl shadow-md transform transition-all ${
+                loading
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-red-600 hover:scale-105"
+              }`}
+              disabled={loading}
             >
-              Buscar
+              {loading ? "Cargando..." : "Buscar"}
             </button>
           </div>
         );
@@ -213,9 +253,7 @@ export const MainForm = () => {
   };
 
   return (
-    <div
-      className="main-form flex flex-col items-center justify-center pt-16 pb-14 translate-y-24 lg:translate-y-40 z-10 rounded-b-2xl w-full bg-red-600"
-    >
+    <div className="main-form flex flex-col items-center justify-center pt-16 pb-14 translate-y-24 lg:translate-y-40 z-10 rounded-b-2xl w-full bg-red-600">
       <div className="flex flex-col items-center justify-center gap-y-8 mx-auto max-w-[700px] w-full">
         {renderStep()}
         {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
