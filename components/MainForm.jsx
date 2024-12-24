@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import Portada from "./Portada";
 import { filtros } from "@/data/filtros";
 
 const MainForm = () => {
@@ -49,7 +50,7 @@ const MainForm = () => {
 
   const getModelsForYearAndBrand = (year, brand) => {
     const itemsForYearAndBrand = resultYears.filter(
-      (item) => item.AÑO == year && item.MARCA.toUpperCase() == brand.toUpperCase()
+      (item) => item.AÑO == year && item.MARCA.toUpperCase() === brand.toUpperCase()
     );
     setResultBrands(itemsForYearAndBrand);
     const models = itemsForYearAndBrand.map((item) =>
@@ -58,14 +59,21 @@ const MainForm = () => {
     return [...new Set(models)];
   };
 
+  const handleTipoVehiculoChange = (e) => {
+    setTipoVehiculo(e.target.value);
+    if (e.target.value) setStep(2); // Avanzar al siguiente paso
+  };
+
   const handleYearChange = (e) => {
     setAnoVehiculo(e.target.value);
     setUniqueBrands(getUniqueBrandsForYear(e.target.value));
+    if (e.target.value) setStep(3); // Avanzar al siguiente paso
   };
 
   const handleBrandChange = (e) => {
     setMarcaVehiculo(e.target.value);
     setUniqueModels(getModelsForYearAndBrand(anoVehiculo, e.target.value));
+    if (e.target.value) setStep(4); // Avanzar al siguiente paso
   };
 
   const handleModelChange = (e) => {
@@ -73,10 +81,13 @@ const MainForm = () => {
     const itemsForYearBrandAndModel = resultBrands.filter(
       (item) =>
         item.AÑO == anoVehiculo &&
-        item.MARCA.toUpperCase() == marcaVehiculo.toUpperCase() &&
-        (typeof item.MODELO === "string" ? item.MODELO.toUpperCase() : item.MODELO) == String(e.target.value).toUpperCase()
+        item.MARCA.toUpperCase() === marcaVehiculo.toUpperCase() &&
+        (typeof item.MODELO === "string"
+          ? item.MODELO.toUpperCase()
+          : item.MODELO) === e.target.value.toUpperCase()
     );
     setResult(itemsForYearBrandAndModel);
+    if (e.target.value) setStep(5); // Avanzar al siguiente paso
   };
 
   const handleSubmit = async (e) => {
@@ -114,17 +125,17 @@ const MainForm = () => {
         body: JSON.stringify(dataToSend),
       });
 
-      const result = await response.json();
+      const responseData = await response.json();
       if (response.ok) {
-        console.log("Datos guardados correctamente:", result);
+        console.log("Datos enviados correctamente:", responseData);
 
-        // Redirigir con las opciones al final
+        // Redirigir con los datos obtenidos
         const opciones = baterias
           .flatMap((bateria) => bateria.opciones)
           .join(",");
         window.location.href = `/search/${opciones}`;
       } else {
-        setErrorMessage(result.message || "Error al guardar los datos.");
+        setErrorMessage(responseData.message || "Error al guardar los datos.");
       }
     } catch (error) {
       console.error("Error al enviar los datos:", error);
@@ -134,44 +145,19 @@ const MainForm = () => {
     }
   };
 
-  useEffect(() => {
-    if (tipoVehiculo && step === 0) {
-      setStep(1);
-    }
-  }, [tipoVehiculo]);
-
-  useEffect(() => {
-    if (anoVehiculo && step === 1) {
-      setStep(2);
-    }
-  }, [anoVehiculo]);
-
-  useEffect(() => {
-    if (marcaVehiculo && step === 2) {
-      setStep(3);
-    }
-  }, [marcaVehiculo]);
-
-  useEffect(() => {
-    if (modeloVehiculo && step === 3) {
-      setStep(4);
-    }
-  }, [modeloVehiculo]);
-
   const renderStep = () => {
     const commonSelectClass =
       "p-3 w-full h-14 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 bg-white";
 
     switch (step) {
       case 0:
+        return <Portada onMotociclistaClick={() => setStep(1)} />;
+      case 1:
         return (
           <div className="flex flex-col items-center justify-center w-full gap-6">
-            <p className="text-xl text-center font-semibold text-white mb-4">
-              Empecemos, selecciona tu automóvil
-            </p>
             <select
               value={tipoVehiculo}
-              onChange={(e) => setTipoVehiculo(e.target.value)}
+              onChange={handleTipoVehiculoChange}
               className={commonSelectClass}
             >
               <option value="">Tipo</option>
@@ -179,7 +165,7 @@ const MainForm = () => {
             </select>
           </div>
         );
-      case 1:
+      case 2:
         return (
           <div className="flex flex-col items-center justify-center w-full gap-6">
             <select
@@ -196,7 +182,7 @@ const MainForm = () => {
             </select>
           </div>
         );
-      case 2:
+      case 3:
         return (
           <div className="flex flex-col items-center justify-center w-full gap-6">
             <select
@@ -213,7 +199,7 @@ const MainForm = () => {
             </select>
           </div>
         );
-      case 3:
+      case 4:
         return (
           <div className="flex flex-col items-center justify-center w-full gap-6">
             <select
@@ -230,7 +216,7 @@ const MainForm = () => {
             </select>
           </div>
         );
-      case 4:
+      case 5:
         return (
           <div className="flex flex-col items-center justify-center w-full gap-6">
             <button
@@ -239,7 +225,7 @@ const MainForm = () => {
               className={`p-3 h-16 w-full text-white font-semibold rounded-xl shadow-md transform transition-all ${
                 loading
                   ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-red-600 hover:scale-105"
+                  : "bg-red-lth hover:scale-105"
               }`}
               disabled={loading}
             >
@@ -253,10 +239,10 @@ const MainForm = () => {
   };
 
   return (
-    <div className="main-form flex flex-col items-center justify-center pt-16 pb-14 translate-y-24 lg:translate-y-40 z-10 rounded-b-2xl w-full bg-red-600">
+    <div className="main-form flex flex-col items-center justify-center pt-8 z-10 rounded-b-2xl w-full">
       <div className="flex flex-col items-center justify-center gap-y-8 mx-auto max-w-[700px] w-full">
         {renderStep()}
-        {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
+        {errorMessage && <p className="text-red-lth text-center">{errorMessage}</p>}
       </div>
     </div>
   );

@@ -5,6 +5,8 @@
 /* Estilos globales */
 body {
   background-color: #F5F5F5;
+  margin: 0;
+  padding: 0;
 }
 
 /* Colores personalizados */
@@ -48,33 +50,33 @@ body {
 /* Estilos de formulario principal */
 .main-form {
   background-image: url('/background-form.png');
-  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  min-height: 100vh; /* Se asegura que ocupe al menos el alto de la pantalla */
-  display: flex; /* Usamos flexbox para centrar los contenidos */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: flex-start; /* Centra verticalmente */
+  background-size: cover; /* Ajusta el ancho al 100% y altura automática */
+  background-position: center; /* Centra la imagen del fondo */
+  background-repeat: no-repeat; /* Evita que se repita el fondo */
+  height: 100vh; /* Ocupa el 100% de la altura del viewport */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 /* Media queries */
 @media screen and (min-width: 1024px) {
   .main-form {
-    background-position: 0px -350px; /* Ajuste para pantallas grandes */
+    background-size: cover; /* Ajusta el fondo para pantallas grandes */
+    background-position: center bottom; /* Alinea el fondo correctamente */
   }
 
   .more-info-card {
-    background-position: 0px 58%; /* Ajuste para pantallas grandes */
+    background-position: center 58%; /* Ajuste para pantallas grandes */
     grid-template-rows: 80% 20%;
   }
 }
-
 
 /* Tarjeta de información adicional */
 .more-info-card {
   background-image: url('/3.jpg');
   background-size: cover;
-  background-position: 0px -90px;
+  background-position: center -90px;
   display: grid;
   grid-template-rows: 46% 54%;
 }
@@ -90,6 +92,7 @@ body {
   fill: #b01325 !important;
   transition: all 0.3s;
 }
+
 /* Estilo para el botón de regresar en la versión móvil */
 .arrow-back {
   margin-left: 10px;  /* Alineación a la izquierda */
@@ -116,3 +119,4 @@ body {
 .option-form::first-letter {
   text-transform: uppercase;
 }
+

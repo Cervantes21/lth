@@ -1,164 +1,131 @@
 "use client";
 
-import { createContext, useContext, useRef, useEffect, useState } from "react";
-import { ChevronDown } from "react-feather";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Menu, X } from "react-feather";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
-const AccordianContext = createContext();
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
-// Acordeón para menú desplegable
-function Accordian({ children, value, onChange, ...props }) {
-  const [selected, setSelected] = useState(value);
-
-  useEffect(() => {
-    onChange?.(selected);
-  }, [selected]);
-
-  return (
-    <ul {...props}>
-      <AccordianContext.Provider value={{ selected, setSelected }}>
-        {children}
-      </AccordianContext.Provider>
-    </ul>
-  );
-}
-
-function AccordianItem({ children, value, trigger, className, ...props }) {
-  const { selected, setSelected } = useContext(AccordianContext);
-  const open = selected === value;
-  const ref = useRef(null);
-
-  const handleChildClick = (e) => {
-    e.stopPropagation();
-    setSelected(null);
-  };
-
-  return (
-    <li className={`border-b bg-white ${className || ""}`} {...props}>
-      <header
-        role="button"
-        onClick={() => setSelected(open ? null : value)}
-        className="flex justify-between items-center p-4 font-medium menu-divs"
-      >
-        {trigger}
-        <ChevronDown
-          size={16}
-          className={`transition-transform duration-200 ${
-            open ? "rotate-0" : "-rotate-90"
-          }`}
-        />
-      </header>
-      <div
-        className="overflow-y-hidden transition-all"
-        style={{ height: open ? ref.current?.offsetHeight || 0 : 0 }}
-      >
-        <div className="pt-2 p-4" ref={ref} onClick={handleChildClick}>
-          {children}
-        </div>
-      </div>
-    </li>
-  );
-}
-
-export const Header = () => {
-  const [open, setOpen] = useState(false);
-  const menuRef = useRef(null);
-
-  const handleMenu = () => {
-    setOpen(!open);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const closeMenu = () => {
-    setOpen(false);
+    setIsMenuOpen(false);
   };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setOpen(false);
-      }
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 0);
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <>
-      {/* Header para dispositivos móviles */}
-      <header className="bg-blue-lth flex justify-between items-center shadow-2xl lg:hidden fixed top-0 left-0 w-full z-50 h-[70px] px-4">
-        {/* Botón del menú */}
-        <button
-          className="w-8 h-8 flex items-center justify-center"
-          onClick={handleMenu}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            viewBox="0 0 24 24"
-            className="w-8 h-8 hover:opacity-70 transition-opacity duration-300 ease-in-out"
-          >
-            <path fill="white" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" />
-          </svg>
-        </button>
-
-        {/* Logo centrado */}
-        <Link href="/" className="flex items-center">
+    <header
+      className={`lg:hidden bg-blue-lth transition-opacity duration-300 ease-in-out ${
+        isSticky
+          ? "fixed top-0 left-0 w-full shadow-lg z-40"
+          : "absolute top-0 left-0 w-full z-40"
+      }`}
+    >
+      <div className="flex justify-between items-center px-4 py-2">
+        <Link href="/">
           <img
-            src="/logo.png"
+            src="/logo.svg"
             alt="Logo"
-            className="h-[50px] w-[50px] rounded-full"
+            className="h-[50px] rounded-full"
           />
         </Link>
-      </header>
 
-      {/* Menú lateral desplegable */}
-      <div
-        ref={menuRef}
-        className={`h-full transition-transform duration-500 bg-white fixed z-[100] top-0 w-[320px] ${
-          open ? "" : "-translate-x-96"
-        }`}
-      >
-        <button className="mt-3 ml-3" onClick={handleMenu}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            viewBox="0 0 24 24"
-            className="w-10 h-10 arrow-back"
-          >
-            <path
-              className="duration-300 transition-all"
-              fill="#d3172e"
-              fillRule="evenodd"
-              d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10m-.47-13.53a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 0 0 0 1.06l3 3a.75.75 0 1 0 1.06-1.06l-1.72-1.72H16a.75.75 0 0 0 0-1.5H9.81l1.72-1.72a.75.75 0 0 0 0-1.06"
-              clipRule="evenodd"
-            />
-          </svg>
+        <button onClick={toggleMenu} aria-label="Toggle menu" className="text-white">
+          {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
-        <p className="text-blue-lth font-bold ml-4">MENÚ</p>
-
-        {/* Contenido del menú */}
-        <Accordian className="max-w-lg">
-          <AccordianItem value="1" trigger="Catálogo de Productos">
-            <div className="flex flex-col w-full">
-              <Link href="/agm" className="py-2 hover:opacity-80" onClick={closeMenu}>AGM</Link>
-              <Link href="/hitec" className="py-2 hover:opacity-80" onClick={closeMenu}>HITEC</Link>
-              <Link href="/lth" className="py-2 hover:opacity-80" onClick={closeMenu}>LTH</Link>
-            </div>
-          </AccordianItem>
-          {/* Opciones individuales con separación */}
-          <Link href="/recomendaciones" className="py-2 px-4 hover:bg-gray-100 block" onClick={closeMenu}>
-            Recomendaciones
-          </Link>
-          <Link href="/nosotros" className="py-2 px-4 hover:bg-gray-100 block" onClick={closeMenu}>
-            Nosotros
-          </Link>
-        </Accordian>
       </div>
-    </>
+
+      {isMenuOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50" onClick={closeMenu}>
+          <nav
+            className="bg-white w-[75%] h-full absolute right-0 shadow-lg z-60 flex flex-col gap-y-4 text-blue-lth font-medium text-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Link
+              href="/servicio"
+              className="py-4 px-6 hover:bg-red-600 hover:text-white flex items-center gap-x-2"
+              onClick={closeMenu}
+            >
+              <DotLottieReact
+                src="/animations/presentacion.json"
+                className="w-6 h-6"
+                autoplay
+                loop
+              />
+              Quiénes somos
+            </Link>
+            <Link
+              href="/"
+              className="py-4 px-6 hover:bg-red-600 hover:text-white flex items-center gap-x-2"
+              onClick={closeMenu}
+            >
+              <DotLottieReact
+                src="/animations/buscar.json"
+                className="w-6 h-6"
+                autoplay
+                loop
+              />
+              Busca tu Batería
+            </Link>
+            <Link
+              href="/centros"
+              className="py-4 px-6 hover:bg-red-600 hover:text-white flex items-center gap-x-2"
+              onClick={closeMenu}
+            >
+              <DotLottieReact
+                src="/animations/marcador-de-posicion.json"
+                className="w-6 h-6"
+                autoplay
+                loop
+              />
+              Centros de Servicio y Venta LTH
+            </Link>
+            <Link
+              href="/recomendaciones"
+              className="py-4 px-6 hover:bg-red-600 hover:text-white flex items-center gap-x-2"
+              onClick={closeMenu}
+            >
+              <DotLottieReact
+                src="/animations/mesa-de-ayuda.json"
+                className="w-10 h-10"
+                autoplay
+                loop
+              />
+              Preguntas Frecuentes y Recomendaciones
+            </Link>
+            <Link
+              href="/garantias-y-ajustes"
+              className="py-4 px-6 hover:bg-red-600 hover:text-white flex items-center gap-x-2"
+              onClick={closeMenu}
+            >
+              <DotLottieReact
+                src="/animations/garantia.json"
+                className="w-6 h-6"
+                autoplay
+                loop
+              />
+              Garantías
+            </Link>
+          </nav>
+        </div>
+      )}
+    </header>
   );
 };
+
+export default Header;
