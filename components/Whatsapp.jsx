@@ -12,7 +12,7 @@ export const Whatsapp = () => {
       {/* Botón de animación Lottie para WhatsApp */}
       <DotLottieReact
         src="/animations/whatsapp_button.json" // Ruta al archivo Lottie en la carpeta 'public'
-        className="cursor-pointer fixed right-0 bottom-1 w-48 h-48"
+        className="cursor-pointer fixed bottom-1 w-48 h-48 left-56 sm:right-0 sm:left-auto"
         autoplay // Autoplay para que la animación inicie automáticamente
         loop // Loop para que la animación se repita
       />

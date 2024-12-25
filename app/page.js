@@ -4,6 +4,7 @@ import MainForm from "@/components/MainForm";
 import { MarcaBanner } from "@/components/MarcaBanner";
 import { Whatsapp } from "@/components/Whatsapp";
 import Banner from "@/components/Banner";
+import ParagraphFooter from "@/components/ParagraphFooter";
 
 export default function Home() {
   return (
@@ -19,7 +20,14 @@ export default function Home() {
       {/* Banner de marcas y tarjetas */}
       <MarcaBanner />
       <Cards page="landing" />
+      
+      {/* Botón de WhatsApp */}
       <Whatsapp />
+
+      {/* Footer con texto estilizado */}
+      <footer>
+        <ParagraphFooter />
+      </footer>
     </>
   );
 }
