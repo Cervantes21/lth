@@ -51,7 +51,7 @@ export const CatalogoData = ({ page }) => {
   const cotizar = (nombre, marca) => {
     const message = `Hola, me gustaría cotizar ${nombre} de ${marca}`; // Mensaje personalizado para enviar por WhatsApp
     const urlMessage = encodeURIComponent(message); // Codificación para URL
-    const whatsappURL = `https://api.whatsapp.com/send/?phone=${527776002745}&text=${urlMessage}&app_absent=0`;
+    const whatsappURL = `https://api.whatsapp.com/send/?phone=527776002745&text=${urlMessage}&app_absent=0`;
 
     // Abrir la URL de WhatsApp en una nueva pestaña
     window.open(whatsappURL, "_blank");
@@ -123,7 +123,7 @@ export const CatalogoData = ({ page }) => {
             width="1em"
             height="1em"
             viewBox="0 0 24 24"
-            className="w-7 h-7"
+            className="w-3 h-3"
           >
             <path
               fill="none"
@@ -163,7 +163,7 @@ export const CatalogoData = ({ page }) => {
             width="1em"
             height="1em"
             viewBox="0 0 24 24"
-            className="w-7 h-7"
+            className="w-3 h-3"
           >
             <path
               fill="none"
@@ -178,3 +178,6 @@ export const CatalogoData = ({ page }) => {
     </div>
   );
 };
+
+
+

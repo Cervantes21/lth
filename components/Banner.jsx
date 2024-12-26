@@ -31,7 +31,7 @@ export default function Banner() {
         <a href="/protect" className="transform hover:scale-105 transition-transform">
           <Image src="/banner/protect_banner.png" alt="Protect" width={100} height={100} />
         </a>
-        <a href="/agm" className="transform hover:scale-105 transition-transform">
+        <a href="/auxiliar" className="transform hover:scale-105 transition-transform">
           <Image src="/banner/auxiliar_banner.png" alt="Auxiliar" width={100} height={100} />
         </a>
       </div>
@@ -43,7 +43,7 @@ export default function Banner() {
         <a href="/lth" className="transform hover:scale-105 transition-transform">
           <Image src="/banner/estandar_banner.png" alt="Estandar" width={100} height={100} />
         </a>
-        <a href="/agm" className="transform hover:scale-105 transition-transform">
+        <a href="/moto" className="transform hover:scale-105 transition-transform">
           <Image src="/banner/moto-banner.png" alt="Moto" width={100} height={100} />
         </a>
       </div>
@@ -113,19 +113,19 @@ export default function Banner() {
               </li>
               <li className="flex items-center space-x-2">
                 <Image
+                  src="/banner/auxiliar_banner.png"
+                  alt="Auxiliar" width={40} height={40}
+                />
+                <a href="/auxiliar" className="hover:text-red-600">Auxiliar</a>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Image
                   src="/banner/protect_banner.png"
                   alt="Protect"
                   width={40}
                   height={40}
                 />
                 <a href="/protect" className="hover:text-red-600">Protect</a>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Image
-                  src="/banner/auxiliar_banner.png"
-                  alt="Auxiliar" width={40} height={40}
-                />
-                <a href="/agm" className="hover:text-red-600">Auxiliar</a>
               </li>
               <li className="flex items-center space-x-2">
                 <Image
@@ -136,6 +136,13 @@ export default function Banner() {
               </li>
               <li className="flex items-center space-x-2">
                 <Image
+                  src="/banner/agm_banner.png"
+                  alt="AGM" width={40} height={40}
+                />
+                <a href="/agm" className="hover:text-red-600">AGM</a>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Image
                   src="/banner/estandar_banner.png"
                   alt="Estandar" width={40} height={40}
                 />
@@ -143,10 +150,17 @@ export default function Banner() {
               </li>
               <li className="flex items-center space-x-2">
                 <Image
+                  src="/banner/taxi_banner.png"
+                  alt="LTH TAXI" width={40} height={40}
+                />
+                <a href="/taxi" className="hover:text-red-600">LTH TAXI</a>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Image
                   src="/banner/moto-banner.png"
                   alt="Moto" width={40} height={40}
                 />
-                <a href="/agm" className="hover:text-red-600">Moto</a>
+                <a href="/moto" className="hover:text-red-600">LTH Moto</a>
               </li>
             </ul>
           </div>
