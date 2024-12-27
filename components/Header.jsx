@@ -41,7 +41,7 @@ const Header = () => {
           <img
             src="/logo.svg"
             alt="Logo"
-            className="h-[50px] rounded-full"
+            className="h-[50px]"
           />
         </Link>
 
