@@ -4,11 +4,18 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useState, useEffect } from 'react';
 
 export const Whatsapp = () => {
-  const [position, setPosition] = useState({ x: 224, y: window.innerHeight - 192 }); // left-56 y posición cerca del borde inferior para móviles
+  const [position, setPosition] = useState({ x: 224, y: 0 }); // Posición inicial
   const [isMobile, setIsMobile] = useState(false); // Verificar si es móvil
 
   useEffect(() => {
+    // Solo ejecuta este código en el cliente
+    const initializePosition = () => {
+      setPosition({ x: 224, y: window.innerHeight - 192 }); // Posición inicial ajustada al cliente
+    };
+
     const checkIsMobile = () => setIsMobile(window.innerWidth < 768); // Móvil si ancho es menor a 768px
+
+    initializePosition();
     checkIsMobile();
 
     window.addEventListener('resize', checkIsMobile);
@@ -43,7 +50,7 @@ export const Whatsapp = () => {
       style={{
         position: 'fixed',
         left: isMobile ? position.x : 'auto', // Ajustable solo en móvil
-        right: isMobile ? 'auto' : 0, // Fijado a la derecha en escritorio
+        right: isMobile ? 'auto' : '1rem', // Fijado a la derecha en escritorio
         top: isMobile ? position.y : 'auto', // Ajustable solo en móvil
         bottom: isMobile ? 'auto' : '1rem', // Fijado en la parte inferior en escritorio
         touchAction: isMobile ? 'none' : 'auto', // Solo móvil permite arrastrar
@@ -71,10 +78,12 @@ export const Whatsapp = () => {
  * @param {string} marca - Marca del producto.
  */
 export const cotizar = (nombre, marca) => {
-  const message = `Hola, me gustaría cotizar ${nombre} de ${marca}`; // Mensaje a enviar
-  const urlMessage = encodeURIComponent(message); // Codificar el mensaje para URL
-  const whatsappURL = `https://api.whatsapp.com/send/?phone=527776002745&text=${urlMessage}&app_absent=0`;
+  if (typeof window !== 'undefined') {
+    const message = `Hola, me gustaría cotizar ${nombre} de ${marca}`; // Mensaje a enviar
+    const urlMessage = encodeURIComponent(message); // Codificar el mensaje para URL
+    const whatsappURL = `https://api.whatsapp.com/send/?phone=527776002745&text=${urlMessage}&app_absent=0`;
 
-  // Abrir la URL de WhatsApp en una nueva pestaña del navegador
-  window.open(whatsappURL, '_blank');
+    // Abrir la URL de WhatsApp en una nueva pestaña del navegador
+    window.open(whatsappURL, '_blank');
+  }
 };
