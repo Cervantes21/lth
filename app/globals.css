@@ -2,6 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
+.asd{
+  border: 2px solid red;
+}
+
+
+body {
+  background-color: #F5F5F5;
+}
+
+.bg-blue-lth {
+  background-color: #061684;
+}
+
+.bg-red-lth {
+  background-color: #D3172E;
+  transition: all 0.3s;
+}
+
+.bg-red-lth:hover {
+  background-color: #b01325 !important;
+  transition: all 0.3s;
+}
+
+.bg-grey-lth {
+  background-color: #E6E8F3;
+}
+
+.text-blue-lth {
+  color: #061684;
+}
+
+.text-red-lth {
+  color: #D3172E;
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+}
+
+.main-form {
+  background-image: url('/background-form.png');
+  background-size: cover;
+}
+
+.more-info-card {
+  background-image: url('/3.jpg');
+  background-size: cover;
+  background-position: 0px -90px;
+  display: grid;
+  grid-template-rows: 46% 54%;
+}
+
+@media screen and (min-width: 1024px) {
+  .more-info-card {
+    background-image: url('/3.jpg');
+    background-size: cover;
+    background-position: 0px 58%;
+    display: grid;
+    grid-template-rows: 80% 20%;
+  }
+
+  .main-form {
+    background-image: url('/background-form.png');
+    background-size:cover;
+    background-position: 0px -350px;
+  }
+
+}
+
+.arrow-back:hover>path {
+  fill: #b01325 !important;
+  transition: all 0.3s;
+}
+
+.menu-divs>p,
+.menu-divs {
+  transition: all 0.3s;
+}
+
+.menu-divs:hover>p,
+.menu-divs:hover {
+  color: #D3172E !important;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.more-info-button:hover {
+  border: #b01325 2px solid !important;
+  color: #b01325 !important
+}
+
+
+.option-form {
+  text-transform: lowercase
+}
+
+
+.option-form::first-letter {
+  text-transform: uppercase;
+}
+
 /* Estilos globales */
 body {
   background-color: #F5F5F5;
