@@ -1,11 +1,28 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import Image from "next/image";
 
 export default function Banner() {
   const [showCatalog, setShowCatalog] = useState(false);
+  const [isMobileResolution, setIsMobileResolution] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth === 1024 && window.innerHeight === 1366;
+      setIsMobileResolution(isMobile);
+    };
+
+    // Check resolution on component mount
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleCall = () => {
     const phoneNumber = "+527776002745";
@@ -24,29 +41,33 @@ export default function Banner() {
       }}
     >
       {/* Contenedor de baterías para pantallas grandes */}
-      <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 left-8 space-x-4">
-        <a href="/evolution" className="transform hover:scale-105 transition-transform banner-bateria">
-          <Image src="/banner/evolution_banner.png" alt="Evolution" width={100} height={100} />
-        </a>
-        <a href="/protect" className="transform hover:scale-105 transition-transform banner-bateria">
-          <Image src="/banner/protect_banner.png" alt="Protect" width={100} height={100} />
-        </a>
-        <a href="/auxiliar" className="transform hover:scale-105 transition-transform banner-bateria">
-          <Image src="/banner/auxiliar_banner.png" alt="Auxiliar" width={100} height={100} />
-        </a>
-      </div>
+      {!isMobileResolution && (
+        <>
+          <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 left-8 space-x-4">
+            <a href="/evolution" className="transform hover:scale-105 transition-transform banner-bateria">
+              <Image src="/banner/evolution_banner.png" alt="Evolution" width={100} height={100} />
+            </a>
+            <a href="/protect" className="transform hover:scale-105 transition-transform banner-bateria">
+              <Image src="/banner/protect_banner.png" alt="Protect" width={100} height={100} />
+            </a>
+            <a href="/auxiliar" className="transform hover:scale-105 transition-transform banner-bateria">
+              <Image src="/banner/auxiliar_banner.png" alt="Auxiliar" width={100} height={100} />
+            </a>
+          </div>
 
-      <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-8 space-x-4">
-        <a href="/hitec" className="transform hover:scale-105 transition-transform banner-bateria">
-          <Image src="/banner/hi-tec-banner.png" alt="Hi Tec" width={100} height={100} />
-        </a>
-        <a href="/lth" className="transform hover:scale-105 transition-transform banner-bateria">
-          <Image src="/banner/estandar_banner.png" alt="Estandar" width={100} height={100} />
-        </a>
-        <a href="/taxi" className="transform hover:scale-105 transition-transform banner-bateria">
-          <Image src="/banner/taxi_banner.png" alt="Taxi" width={110} height={150} />
-        </a>
-      </div>
+          <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-8 space-x-4">
+            <a href="/hitec" className="transform hover:scale-105 transition-transform banner-bateria">
+              <Image src="/banner/hi-tec-banner.png" alt="Hi Tec" width={100} height={100} />
+            </a>
+            <a href="/lth" className="transform hover:scale-105 transition-transform banner-bateria">
+              <Image src="/banner/estandar_banner.png" alt="Estandar" width={100} height={100} />
+            </a>
+            <a href="/taxi" className="transform hover:scale-105 transition-transform banner-bateria">
+              <Image src="/banner/taxi_banner.png" alt="Taxi" width={110} height={150} />
+            </a>
+          </div>
+        </>
+      )}
 
       {/* Contenido central del banner */}
       <div className="text-center flex flex-col items-center justify-center space-y-4 lg:space-y-6 px-4">
@@ -80,20 +101,22 @@ export default function Banner() {
           />
         </div>
 
-        {/* Botón desplegable para móviles */}
-        <button
-          onClick={toggleCatalog}
-          className="lg:hidden flex items-center justify-center space-x-2 bg-red-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-500 transition-all duration-150 mt-6"
-          style={{ marginBottom: '16px' }}
-        >
-          <span>Catálogo</span>
-          <Image
-            src="/banner/angle-small-down.svg"
-            alt="Toggle Catalog"
-            width={20}
-            height={20}
-          />
-        </button>
+        {/* Botón desplegable del catálogo en versión móvil o resolución específica */}
+        {(isMobileResolution || showCatalog) && (
+          <button
+            onClick={toggleCatalog}
+            className="lg:hidden flex items-center justify-center space-x-2 bg-red-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-500 transition-all duration-150 mt-6"
+            style={{ marginBottom: '16px' }}
+          >
+            <span>Catálogo</span>
+            <Image
+              src="/banner/angle-small-down.svg"
+              alt="Toggle Catalog"
+              width={20}
+              height={20}
+            />
+          </button>
+        )}
 
         {/* Catálogo desplegable */}
         {showCatalog && (
@@ -122,7 +145,8 @@ export default function Banner() {
                 <Image
                   src="/banner/protect_banner.png"
                   alt="Protect"
-                  width={40} height={40}
+                  width={40}
+                  height={40}
                 />
                 <a href="/protect" className="hover:text-red-600">Protect</a>
               </li>
@@ -136,14 +160,16 @@ export default function Banner() {
               <li className="flex items-center space-x-2">
                 <Image
                   src="/banner/estandar_banner.png"
-                  alt="Estandar" width={40} height={40}
+                  alt="Estandar" width={40}
+                  height={40}
                 />
                 <a href="/lth" className="hover:text-red-600">Estandar</a>
               </li>
               <li className="flex items-center space-x-2">
                 <Image
                   src="/banner/taxi_banner.png"
-                  alt="LTH TAXI" width={40} height={40}
+                  alt="LTH TAXI" width={40}
+                  height={40}
                 />
                 <a href="/taxi" className="hover:text-red-600">LTH TAXI</a>
               </li>

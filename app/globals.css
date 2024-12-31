@@ -16,12 +16,11 @@ body {
 
 .bg-red-lth {
   background-color: #D3172E;
-  transition: all 0.3s;
+  transition: background-color 0.3s;
 }
 
 .bg-red-lth:hover {
   background-color: #b01325 !important;
-  transition: all 0.3s;
 }
 
 .bg-grey-lth {
@@ -36,106 +35,89 @@ body {
   color: #D3172E;
 }
 
-/* Utilidades generales */
-.asd {
-  border: 2px solid red;
-}
-
-/* Header */
-.header-grid {
-  display: grid;
-  grid-template-columns: 50px auto 50px;
-}
-
 /* Estilos de formulario principal */
 .main-form {
   background-image: url('/background-form.png');
-  background-size: cover; /* Ajusta el ancho al 100% y altura automática */
-  background-position: center; /* Centra la imagen del fondo */
-  background-repeat: no-repeat; /* Evita que se repita el fondo */
-  height: 100vh; /* Ocupa el 100% de la altura del viewport */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-/* Media queries */
+/* Media queries para pantallas grandes */
 @media screen and (min-width: 1024px) {
   .main-form {
-    background-size: cover; /* Ajusta el fondo para pantallas grandes */
-    background-position: center bottom; /* Alinea el fondo correctamente */
-  }
-
-  .more-info-card {
-    background-position: center 58%; /* Ajuste para pantallas grandes */
-    grid-template-rows: 80% 20%;
+    background-position: center bottom;
   }
 }
 
-/* Tarjeta de información adicional */
-.more-info-card {
-  background-image: url('/3.jpg');
-  background-size: cover;
-  background-position: center -90px;
-  display: grid;
-  grid-template-rows: 46% 54%;
+/* Motociclista: Ajustes generales */
+.motociclista img {
+  transition: all 0.3s ease-in-out;
 }
 
-/* Botones */
-.more-info-button:hover {
-  border: #b01325 2px solid !important;
-  color: #b01325 !important;
+/* Ajustes para diferentes resoluciones */
+
+/* Texto principal: Pantallas largas */
+@media (min-height: 800px) {
+  .text-blue-lth {
+    margin-top: 2rem; /* Margen superior para texto principal */
+  }
 }
 
-/* Animaciones */
-.arrow-back:hover > path {
-  fill: #b01325 !important;
-  transition: all 0.3s;
-}
-
-/* Estilo para el botón de regresar en la versión móvil */
-.arrow-back {
-  margin-left: 10px;  /* Alineación a la izquierda */
-  margin-top: 10px;   /* Espacio estético hacia abajo */
-}
-
-.menu-divs > p,
-.menu-divs {
-  transition: all 0.3s;
-}
-
-.menu-divs:hover > p,
-.menu-divs:hover {
-  color: #D3172E !important;
-  font-weight: 600;
-  transition: all 0.3s;
-}
-
-/* Formulario: Opciones de selección */
-.option-form {
-  text-transform: lowercase;
-}
-
-.option-form::first-letter {
-  text-transform: uppercase;
-}
-
+/* Ajuste del tamaño del motociclista para pantallas estándar (1024x600 y similares) */
 @media (width: 1024px) and (height: 600px) {
   .motociclista img {
-    width: 280px !important; /* Ajusta el ancho a 280px */
-    height: auto; /* Mantiene la proporción de la imagen */
-  }
-}
-@media (width: 1024px) and (height: 600px) {
-  .banner-bateria img {
-    width: 80px !important; /* Ajusta el ancho de las baterías */
-    height: auto; /* Mantiene la proporción */
+    width: 260px !important;
+    height: auto;
   }
 }
 
-@media (width: 1024px) and (height: 768px) {
-  .banner-bateria img {
-    width: 80px !important; /* Ajusta el ancho de las baterías */
-    height: auto; /* Mantiene la proporción */
+/* Ajuste del tamaño del motociclista para pantallas largas (altura mayor a 900px) */
+@media (min-height: 800px) {
+  .motociclista img {
+    width: 320px !important;
+    height: auto;
+  }
+  .motociclista {
+    bottom: 20% !important;
   }
 }
+
+/* Ajuste del tamaño del motociclista para pantallas muy largas (altura mayor a 1200px) */
+@media (min-height: 1200px) {
+  .motociclista img {
+    width: 400px !important;
+    height: auto;
+  }
+  .motociclista {
+    bottom: 20% !important;
+  }
+}
+
+/* Ajuste para pantallas largas y estrechas (altura > 800px y ancho < 600px) */
+@media (min-height: 800px) and (max-width: 600px) {
+  .motociclista img {
+    width: 400px !important;
+    height: auto;
+  }
+  .motociclista {
+    bottom: 20% !important;
+  }
+}
+
+/* Ajuste del tamaño de las baterías del banner */
+@media (width: 1024px) and (height: 600px),
+       (width: 1024px) and (height: 768px) {
+  .banner-bateria img {
+    width: 80px !important;
+    height: auto;
+  }
+  .motociclista p {
+    display: none !important;
+  }
+}
+

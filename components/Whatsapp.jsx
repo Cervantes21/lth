@@ -3,44 +3,49 @@
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useState, useEffect } from 'react';
 
-export const Whatsapp = () => {
-  const [position, setPosition] = useState({ x: 224, y: 0 }); // Posición inicial
-  const [isMobile, setIsMobile] = useState(false); // Verificar si es móvil
+const useWindowSize = () => {
+  const [size, setSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    // Solo ejecuta este código en el cliente
-    const initializePosition = () => {
-      setPosition({ x: 224, y: window.innerHeight - 192 }); // Posición inicial ajustada al cliente
+    const handleResize = () => {
+      setSize({ width: window.innerWidth, height: window.innerHeight });
     };
 
-    const checkIsMobile = () => setIsMobile(window.innerWidth < 768); // Móvil si ancho es menor a 768px
+    handleResize();
 
-    initializePosition();
-    checkIsMobile();
-
-    window.addEventListener('resize', checkIsMobile);
-    return () => window.removeEventListener('resize', checkIsMobile);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const handleDrag = (e) => {
-    if (!isMobile) return;
-    e.preventDefault();
-    const touch = e.touches[0];
-    setPosition({
-      x: touch.clientX - 96, // Ajusta para centrar el botón
-      y: touch.clientY - 96,
-    });
-  };
+  return size;
+};
 
-  const handleDragEnd = (e) => {
-    if (!isMobile) return;
-    e.preventDefault();
-    const touch = e.changedTouches[0];
-    setPosition({
-      x: Math.max(0, Math.min(touch.clientX - 96, window.innerWidth - 192)), // Limitar dentro de los bordes horizontales
-      y: Math.max(0, Math.min(touch.clientY - 96, window.innerHeight - 192)), // Limitar dentro de los bordes verticales
-    });
-  };
+export const Whatsapp = () => {
+  const { width, height } = useWindowSize();
+  const [position, setPosition] = useState({ x: 224, y: 0 });
+  const isMobile = width < 768;
+
+  useEffect(() => {
+    setPosition({ x: 224, y: height - 192 });
+  }, [height]);
+
+  useEffect(() => {
+    const handleTouchMove = (e) => {
+      if (!isMobile) return;
+      const touch = e.touches[0];
+      setPosition({
+        x: Math.max(0, Math.min(touch.clientX - 96, width - 192)),
+        y: Math.max(0, Math.min(touch.clientY - 96, height - 192)),
+      });
+      e.preventDefault();
+    };
+
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, [isMobile, width, height]);
 
   return (
     <a
@@ -49,24 +54,23 @@ export const Whatsapp = () => {
       rel="noopener noreferrer"
       style={{
         position: 'fixed',
-        left: isMobile ? position.x : 'auto', // Ajustable solo en móvil
-        right: isMobile ? 'auto' : '1rem', // Fijado a la derecha en escritorio
-        top: isMobile ? position.y : 'auto', // Ajustable solo en móvil
-        bottom: isMobile ? 'auto' : '1rem', // Fijado en la parte inferior en escritorio
-        touchAction: isMobile ? 'none' : 'auto', // Solo móvil permite arrastrar
-        width: '192px', // Equivalente a w-48
-        height: '192px', // Equivalente a h-48
+        left: isMobile ? position.x : 'auto',
+        right: isMobile ? 'auto' : '1rem',
+        top: isMobile ? position.y : 'auto',
+        bottom: isMobile ? 'auto' : '1rem',
+        touchAction: isMobile ? 'none' : 'auto',
+        width: '192px',
+        height: '192px',
         zIndex: 1000,
       }}
-      onTouchMove={handleDrag}
-      onTouchEnd={handleDragEnd}
     >
-      {/* Botón de animación Lottie para WhatsApp */}
+      {/* Manejo de errores en la animación Lottie */}
       <DotLottieReact
         src="/animations/whatsapp_button.json"
         autoplay
         loop
         className="w-full h-full cursor-pointer"
+        onError={() => console.error('Error al cargar la animación Lottie.')}
       />
     </a>
   );
@@ -78,12 +82,12 @@ export const Whatsapp = () => {
  * @param {string} marca - Marca del producto.
  */
 export const cotizar = (nombre, marca) => {
-  if (typeof window !== 'undefined') {
-    const message = `Hola, me gustaría cotizar ${nombre} de ${marca}`; // Mensaje a enviar
-    const urlMessage = encodeURIComponent(message); // Codificar el mensaje para URL
-    const whatsappURL = `https://api.whatsapp.com/send/?phone=527776002745&text=${urlMessage}&app_absent=0`;
+  const message = `Hola, me gustaría cotizar ${nombre} de ${marca}`; // Mensaje a enviar
+  const urlMessage = encodeURIComponent(message); // Codificar el mensaje para URL
+  const whatsappURL = `https://api.whatsapp.com/send/?phone=527776002745&text=${urlMessage}&app_absent=0`;
 
-    // Abrir la URL de WhatsApp en una nueva pestaña del navegador
+  // Abrir la URL de WhatsApp en una nueva pestaña del navegador
+  if (typeof window !== 'undefined') {
     window.open(whatsappURL, '_blank');
   }
 };
