@@ -12,10 +12,8 @@ export const MarcaBanner = () => {
     { name: "Auxiliar", src: "/banner/auxiliar_banner.png", link: "/auxiliar" },
     { name: "Protect", src: "/banner/protect_banner.png", link: "/protect" },
     { name: "Hi Tec", src: "/banner/hi-tec-banner.png", link: "/hitec" },
-    { name: "AGM", src: "/banner/agm_banner.png", link: "/agm" },
     { name: "Estandar", src: "/banner/estandar_banner.png", link: "/lth" },
     { name: "LTH TAXI", src: "/banner/taxi_banner.png", link: "/taxi" },
-    { name: "Moto", src: "/banner/moto-banner.png", link: "/moto" },
   ];
 
   return (
@@ -35,7 +33,7 @@ export const MarcaBanner = () => {
           <h2 className="text-center text-lg lg:text-2xl font-extrabold mb-4 text-red-lth">
             Nuestro Catálogo:
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 text-blue-lth">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 text-blue-lth">
             {brands.map((brand, index) => (
               <Link
                 key={index}

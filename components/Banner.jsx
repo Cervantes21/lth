@@ -25,26 +25,26 @@ export default function Banner() {
     >
       {/* Contenedor de baterías para pantallas grandes */}
       <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 left-8 space-x-4">
-        <a href="/evolution" className="transform hover:scale-105 transition-transform">
+        <a href="/evolution" className="transform hover:scale-105 transition-transform banner-bateria">
           <Image src="/banner/evolution_banner.png" alt="Evolution" width={100} height={100} />
         </a>
-        <a href="/protect" className="transform hover:scale-105 transition-transform">
+        <a href="/protect" className="transform hover:scale-105 transition-transform banner-bateria">
           <Image src="/banner/protect_banner.png" alt="Protect" width={100} height={100} />
         </a>
-        <a href="/auxiliar" className="transform hover:scale-105 transition-transform">
+        <a href="/auxiliar" className="transform hover:scale-105 transition-transform banner-bateria">
           <Image src="/banner/auxiliar_banner.png" alt="Auxiliar" width={100} height={100} />
         </a>
       </div>
 
       <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-8 space-x-4">
-        <a href="/hitec" className="transform hover:scale-105 transition-transform">
+        <a href="/hitec" className="transform hover:scale-105 transition-transform banner-bateria">
           <Image src="/banner/hi-tec-banner.png" alt="Hi Tec" width={100} height={100} />
         </a>
-        <a href="/lth" className="transform hover:scale-105 transition-transform">
+        <a href="/lth" className="transform hover:scale-105 transition-transform banner-bateria">
           <Image src="/banner/estandar_banner.png" alt="Estandar" width={100} height={100} />
         </a>
-        <a href="/moto" className="transform hover:scale-105 transition-transform">
-          <Image src="/banner/moto-banner.png" alt="Moto" width={100} height={100} />
+        <a href="/taxi" className="transform hover:scale-105 transition-transform banner-bateria">
+          <Image src="/banner/taxi_banner.png" alt="Taxi" width={110} height={150} />
         </a>
       </div>
 
@@ -57,7 +57,7 @@ export default function Banner() {
         {/* Botón de llamada con icono */}
         <button
           onClick={handleCall}
-          className="flex items-center justify-center space-x-2 bg-red-600 text-white text-lg lg:text-2xl font-bold py-3 px-6 rounded-full hover:bg-green-500 hover:text-black transition-all duration-150 mb-1"
+          className="flex items-center justify-center space-x-2 bg-red-600 text-white text-lg lg:text-2xl font-bold py-3 px-6 rounded-full hover:bg-green-500 hover:text-black transition-all duration-150 mb-1 shadow-2xl"
         >
           <span className="text-base lg:text-2xl">¡LLAMA YA!</span>
           <DotLottieReact
@@ -84,7 +84,7 @@ export default function Banner() {
         <button
           onClick={toggleCatalog}
           className="lg:hidden flex items-center justify-center space-x-2 bg-red-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-500 transition-all duration-150 mt-6"
-          style={ { marginBottom: '16px' } }
+          style={{ marginBottom: '16px' }}
         >
           <span>Catálogo</span>
           <Image
@@ -122,8 +122,7 @@ export default function Banner() {
                 <Image
                   src="/banner/protect_banner.png"
                   alt="Protect"
-                  width={40}
-                  height={40}
+                  width={40} height={40}
                 />
                 <a href="/protect" className="hover:text-red-600">Protect</a>
               </li>
@@ -133,13 +132,6 @@ export default function Banner() {
                   alt="Hi Tec" width={40} height={40}
                 />
                 <a href="/hitec" className="hover:text-red-600">Hi Tec</a>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Image
-                  src="/banner/agm_banner.png"
-                  alt="AGM" width={40} height={40}
-                />
-                <a href="/agm" className="hover:text-red-600">AGM</a>
               </li>
               <li className="flex items-center space-x-2">
                 <Image
@@ -154,13 +146,6 @@ export default function Banner() {
                   alt="LTH TAXI" width={40} height={40}
                 />
                 <a href="/taxi" className="hover:text-red-600">LTH TAXI</a>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Image
-                  src="/banner/moto-banner.png"
-                  alt="Moto" width={40} height={40}
-                />
-                <a href="/moto" className="hover:text-red-600">LTH Moto</a>
               </li>
             </ul>
           </div>

@@ -120,3 +120,22 @@ body {
   text-transform: uppercase;
 }
 
+@media (width: 1024px) and (height: 600px) {
+  .motociclista img {
+    width: 280px !important; /* Ajusta el ancho a 280px */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+}
+@media (width: 1024px) and (height: 600px) {
+  .banner-bateria img {
+    width: 80px !important; /* Ajusta el ancho de las baterías */
+    height: auto; /* Mantiene la proporción */
+  }
+}
+
+@media (width: 1024px) and (height: 768px) {
+  .banner-bateria img {
+    width: 80px !important; /* Ajusta el ancho de las baterías */
+    height: auto; /* Mantiene la proporción */
+  }
+}
