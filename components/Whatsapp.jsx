@@ -1,7 +1,7 @@
 'use client';
 
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const useWindowSize = () => {
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -23,15 +23,49 @@ const useWindowSize = () => {
 export const Whatsapp = () => {
   const { width, height } = useWindowSize();
   const [position, setPosition] = useState({ x: 224, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const buttonRef = useRef(null); // Referencia al botón
   const isMobile = width < 768;
 
   useEffect(() => {
     setPosition({ x: 224, y: height - 192 });
   }, [height]);
 
+  const handleTouchStart = (e) => {
+    if (isMobile) {
+      const touch = e.touches[0];
+      const buttonRect = buttonRef.current.getBoundingClientRect();
+      // Verifica si el toque inicia dentro del botón
+      if (
+        touch.clientX >= buttonRect.left &&
+        touch.clientX <= buttonRect.right &&
+        touch.clientY >= buttonRect.top &&
+        touch.clientY <= buttonRect.bottom
+      ) {
+        setIsDragging(true);
+      }
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (isMobile && isDragging) {
+      // Ajustar posición a los bordes más cercanos
+      setPosition((prevPosition) => {
+        const margin = 16; // Espacio desde el borde
+        const nearestX =
+          prevPosition.x < width / 2 ? margin : width - 192 - margin;
+        const nearestY =
+          prevPosition.y < height / 2 ? margin : height - 192 - margin;
+
+        return { x: nearestX, y: nearestY };
+      });
+      setIsDragging(false);
+    }
+  };
+
   useEffect(() => {
     const handleTouchMove = (e) => {
-      if (!isMobile) return;
+      if (!isMobile || !isDragging) return;
       const touch = e.touches[0];
       setPosition({
         x: Math.max(0, Math.min(touch.clientX - 96, width - 192)),
@@ -41,28 +75,31 @@ export const Whatsapp = () => {
     };
 
     window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('touchend', handleTouchEnd);
 
     return () => {
       window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [isMobile, width, height]);
+  }, [isMobile, isDragging, width, height]);
 
   return (
     <a
       href="https://api.whatsapp.com/send/?phone=527776002745&app_absent=0"
       target="_blank"
       rel="noopener noreferrer"
+      ref={buttonRef} // Asigna la referencia al botón
       style={{
         position: 'fixed',
         left: isMobile ? position.x : 'auto',
         right: isMobile ? 'auto' : '1rem',
         top: isMobile ? position.y : 'auto',
         bottom: isMobile ? 'auto' : '1rem',
-        touchAction: isMobile ? 'none' : 'auto',
         width: '192px',
         height: '192px',
         zIndex: 1000,
       }}
+      onTouchStart={handleTouchStart}
     >
       {/* Manejo de errores en la animación Lottie */}
       <DotLottieReact

@@ -10,7 +10,7 @@ export default function Banner() {
 
   useEffect(() => {
     const handleResize = () => {
-      const isMobile = window.innerWidth === 1024 && window.innerHeight === 1366;
+      const isMobile = window.innerWidth <= 1024; // Ancho típico para móviles y tablets
       setIsMobileResolution(isMobile);
     };
 
@@ -125,53 +125,89 @@ export default function Banner() {
             style={{ marginBottom: '16px' }}
           >
             <ul className="flex flex-col space-y-2">
-              <li className="flex items-center space-x-2">
-                <Image
-                  src="/banner/evolution_banner.png"
-                  alt="Evolution"
-                  width={40}
-                  height={40}
-                />
-                <a href="/evolution" className="hover:text-red-600">Evolution</a>
+              <li>
+                <a
+                  href="/evolution"
+                  className="flex items-center space-x-2 p-2 rounded hover:bg-red-600 hover:text-white transition-all"
+                >
+                  <Image
+                    src="/banner/evolution_banner.png"
+                    alt="Evolution"
+                    width={40}
+                    height={40}
+                  />
+                  <span>Evolution</span>
+                </a>
               </li>
-              <li className="flex items-center space-x-2">
-                <Image
-                  src="/banner/auxiliar_banner.png"
-                  alt="Auxiliar" width={40} height={40}
-                />
-                <a href="/auxiliar" className="hover:text-red-600">Auxiliar</a>
+              <li>
+                <a
+                  href="/auxiliar"
+                  className="flex items-center space-x-2 p-2 rounded hover:bg-red-600 hover:text-white transition-all"
+                >
+                  <Image
+                    src="/banner/auxiliar_banner.png"
+                    alt="Auxiliar"
+                    width={40}
+                    height={40}
+                  />
+                  <span>Auxiliar</span>
+                </a>
               </li>
-              <li className="flex items-center space-x-2">
-                <Image
-                  src="/banner/protect_banner.png"
-                  alt="Protect"
-                  width={40}
-                  height={40}
-                />
-                <a href="/protect" className="hover:text-red-600">Protect</a>
+              <li>
+                <a
+                  href="/protect"
+                  className="flex items-center space-x-2 p-2 rounded hover:bg-red-600 hover:text-white transition-all"
+                >
+                  <Image
+                    src="/banner/protect_banner.png"
+                    alt="Protect"
+                    width={40}
+                    height={40}
+                  />
+                  <span>Protect</span>
+                </a>
               </li>
-              <li className="flex items-center space-x-2">
-                <Image
-                  src="/banner/hi-tec-banner.png"
-                  alt="Hi Tec" width={40} height={40}
-                />
-                <a href="/hitec" className="hover:text-red-600">Hi Tec</a>
+              <li>
+                <a
+                  href="/hitec"
+                  className="flex items-center space-x-2 p-2 rounded hover:bg-red-600 hover:text-white transition-all"
+                >
+                  <Image
+                    src="/banner/hi-tec-banner.png"
+                    alt="Hi Tec"
+                    width={40}
+                    height={40}
+                  />
+                  <span>Hi Tec</span>
+                </a>
               </li>
-              <li className="flex items-center space-x-2">
-                <Image
-                  src="/banner/estandar_banner.png"
-                  alt="Estandar" width={40}
-                  height={40}
-                />
-                <a href="/lth" className="hover:text-red-600">Estandar</a>
+              <li>
+                <a
+                  href="/lth"
+                  className="flex items-center space-x-2 p-2 rounded hover:bg-red-600 hover:text-white transition-all"
+                >
+                  <Image
+                    src="/banner/estandar_banner.png"
+                    alt="Estandar"
+                    width={40}
+                    height={40}
+                  />
+                  <span>Estandar</span>
+                </a>
               </li>
-              <li className="flex items-center space-x-2">
-                <Image
-                  src="/banner/taxi_banner.png"
-                  alt="LTH TAXI" width={40}
-                  height={40}
-                />
-                <a href="/taxi" className="hover:text-red-600">LTH TAXI</a>
+              <li>
+                <a
+                  href="/taxi"
+                  className="flex items-center space-x-2 p-2 rounded hover:bg-red-600 hover:text-white transition-all"
+                >
+                  <Image
+                    src="/banner/taxi_banner.png"
+                    alt="LTH TAXI"
+                    width={40}
+                    height={40}
+                  />
+                  <span>LTH TAXI</span>
+                </a>
               </li>
             </ul>
           </div>
