@@ -52,7 +52,7 @@ export const MoreInfoCard = ({ page, text }) => {
 
   return (
     <>
-      <Link href="/" className=" flex w-10 m-3 p-0 border-none outline-none">
+      <Link href="/" className=" flex w-16 m-1 p-4 border-none outline-none">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
