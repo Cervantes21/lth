@@ -1,8 +1,10 @@
+// components/MainForm.jsx
+
 import { useState, useEffect } from "react";
 import Portada from "./Portada";
 import { filtros } from "@/data/filtros";
 
-const MainForm = () => {
+const MainForm = ({ forceShowForm = false }) => {
   const [showForm, setShowForm] = useState(false); // Para manejar la visibilidad del formulario
   const [tipoVehiculo, setTipoVehiculo] = useState("");
   const [anoVehiculo, setAnoVehiculo] = useState("");
@@ -15,7 +17,6 @@ const MainForm = () => {
   const [uniqueModels, setUniqueModels] = useState([]);
   const [resultYears, setResultYears] = useState([]);
   const [resultBrands, setResultBrands] = useState([]);
-  const [result, setResult] = useState([]);
 
   useEffect(() => {
     if (anoVehiculo) {
@@ -32,6 +33,14 @@ const MainForm = () => {
     }
   }, [marcaVehiculo]);
 
+  // --- NUEVO: Si se pasa forceShowForm = true, omitimos la Portada y vamos directo al formulario
+  useEffect(() => {
+    if (forceShowForm) {
+      setShowForm(true);
+    }
+  }, [forceShowForm]);
+  // ---
+
   const getUniqueBrandsForYear = (year) => {
     const itemsForYear = filtros.filter((item) => item.AÑO == year);
     setResultYears(itemsForYear);
@@ -41,7 +50,8 @@ const MainForm = () => {
 
   const getModelsForYearAndBrand = (year, brand) => {
     const itemsForYearAndBrand = resultYears.filter(
-      (item) => item.AÑO == year && item.MARCA.toUpperCase() === brand.toUpperCase()
+      (item) =>
+        item.AÑO == year && item.MARCA.toUpperCase() === brand.toUpperCase()
     );
     setResultBrands(itemsForYearAndBrand);
     const models = itemsForYearAndBrand.map((item) =>
@@ -57,6 +67,7 @@ const MainForm = () => {
       return;
     }
 
+    // Filtramos para validar que existan resultados
     const itemsForYearBrandAndModel = resultBrands.filter(
       (item) =>
         item.AÑO == anoVehiculo &&
@@ -96,10 +107,19 @@ const MainForm = () => {
 
       const responseData = await response.json();
       if (response.ok) {
-        const opciones = baterias
-          .flatMap((bateria) => bateria.opciones)
-          .join(",");
-        window.location.href = `/search/${opciones}`;
+        // Construimos el querystring con los datos del vehículo
+        const queryParams = new URLSearchParams({
+          tipo: tipoVehiculo,
+          ano: anoVehiculo,
+          marca: marcaVehiculo,
+          modelo: modeloVehiculo,
+        });
+
+        // Unimos las opciones de baterías
+        const opciones = baterias.flatMap((b) => b.opciones).join(",");
+
+        // Redirigimos a: /search/<opciones>?tipo=...&ano=...&marca=...&modelo=...
+        window.location.href = `/search/${opciones}?${queryParams.toString()}`;
       } else {
         setErrorMessage(responseData.message || "Error al guardar los datos.");
       }
@@ -113,20 +133,27 @@ const MainForm = () => {
 
   return (
     <div className="main-form flex flex-col items-center justify-center pt-8 z-10 rounded-b-2xl w-full">
-      {!showForm ? (
+      {/* 
+        Si NO es forceShowForm, y showForm es false, mostramos la Portada.
+        Si es forceShowForm (true) o showForm (true), se muestra el <form> 
+      */}
+      {!forceShowForm && !showForm ? (
         <Portada onMotociclistaClick={() => setShowForm(true)} />
       ) : (
         <form
           className="flex flex-col items-center justify-center lg:gap-y-6 sm:gap-y-0 md:gap-y-1 mx-auto max-w-[700px] w-full px-4 h-screen"
           onSubmit={handleSubmit}
         >
-          <button
-            type="button"
-            onClick={() => setShowForm(false)}
-            className="self-start bg-red-lth text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-300"
-          >
-            Regresar
-          </button>
+          {/* Si NO es forceShowForm, entonces mostramos el botón de "Regresar" a la portada */}
+          {!forceShowForm && (
+            <button
+              type="button"
+              onClick={() => setShowForm(false)}
+              className="self-start bg-red-lth text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-300"
+            >
+              Regresar
+            </button>
+          )}
 
           <select
             value={tipoVehiculo}
@@ -191,7 +218,9 @@ const MainForm = () => {
             {loading ? "Cargando..." : "Buscar"}
           </button>
 
-          {errorMessage && <p className="text-red-lth text-center">{errorMessage}</p>}
+          {errorMessage && (
+            <p className="text-red-lth text-center">{errorMessage}</p>
+          )}
         </form>
       )}
     </div>

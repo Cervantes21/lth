@@ -1,18 +1,32 @@
 "use client";
 
-import { Cards } from "@/components/Cards";
-import { Whatsapp, cotizar } from "@/components/Whatsapp";
+import { useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import productos from "@/data/Catalogo";
 import Image from "next/image";
 
-export default function SearchIds() {
-  const pathname = usePathname();
-  const id = pathname.replace("/search/", "");
-  const ids = id.split(",").map((id) => decodeURIComponent(id)); // Decodifica cada ID
-  console.log(ids);
+import { Cards } from "@/components/Cards";
+import { Whatsapp, cotizar } from "@/components/Whatsapp";
+import MainForm from "@/components/MainForm";  // <--- Importamos tu formulario
+import productos from "@/data/Catalogo";
 
+export default function SearchIds() {
+  // Para mostrar/ocultar el formulario
+  const [showForm, setShowForm] = useState(false);
+
+  const pathname = usePathname();
+  // Extraemos la parte /search/<opciones> (por ejemplo "LTH|24,R24-etc")
+  const id = pathname.replace("/search/", "");
+  const ids = id.split(",").map((id) => decodeURIComponent(id));
+
+  // Leemos los parámetros de búsqueda (tipo, ano, marca, modelo) del querystring
+  const searchParams = useSearchParams();
+  const tipoVehiculo = searchParams.get("tipo") || "";
+  const anoVehiculo = searchParams.get("ano") || "";
+  const marcaVehiculo = searchParams.get("marca") || "";
+  const modeloVehiculo = searchParams.get("modelo") || "";
+
+  // Filtramos los productos según IDs (BCI) obtenidos
   const filteredProducts = productos.filter((producto) =>
     ids.includes(producto.BCI)
   );
@@ -22,11 +36,12 @@ export default function SearchIds() {
     window.location.href = `tel:${phoneNumber}`;
   };
 
+  // Útil si algunas imágenes llevan "|" en el nombre
   const replacePipeWithSlash = (str) => str.replace(/\|/g, "/");
 
   return (
     <>
-      {/* Botón para regresar */}
+      {/* Botón para regresar al home */}
       <Link href="/" className="flex w-16 m-1 p-4 border-none outline-none">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -57,11 +72,32 @@ export default function SearchIds() {
           alt="BEC Animation"
           width={300}
           height={300}
-          className="w-36 h-auto md:w-60"
+          className="w-24 h-auto md:w-32"
         />
       </div>
 
-      {/* Mensaje cuando no se encuentran productos */}
+      {/* Texto mostrando el vehículo (omitimos tipoVehiculo) */}
+      <h2 className="text-red-lth text-center text-xl font-semibold mb-4">
+        Tu vehículo es: {marcaVehiculo.toUpperCase()} {modeloVehiculo.toUpperCase()} {anoVehiculo}
+      </h2>
+
+      {/* Botón para corregir la respuesta */}
+      <div className="flex justify-center mb-6">
+        <button
+          onClick={() => setShowForm(!showForm)}
+          className="bg-red-lth text-white p-2 px-4 rounded-lg font-bold hover:opacity-80"
+        >
+          {showForm ? "Ocultar formulario" : "Corregir la respuesta"}
+        </button>
+      </div>
+
+      {/* Al hacer clic, mostramos el formulario (fuerza que sea sin portada) */}
+      {showForm && (
+        <div className="mb-10 w-full max-w-sm mx-auto">
+          <MainForm forceShowForm={true} />
+        </div>
+      )}
+
       {filteredProducts.length === 0 ? (
         <div className="flex flex-col items-center">
           <h2 className="text-xl font-bold text-red-lth uppercase w-full text-center lg:text-xl">
@@ -83,13 +119,14 @@ export default function SearchIds() {
         </p>
       )}
 
-      {/* Renderizado de productos */}
+      {/* Render de productos */}
       <div className="w-full px-4 grid grid-cols-2 lg:grid-cols-4 lg:px-16 gap-3 mb-40">
         {filteredProducts.map((producto, index) => (
           <div
             className="bg-grey-lth flex flex-col gap-y-3 items-center p-4 rounded-xl"
             key={index}
           >
+            {/* Imagen del producto */}
             <div className="min-h-40 overflow-hidden flex items-center">
               <Image
                 src={`/${producto.IMAGEN}`}
