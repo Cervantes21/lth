@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.asd{
+.asd {
   border: 2px solid red;
 }
-
 
 body {
   background-color: #F5F5F5;
@@ -66,23 +65,22 @@ body {
 
   .main-form {
     background-image: url('/background-form.png');
-    background-size:cover;
+    background-size: cover;
     background-position: 0px -350px;
   }
-
 }
 
-.arrow-back:hover>path {
+.arrow-back:hover > path {
   fill: #b01325 !important;
   transition: all 0.3s;
 }
 
-.menu-divs>p,
+.menu-divs > p,
 .menu-divs {
   transition: all 0.3s;
 }
 
-.menu-divs:hover>p,
+.menu-divs:hover > p,
 .menu-divs:hover {
   color: #D3172E !important;
   font-weight: 600;
@@ -91,27 +89,25 @@ body {
 
 .more-info-button:hover {
   border: #b01325 2px solid !important;
-  color: #b01325 !important
+  color: #b01325 !important;
 }
-
 
 .option-form {
-  text-transform: lowercase
+  text-transform: lowercase;
 }
-
 
 .option-form::first-letter {
   text-transform: uppercase;
 }
 
-/* Estilos globales */
+/* ===== Estilos globales ===== */
 body {
   background-color: #F5F5F5;
   margin: 0;
   padding: 0;
 }
 
-/* Colores personalizados */
+/* ===== Colores personalizados ===== */
 .bg-blue-lth {
   background-color: #061684;
 }
@@ -137,7 +133,7 @@ body {
   color: #D3172E;
 }
 
-/* Estilos de formulario principal */
+/* ===== Estilos de formulario principal ===== */
 .main-form {
   background-image: url('/background-form.png');
   background-size: cover;
@@ -156,30 +152,25 @@ body {
   }
 }
 
-/* Motociclista: Ajustes generales */
+/* ========== Motociclista: Ajustes Generales ========== */
 .motociclista img {
   transition: all 0.3s ease-in-out;
 }
 
-/* Ajustes para diferentes resoluciones */
-
 /* Texto principal: Pantallas largas */
 @media (min-height: 800px) {
   .text-blue-lth {
-    margin-top: 2rem; /* Margen superior para texto principal */
+    margin-top: 2rem; /* Margen superior para texto principal (solo si lo deseas) */
   }
 }
 
-/* Ajuste del tamaño del motociclista para pantallas estándar (1024x600 y similares) */
-@media (width: 1024px) and (height: 600px) {
-  .motociclista img {
-    width: 260px !important;
-    height: auto;
-  }
-}
-
-/* Ajuste del tamaño del motociclista para pantallas largas (altura mayor a 900px) */
-@media (min-height: 800px) {
+/*
+   ===================================
+   Ajuste del tamaño del motociclista
+   SEGÚN ALTURA, PERO SÓLO HASTA 1023px de ancho
+   ===================================
+*/
+@media (min-height: 800px) and (max-width: 1023px) {
   .motociclista img {
     width: 320px !important;
     height: auto;
@@ -189,8 +180,7 @@ body {
   }
 }
 
-/* Ajuste del tamaño del motociclista para pantallas muy largas (altura mayor a 1200px) */
-@media (min-height: 1200px) {
+@media (min-height: 1200px) and (max-width: 1023px) {
   .motociclista img {
     width: 400px !important;
     height: auto;
@@ -211,6 +201,29 @@ body {
   }
 }
 
+/* ========== TAMAÑO para ESCRITORIOS GRANDES ========== */
+@media (min-width: 1024px) {
+  /* Ajuste final para pantallas anchas. 
+     Pon lo que quieras para tu "versión escritorio". */
+  .motociclista img {
+    width: 320px !important; /* O 600px, el tamaño que desees */
+    height: auto;
+  }
+  .motociclista {
+    bottom: 15% !important; /* Ajusta según te convenga */
+  }
+}
+
+/* ========== Mantén tus condicionales específicas ========== */
+
+/* Ajuste del tamaño del motociclista para 1024x600 exacto */
+@media (width: 1024px) and (height: 600px) {
+  .motociclista img {
+    width: 260px !important;
+    height: auto;
+  }
+}
+
 /* Ajuste del tamaño de las baterías del banner */
 @media (width: 1024px) and (height: 600px),
        (width: 1024px) and (height: 768px) {
@@ -223,4 +236,19 @@ body {
   }
 }
 
+/* Ajuste específico para “Mobile L” (<= 425px) */
+@media (max-width: 425px) {
+  .portada-texto {
+    margin-top: 60px !important; 
+  }
+
+  .motociclista {
+    bottom: 20% !important;
+  }
+
+  .motociclista img {
+    width: 350px !important;
+    height: auto;
+  }
+}
 

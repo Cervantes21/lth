@@ -44,7 +44,7 @@ const HeaderDesktop = () => {
             />
             Quiénes somos
           </Link>
-          <Link href="/" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
+          <Link href="/search/default" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
             <DotLottieReact
               src="/animations/buscar.json"
               className="w-6 h-6"

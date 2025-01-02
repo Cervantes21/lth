@@ -23,7 +23,7 @@ const Portada = ({ onMotociclistaClick }) => {
   return (
     <div className="relative w-full h-screen bg-cover bg-center flex flex-col items-center justify-start">
       {/* Texto Principal */}
-      <div className="absolute top-0 w-full text-center">
+      <div className="absolute top-1 w-full text-center portada-texto">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-lth leading-tight">
           ¿Te quedaste sin batería?
         </h1>

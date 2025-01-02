@@ -80,7 +80,7 @@ export default function Bateria() {
                                 width="1em"
                                 height="1em"
                                 viewBox="0 0 24 24"
-                                className="w-10 h-10 -translate-y-2 ml-2 arrow-back absolute"
+                                className="w-16 mt-4 h-10 -translate-y-2 ml-2 arrow-back absolute"
                             >
                                 <path
                                     className=" duration-300 transition-all"

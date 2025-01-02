@@ -70,7 +70,7 @@ const Header = () => {
               Quiénes somos
             </Link>
             <Link
-              href="/"
+              href="/search/default"
               className="py-4 px-6 hover:bg-red-600 hover:text-white flex items-center gap-x-2"
               onClick={closeMenu}
             >
