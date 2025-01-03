@@ -218,10 +218,37 @@ body {
   }
 }
 
-/* Ajuste del tamaño del motociclista para 1024x640 exacto */
-@media (width: 1024px) and (height: 640px) {
+@media (max-height: 680px) {
   .motociclista img {
-    width: 270px !important;
+    width: 260px !important;
+    height: auto;
+  }
+}
+
+@media (max-height: 600px) {
+  .motociclista img {
+    width: 240px !important;
+    height: auto;
+  }
+}
+
+@media (max-height: 570px) {
+  .motociclista img {
+    width: 200px !important;
+    height: auto;
+  }
+}
+
+@media (max-height: 490px) {
+  .motociclista img {
+    width: 140px !important;
+    height: auto;
+  }
+}
+
+@media (max-height: 300px) {
+  .motociclista img {
+    width: 100px !important;
     height: auto;
   }
 }
