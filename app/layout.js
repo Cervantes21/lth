@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Batería en casa",
   description:
-    "Llevamos la batería a tu casa en cualquier momento en tan solo 90 minutos en México.",
+    "Llevamos la batería a tu casa en cualquier momento en tan solo 90 minutos en Todo Morelos.",
 };
 
 export default function RootLayout({ children }) {

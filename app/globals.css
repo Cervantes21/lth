@@ -254,3 +254,28 @@ body {
   }
 }
 
+/* Ajuste específico para “Mobile L” (<= 344px) */
+@media (max-height: 344px) {
+  .motociclista {
+    bottom: 20% !important;
+  }
+
+  .motociclista img {
+    width: 120px !important;
+    height: auto;
+  }
+}
+
+
+/* Ajuste específico para “Mobile L” (<= 360px) */
+@media (max-height: 360px) {
+
+  .motociclista {
+    bottom: 10% !important;
+  }
+
+  .motociclista img {
+    width: 120px !important;
+    height: auto;
+  }
+}
