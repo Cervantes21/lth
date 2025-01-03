@@ -20,7 +20,7 @@ async function dbConnect() {
   if (!cached.promise) {
     cached.promise = mongoose
       .connect(MONGO_URI, {
-        dbName: "myDatabase", // Nombre explícito de la base de datos
+        dbName: "myDatabase",
       })
       .then((mongoose) => {
         console.log("Conexión a MongoDB establecida");

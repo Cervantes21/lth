@@ -74,12 +74,12 @@ export const Cards = ({ page }) => {
       icon: (
         <DotLottieReact
           src="/animations/phone_location.json"
-          className="w-24 h-24"
+          className="w-24 h-24 md:w-18 md:h-18"
           autoplay
           loop
         />
       ),
-      title: <>Centros de Servicio</>,
+      title: <>Nuestras Sucursales</>,
       button: "Ubica tu sucursal",
       buttonLink: "/centros",
       exeption: "location",

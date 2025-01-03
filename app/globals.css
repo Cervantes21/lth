@@ -160,16 +160,10 @@ body {
 /* Texto principal: Pantallas largas */
 @media (min-height: 800px) {
   .text-blue-lth {
-    margin-top: 2rem; /* Margen superior para texto principal (solo si lo deseas) */
+    margin-top: 2rem; 
   }
 }
 
-/*
-   ===================================
-   Ajuste del tamaño del motociclista
-   SEGÚN ALTURA, PERO SÓLO HASTA 1023px de ancho
-   ===================================
-*/
 @media (min-height: 800px) and (max-width: 1023px) {
   .motociclista img {
     width: 320px !important;
@@ -224,11 +218,19 @@ body {
   }
 }
 
+/* Ajuste del tamaño del motociclista para 1024x640 exacto */
+@media (width: 1024px) and (height: 640px) {
+  .motociclista img {
+    width: 270px !important;
+    height: auto;
+  }
+}
+
 /* Ajuste del tamaño de las baterías del banner */
 @media (width: 1024px) and (height: 600px),
        (width: 1024px) and (height: 768px) {
   .banner-bateria img {
-    width: 80px !important;
+    width: 60px !important;
     height: auto;
   }
   .motociclista p {

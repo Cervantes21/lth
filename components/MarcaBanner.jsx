@@ -56,7 +56,7 @@ export const MarcaBanner = () => {
 
       {/* Ocultar en versiones móviles */}
       <style jsx>{`
-        @media (max-width: 1024px) {
+        @media (max-width: 900px) {
           div.relative {
             display: none;
           }

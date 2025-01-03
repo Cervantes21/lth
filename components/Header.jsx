@@ -93,7 +93,7 @@ const Header = () => {
                 autoplay
                 loop
               />
-              Centros de Servicio y Venta LTH
+              Ubica tu Sucursal
             </Link>
             <Link
               href="/recomendaciones"

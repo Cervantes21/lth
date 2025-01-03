@@ -60,7 +60,7 @@ const HeaderDesktop = () => {
               autoplay
               loop
             />
-            Centros de Servicio y Venta LTH
+            Ubica tu Sucursal
           </Link>
           <Link href="/recomendaciones" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
             <DotLottieReact
