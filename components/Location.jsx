@@ -15,7 +15,7 @@ export const Location = () => {
       logo: "/centros_logos/PA.png",
     },
     {
-      nombre: "CENTRO DE SERVICIO VENTA LTH VICENTE GUERRERO",
+      nombre: "CENTRO DE VENTA LTH VICENTE GUERRERO",
       direccion: "Av. Vicente Guerrero 100, Zona 1, Tezontepec, 62450, Cuernavaca, Mor.",
       url: "https://maps.app.goo.gl/uBnyqJQYzVUvwCa48",
       embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d471.7189417919201!2d-99.2298949!3d18.9423889!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cddfcc3346f515%3A0xae7b318f2fb92463!2sCentro%20de%20Venta%20LTH%20Vicente%20Guerrero!5e0!3m2!1ses!2smx!4v1731489824472!5m2!1ses!2smx",

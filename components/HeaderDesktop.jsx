@@ -20,7 +20,7 @@ const HeaderDesktop = () => {
 
   return (
     <header
-      className={`hidden lg:block bg-blue-lth transition-opacity duration-300 ease-in-out ${
+      className={`hidden lg:block bg-gradient-to-r from-[#000839] via-[#061684] to-[#000839] transition-opacity duration-300 ease-in-out ${
         isSticky
           ? "fixed top-0 left-0 w-full shadow-lg z-40"
           : "absolute top-0 left-0 w-full z-40"
@@ -35,15 +35,6 @@ const HeaderDesktop = () => {
           />
         </Link>
         <nav className="flex space-x-8 text-white font-medium text-lg">
-          <Link href="/servicio" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
-            <DotLottieReact
-              src="/animations/presentacion.json"
-              className="w-6 h-6"
-              autoplay
-              loop
-            />
-            Quiénes somos
-          </Link>
           <Link href="/search/default" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
             <DotLottieReact
               src="/animations/buscar.json"
@@ -51,7 +42,16 @@ const HeaderDesktop = () => {
               autoplay
               loop
             />
-            Busca tu Batería
+            BUSCA TU BATERÍA
+          </Link>
+          <Link href="/catalogo" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
+            <DotLottieReact
+              src="/animations/catalogo.json"
+              className="w-6 h-6"
+              autoplay
+              loop
+            />
+            CATÁLOGO
           </Link>
           <Link href="/centros" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
             <DotLottieReact
@@ -60,25 +60,34 @@ const HeaderDesktop = () => {
               autoplay
               loop
             />
-            Ubica tu Sucursal
+            UBICA TU SUCURSAL
           </Link>
           <Link href="/recomendaciones" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
-            <DotLottieReact
-              src="/animations/mesa-de-ayuda.json"
-              className="w-6 h-6"
-              autoplay
-              loop
-            />
-            Preguntas Frecuentes y Recomendaciones
-          </Link>
-          <Link href="/garantias-y-ajustes" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
             <DotLottieReact
               src="/animations/garantia.json"
               className="w-6 h-6"
               autoplay
               loop
             />
-            Garantías
+            EXPERIENCIA LTH
+          </Link>
+          <Link href="/garantias-y-ajustes" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
+            <DotLottieReact
+              src="/animations/mesa-de-ayuda.json"
+              className="w-6 h-6"
+              autoplay
+              loop
+            />
+            SOPORTE
+          </Link>
+          <Link href="/nosotros" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
+            <DotLottieReact
+              src="/animations/presentacion.json"
+              className="w-6 h-6"
+              autoplay
+              loop
+            />
+            ACERCA DE BEC
           </Link>
         </nav>
       </div>

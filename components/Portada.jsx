@@ -34,25 +34,30 @@ const Portada = ({ onMotociclistaClick }) => {
 
       {/* Motociclista */}
       <div
-        className="motociclista absolute bottom-[15%] md:bottom-[12%] left-1/2 transform -translate-x-1/2 cursor-pointer hover:scale-110 transition-transform flex flex-col items-center"
+        className="motociclista absolute bottom-[15%] md:bottom-[12%] left-1/2 transform -translate-x-1/2 
+                   cursor-pointer hover:scale-110 transition-transform flex flex-col items-center"
         onClick={onMotociclistaClick}
       >
         <img
           src="/motociclista.png"
           alt="Motociclista"
-          className="w-[180px] sm:w-[140px] md:w-[160px] lg:w-[320px] h-auto"
+          className="w-[180px] sm:w-[140px] md:w-[160px] lg:w-[280px] h-auto"
         />
-        {/* Ocultar texto solo en resolución 1024x600 */}
+        {/* Ocultar el botón solo en la resolución 1024x600 */}
         {!isSpecificResolution && (
-          <p className="text-blue-lth text-sm mt-2 md:hidden lg:block">
-            (Presiona el motociclista para iniciar tu búsqueda)
-          </p>
+          <button
+            className="bg-gradient-to-r from-blue-950 via-blue-600 to-blue-950
+                       shadow-2xl text-white rounded-full font-bold py-2 px-4 mt-2 
+                       md:hidden lg:block hover:from-blue-700 hover:via-blue-500 hover:to-blue-700"
+          >
+            BUSCA TU BATERIA
+          </button>
         )}
       </div>
 
       {/* Contenedor del círculo de baterías */}
       <div className="circulo-baterias absolute bottom-20 md:bottom-10 right-[10%] md:right-[8%] w-auto h-auto hidden lg:block cursor-pointer hover:scale-110 transition-transform">
-        <Link href="/lth">
+        <Link href="/catalogo">
           <img
             src="/circulo_baterias.svg"
             alt="Círculo de Baterías"

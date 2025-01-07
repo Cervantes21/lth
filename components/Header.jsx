@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <header
-      className={`lg:hidden bg-blue-lth transition-opacity duration-300 ease-in-out ${
+      className={`lg:hidden bg-gradient-to-r from-[#000839] via-[#061684] to-[#000839] transition-opacity duration-300 ease-in-out ${
         isSticky
           ? "fixed top-0 left-0 w-full shadow-lg z-40"
           : "absolute top-0 left-0 w-full z-40"
@@ -57,19 +57,6 @@ const Header = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <Link
-              href="/servicio"
-              className="py-4 px-6 hover:bg-red-600 hover:text-white flex items-center gap-x-2"
-              onClick={closeMenu}
-            >
-              <DotLottieReact
-                src="/animations/presentacion.json"
-                className="w-6 h-6"
-                autoplay
-                loop
-              />
-              Quiénes somos
-            </Link>
-            <Link
               href="/search/default"
               className="py-4 px-6 hover:bg-red-600 hover:text-white flex items-center gap-x-2"
               onClick={closeMenu}
@@ -80,7 +67,20 @@ const Header = () => {
                 autoplay
                 loop
               />
-              Busca tu Batería
+              BUSCA TU BATERÍA
+            </Link>
+            <Link
+              href="/catalogo"
+              className="py-4 px-6 hover:bg-red-600 hover:text-white flex items-center gap-x-2"
+              onClick={closeMenu}
+            >
+              <DotLottieReact
+                src="/animations/catalogo.json"
+                className="w-6 h-6"
+                autoplay
+                loop
+              />
+              CATÁLOGO
             </Link>
             <Link
               href="/centros"
@@ -93,7 +93,7 @@ const Header = () => {
                 autoplay
                 loop
               />
-              Ubica tu Sucursal
+              UBICA TU SUCURSAL
             </Link>
             <Link
               href="/recomendaciones"
@@ -101,12 +101,12 @@ const Header = () => {
               onClick={closeMenu}
             >
               <DotLottieReact
-                src="/animations/mesa-de-ayuda.json"
+                src="/animations/garantia.json"
                 className="w-10 h-10"
                 autoplay
                 loop
               />
-              Preguntas Frecuentes y Recomendaciones
+              EXPERIENCIAS LTH
             </Link>
             <Link
               href="/garantias-y-ajustes"
@@ -114,12 +114,25 @@ const Header = () => {
               onClick={closeMenu}
             >
               <DotLottieReact
-                src="/animations/garantia.json"
+                src="/animations/mesa-de-ayuda.json"
                 className="w-6 h-6"
                 autoplay
                 loop
               />
-              Garantías
+              SOPORTE
+            </Link>
+            <Link
+              href="/nosotros"
+              className="py-4 px-6 hover:bg-red-600 hover:text-white flex items-center gap-x-2"
+              onClick={closeMenu}
+            >
+              <DotLottieReact
+                src="/animations/presentacion.json"
+                className="w-6 h-6"
+                autoplay
+                loop
+              />
+              ACERCA DE BEC
             </Link>
           </nav>
         </div>

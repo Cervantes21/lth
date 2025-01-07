@@ -5,6 +5,7 @@ import { MarcaBanner } from "@/components/MarcaBanner";
 import { Whatsapp } from "@/components/Whatsapp";
 import Banner from "@/components/Banner";
 import ParagraphFooter from "@/components/ParagraphFooter";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       {/* Footer con texto estilizado */}
       <footer>
         <ParagraphFooter />
+        <Footer />
       </footer>
     </>
   );

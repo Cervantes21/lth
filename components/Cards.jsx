@@ -15,8 +15,8 @@ const generateCard = ({
   <div
     key={key}
     onClick={llamda ? handleCall : null}
-    className={`flex flex-col items-center justify-between bg-grey-lth w-full h-52 p-4 my-3 rounded-xl lg:max-w-[550px] ${
-      llamda ? "cursor-pointer hover:bg-slate-300 transition-all duration-300" : ""
+    className={`flex flex-col items-center justify-between bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 text-white w-full h-52 p-4 my-3 rounded-xl lg:max-w-[550px] ${
+      llamda ? "cursor-pointer hover:from-blue-700 hover:via-blue-500 hover:to-blue-700 transition-all duration-300" : ""
     }`}
   >
     {icon}
@@ -134,22 +134,7 @@ export const Cards = ({ page }) => {
       button: "Ver más información",
       buttonLink: "/nosotros",
       exeption: "nosotros",
-    },
-    {
-      key: "acerca-de-nosotros",
-      icon: (
-        <DotLottieReact
-          src="/animations/about_animation.json"
-          className="w-32 h-32"
-          autoplay
-          loop
-        />
-      ),
-      title: <>Acerca de nosotros</>,
-      button: "Conócenos",
-      buttonLink: "/servicio",
-      exeption: "service",
-    },
+    }
   ];
 
   return (
@@ -158,7 +143,7 @@ export const Cards = ({ page }) => {
         card.exeption === page ? null : generateCard({ ...card, handleCall })
       )}
 
-      <div className="flex flex-col items-center justify-between bg-grey-lth w-full h-52 p-4 my-3 rounded-xl lg:max-w-[550px]">
+      <div className="flex flex-col items-center justify-between bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 text-white w-full h-52 p-4 my-3 rounded-xl lg:max-w-[550px]">
         <h2 className="text-lg font-semibold text-center">
           Aceptamos todas las tarjetas <br /> de crédito
         </h2>
@@ -169,7 +154,7 @@ export const Cards = ({ page }) => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-between bg-grey-lth w-full p-4 my-3 rounded-xl lg:max-w-[550px]">
+      <div className="flex flex-col items-center justify-between bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 text-white w-full p-4 my-3 rounded-xl lg:max-w-[550px]">
         <h2 className="text-lg font-semibold text-center">Cobertura:</h2>
         <ul className="mt-3 grid grid-cols-2 gap-x-12">
           {locationList.map((location) => (

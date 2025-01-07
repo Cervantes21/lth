@@ -2,96 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-.asd {
-  border: 2px solid red;
-}
-
-body {
-  background-color: #F5F5F5;
-}
-
-.bg-blue-lth {
-  background-color: #061684;
-}
-
-.bg-red-lth {
-  background-color: #D3172E;
-  transition: all 0.3s;
-}
-
-.bg-red-lth:hover {
-  background-color: #b01325 !important;
-  transition: all 0.3s;
-}
-
-.bg-grey-lth {
-  background-color: #E6E8F3;
-}
-
-.text-blue-lth {
-  color: #061684;
-}
-
-.text-red-lth {
-  color: #D3172E;
-}
-
+/* ==== Grid Styling ==== */
 .header-grid {
   display: grid;
   grid-template-columns: 50px auto 50px;
 }
 
+/* ==== Form Background Styling ==== */
 .main-form {
   background-image: url('/background-form.png');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
+@media screen and (min-width: 1024px) {
+  .main-form {
+    background-position: center bottom;
+  }
+}
+
+/* ==== Card Styling ==== */
 .more-info-card {
   background-image: url('/3.jpg');
   background-size: cover;
-  background-position: 0px -90px;
   display: grid;
   grid-template-rows: 46% 54%;
 }
 
 @media screen and (min-width: 1024px) {
   .more-info-card {
-    background-image: url('/3.jpg');
-    background-size: cover;
     background-position: 0px 58%;
-    display: grid;
     grid-template-rows: 80% 20%;
   }
-
-  .main-form {
-    background-image: url('/background-form.png');
-    background-size: cover;
-    background-position: 0px -350px;
-  }
 }
 
+/* ==== Hover Effects ==== */
 .arrow-back:hover > path {
   fill: #b01325 !important;
+  transition: fill 0.3s;
+}
+
+.menu-divs, .menu-divs > p {
   transition: all 0.3s;
 }
 
-.menu-divs > p,
-.menu-divs {
-  transition: all 0.3s;
-}
-
-.menu-divs:hover > p,
-.menu-divs:hover {
+.menu-divs:hover, .menu-divs:hover > p {
   color: #D3172E !important;
   font-weight: 600;
-  transition: all 0.3s;
 }
 
 .more-info-button:hover {
-  border: #b01325 2px solid !important;
+  border: 2px solid #b01325 !important;
   color: #b01325 !important;
 }
 
+/* ==== Text Transformations ==== */
 .option-form {
   text-transform: lowercase;
 }
@@ -100,14 +70,14 @@ body {
   text-transform: uppercase;
 }
 
-/* ===== Estilos globales ===== */
+/* ==== Global Styles ==== */
 body {
   background-color: #F5F5F5;
   margin: 0;
   padding: 0;
 }
 
-/* ===== Colores personalizados ===== */
+/* ==== Custom Colors ==== */
 .bg-blue-lth {
   background-color: #061684;
 }
@@ -133,41 +103,20 @@ body {
   color: #D3172E;
 }
 
-/* ===== Estilos de formulario principal ===== */
-.main-form {
-  background-image: url('/background-form.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-/* Media queries para pantallas grandes */
-@media screen and (min-width: 1024px) {
-  .main-form {
-    background-position: center bottom;
-  }
-}
-
-/* ========== Motociclista: Ajustes Generales ========== */
+/* ==== Responsive Adjustments ==== */
 .motociclista img {
   transition: all 0.3s ease-in-out;
 }
 
-/* Texto principal: Pantallas largas */
 @media (min-height: 800px) {
   .text-blue-lth {
-    margin-top: 2rem; 
+    margin-top: 2rem;
   }
 }
 
 @media (min-height: 800px) and (max-width: 1023px) {
   .motociclista img {
     width: 320px !important;
-    height: auto;
   }
   .motociclista {
     bottom: 20% !important;
@@ -177,132 +126,102 @@ body {
 @media (min-height: 1200px) and (max-width: 1023px) {
   .motociclista img {
     width: 400px !important;
-    height: auto;
   }
   .motociclista {
     bottom: 20% !important;
   }
 }
 
-/* Ajuste para pantallas largas y estrechas (altura > 800px y ancho < 600px) */
 @media (min-height: 800px) and (max-width: 600px) {
   .motociclista img {
     width: 400px !important;
-    height: auto;
   }
   .motociclista {
     bottom: 20% !important;
   }
 }
 
-/* ========== TAMAÑO para ESCRITORIOS GRANDES ========== */
 @media (min-width: 1024px) {
-  /* Ajuste final para pantallas anchas. 
-     Pon lo que quieras para tu "versión escritorio". */
   .motociclista img {
-    width: 320px !important; /* O 600px, el tamaño que desees */
-    height: auto;
+    width: 320px !important;
   }
   .motociclista {
-    bottom: 15% !important; /* Ajusta según te convenga */
+    bottom: 15% !important;
   }
 }
 
-/* ========== Mantén tus condicionales específicas ========== */
-
-/* Ajuste del tamaño del motociclista para 1024x600 exacto */
 @media (width: 1024px) and (height: 600px) {
   .motociclista img {
     width: 260px !important;
-    height: auto;
   }
 }
 
 @media (max-height: 680px) {
   .motociclista img {
     width: 260px !important;
-    height: auto;
   }
 }
 
 @media (max-height: 600px) {
   .motociclista img {
     width: 240px !important;
-    height: auto;
   }
 }
 
 @media (max-height: 570px) {
   .motociclista img {
     width: 200px !important;
-    height: auto;
   }
 }
 
 @media (max-height: 490px) {
   .motociclista img {
     width: 140px !important;
-    height: auto;
   }
 }
 
 @media (max-height: 300px) {
   .motociclista img {
     width: 100px !important;
-    height: auto;
   }
 }
 
-/* Ajuste del tamaño de las baterías del banner */
-@media (width: 1024px) and (height: 600px),
-       (width: 1024px) and (height: 768px) {
+@media (width: 1024px) and (height: 768px),
+       (width: 1024px) and (height: 600px) {
   .banner-bateria img {
     width: 60px !important;
-    height: auto;
   }
   .motociclista p {
     display: none !important;
   }
 }
 
-/* Ajuste específico para “Mobile L” (<= 425px) */
 @media (max-width: 425px) {
   .portada-texto {
-    margin-top: 60px !important; 
+    margin-top: 60px !important;
   }
-
   .motociclista {
     bottom: 20% !important;
   }
-
   .motociclista img {
     width: 350px !important;
-    height: auto;
   }
 }
 
-/* Ajuste específico para “Mobile L” (<= 344px) */
 @media (max-height: 344px) {
   .motociclista {
     bottom: 20% !important;
   }
-
   .motociclista img {
     width: 120px !important;
-    height: auto;
   }
 }
 
-
-/* Ajuste específico para “Mobile L” (<= 360px) */
 @media (max-height: 360px) {
-
   .motociclista {
     bottom: 10% !important;
   }
-
   .motociclista img {
     width: 120px !important;
-    height: auto;
   }
 }

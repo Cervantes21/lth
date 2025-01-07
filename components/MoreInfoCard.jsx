@@ -30,6 +30,12 @@ const cards = [
   },
   {
     icon: (
+      <img className="w-16 h-16" src="/card-logo.png" alt="logo-in-card"></img>
+    ),
+    exeption: "catalogo",
+  },
+  {
+    icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
