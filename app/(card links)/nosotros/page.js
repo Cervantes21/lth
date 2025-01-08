@@ -12,7 +12,7 @@ export default function Home() {
                 <h2 className="text-xl lg:text-2xl max-w-[90%] mx-auto">Acerca de nosotros</h2>
             </div>
             <p className="mt-10 mb-4 px-4 text-center text-lg font-light sm:font-normal lg:text-xl lg:max-w-4xl lg:mx-auto">
-                <strong>BEC Batería en Casa</strong> es una empresa de <strong>instalación y reemplazo de baterías</strong> de automóviles, equipo pesado y otras aplicaciones.
+                <strong className="text-blue-lth">BEC Batería en Casa</strong> es una empresa de <strong className="text-blue-lth">instalación y reemplazo de baterías</strong> de automóviles, equipo pesado y otras aplicaciones.
             </p>
             <div className="flex justify-center my-6">
                 <Link href="/">
@@ -24,7 +24,7 @@ export default function Home() {
                 </Link>
             </div>
             <p className="mb-16 px-4 text-center text-lg font-light sm:font-normal lg:text-xl lg:max-w-4xl lg:mx-auto">
-                Somos una marca registrada. Trabajamos con las mejores baterías del mercado: <strong>LTH</strong>, <strong>LTH HITEC</strong>, <strong>LTH AGM</strong>, <strong>OPTIMA</strong>, <strong>LTH Heavy Duty</strong>, <strong>LTH Golf</strong>, y más.
+                Trabajamos con las mejores marcas de baterias en México: <strong className="text-blue-lth">LTH®</strong>, Marcas que se acoplan a las necesidades de tu auto, <strong className="text-blue-lth">LTH® PROTECT</strong>, <strong className="text-blue-lth">LTH® AGM EVOLUTION</strong>, <strong className="text-blue-lth">HITEC®</strong>, <strong className="text-blue-lth">FULLPOWER®</strong>, <strong className="text-blue-lth">ÁMERICA®</strong>, y más.
             </p>
             <div className="p-5 mt-5 md:mx-auto lg:w-full lg:max-w-4xl lg:text-xl">
                 <p className="mb-10 flex items-center gap-x-2">
@@ -65,17 +65,25 @@ export default function Home() {
                 </ul>
                 <p className="mt-10 italic text-gray-600">*Pregunta por métodos alternos de pago.</p>
             </div>
-            <div className="text-center px-4 mt-10 lg:mt-28 lg:max-w-4xl lg:mx-auto">
-                <p className="text-lg font-bold lg:text-xl">
-                    Somos la solución para que tu día no se detenga.
+            <div className="angled-container">
+              {/* Contenido dentro del div diagonal */}
+              <div className="content">
+                <h2>SOMOS LA SOLUCIÓN PARA QUE TU DÍA NO SE DETENGA</h2>
+                <p>
+                  Resolvemos el cambio de batería en tu casa, negocio o oficina. Llámanos y uno de nuestros técnicos te visitará para realizar el cambio de tu batería de manera rápida, eficiente y profesional.
                 </p>
-                <p className="mt-4 text-lg font-light lg:text-xl lg:font-normal">
-                    Nuestro servicio resuelve el cambio de batería en tu casa, negocio y oficina. 
-                    Llámanos y uno de nuestros técnicos te visitará para realizar el cambio de tu batería 
-                    de manera rápida, eficiente y profesional.
-                </p>
+              </div>
+                
+              {/* Imagen */}
+              <div className="image">
+                <img
+                  src="/nosotros.png"
+                  alt="Cambio de batería"
+                  className="object-cover w-full h-full"
+                />
+              </div>
             </div>
-
+                
             <Cards page="nosotros" />
             <Whatsapp />
         </>

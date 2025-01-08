@@ -116,7 +116,7 @@ body {
 
 @media (min-height: 800px) and (max-width: 1023px) {
   .motociclista img {
-    width: 320px !important;
+    width: 300px !important;
   }
   .motociclista {
     bottom: 20% !important;
@@ -125,7 +125,7 @@ body {
 
 @media (min-height: 1200px) and (max-width: 1023px) {
   .motociclista img {
-    width: 400px !important;
+    width: 380px !important;
   }
   .motociclista {
     bottom: 20% !important;
@@ -134,7 +134,7 @@ body {
 
 @media (min-height: 800px) and (max-width: 600px) {
   .motociclista img {
-    width: 400px !important;
+    width: 380px !important;
   }
   .motociclista {
     bottom: 20% !important;
@@ -143,7 +143,7 @@ body {
 
 @media (min-width: 1024px) {
   .motociclista img {
-    width: 320px !important;
+    width: 310px !important;
   }
   .motociclista {
     bottom: 15% !important;
@@ -152,13 +152,13 @@ body {
 
 @media (width: 1024px) and (height: 600px) {
   .motociclista img {
-    width: 260px !important;
+    width: 250px !important;
   }
 }
 
 @media (max-height: 680px) {
   .motociclista img {
-    width: 260px !important;
+    width: 250px !important;
   }
 }
 
@@ -204,7 +204,7 @@ body {
     bottom: 20% !important;
   }
   .motociclista img {
-    width: 350px !important;
+    width: 320px !important;
   }
 }
 
@@ -213,7 +213,7 @@ body {
     bottom: 20% !important;
   }
   .motociclista img {
-    width: 120px !important;
+    width: 110px !important;
   }
 }
 
@@ -224,4 +224,63 @@ body {
   .motociclista img {
     width: 120px !important;
   }
+}
+
+.angled-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden; /* Oculta las áreas fuera del contenedor */
+  background: linear-gradient(to right, #000839, #061684, #000839);
+  color: white;
+  height: 300px; /* Altura del contenedor */
+  max-width: 1000px; /* Anchura máxima */
+  margin: 40px auto; /* Centrado automático */
+}
+
+/* Contenido dentro del div */
+.content {
+  z-index: 1; /* Asegura que esté por encima del fondo diagonal */
+  padding: 20px;
+  flex: 1; /* Toma la mitad del ancho */
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Imagen */
+.image {
+  z-index: 1;
+  flex: 1; /* Toma la otra mitad del ancho */
+  position: relative;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen se recorte correctamente */
+}
+
+/* Corte diagonal */
+.angled-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit; /* Usa el mismo fondo del contenedor */
+  transform: skewY(-6deg); /* Crea el corte diagonal */
+  transform-origin: top left; /* Punto desde donde se aplica el skew */
+  z-index: 0; /* Coloca este fondo detrás del contenido */
 }

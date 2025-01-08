@@ -43,7 +43,7 @@ export default function Banner() {
       {/* Contenedor de baterías para pantallas grandes */}
       {!isMobileResolution && (
         <>
-          <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 left-8 space-x-4">
+          <div className="flex justify-items-center items-center lg:flex absolute top-1/2 -translate-y-1/2 left-8 space-x-4">
             <a href="/evolution" className="transform hover:scale-105 transition-transform banner-bateria">
               <Image src="/banner/evolution_banner.png" alt="Evolution" width={100} height={100} />
             </a>
@@ -55,7 +55,7 @@ export default function Banner() {
             </a>
           </div>
 
-          <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-8 space-x-4">
+          <div className="flex justify-center items-center lg:flex absolute top-1/2 -translate-y-1/2 right-8 space-x-4">
             <a href="/hitec" className="transform hover:scale-105 transition-transform banner-bateria">
               <Image src="/banner/hi-tec-banner.png" alt="Hi Tec" width={100} height={100} />
             </a>
@@ -63,7 +63,7 @@ export default function Banner() {
               <Image src="/banner/estandar_banner.png" alt="Estandar" width={100} height={100} />
             </a>
             <a href="/taxi" className="transform hover:scale-105 transition-transform banner-bateria">
-              <Image src="/banner/taxi_banner.png" alt="Taxi" width={110} height={150} />
+              <Image src="/banner/taxi_banner.png" alt="Taxi" width={100} height={100} />
             </a>
           </div>
         </>

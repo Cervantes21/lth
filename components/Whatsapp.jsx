@@ -1,7 +1,5 @@
 'use client';
 
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-
 export const Whatsapp = () => {
   return (
     <a
@@ -16,19 +14,21 @@ export const Whatsapp = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '80px', // Tamaño reducido del área del botón
-        height: '80px', // Tamaño reducido del área del botón
+        width: '60px', // Tamaño reducido del área del botón
+        height: '60px', // Tamaño reducido del área del botón
         borderRadius: '50%', // Hacer el contenedor circular para ajustarse al botón
         overflow: 'hidden', // Asegurar que no haya área adicional seleccionable
         backgroundColor: 'rgba(0, 0, 0, 0)', // Fondo transparente para mejorar la experiencia visual
       }}
     >
-      <DotLottieReact
-        src="/animations/whatsapp_button.json"
-        autoplay
-        loop
-        className="w-full h-full cursor-pointer"
-        onError={() => console.error('Error al cargar la animación Lottie.')}
+      <img
+        src="/whatsapp.svg"
+        alt="WhatsApp"
+        style={{
+          width: '100%', // Ajusta la imagen al contenedor
+          height: '100%', // Ajusta la imagen al contenedor
+          cursor: 'pointer',
+        }}
       />
     </a>
   );

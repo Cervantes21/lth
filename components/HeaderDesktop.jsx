@@ -35,7 +35,7 @@ const HeaderDesktop = () => {
           />
         </Link>
         <nav className="flex space-x-8 text-white font-medium text-lg">
-          <Link href="/search/default" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
+          <Link href="/search/default" className="flex border-4 border-blue-800 rounded-xl hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 p-2 items-center gap-x-2 transition-colors duration-300">
             <DotLottieReact
               src="/animations/buscar.json"
               className="w-6 h-6"
@@ -44,7 +44,7 @@ const HeaderDesktop = () => {
             />
             BUSCA TU BATERÍA
           </Link>
-          <Link href="/catalogo" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
+          <Link href="/catalogo" className="flex border-4 border-blue-800 rounded-xl hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 p-2 items-center gap-x-2 transition-colors duration-300">
             <DotLottieReact
               src="/animations/catalogo.json"
               className="w-6 h-6"
@@ -53,7 +53,7 @@ const HeaderDesktop = () => {
             />
             CATÁLOGO
           </Link>
-          <Link href="/centros" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
+          <Link href="/centros" className="flex border-4 border-blue-800 rounded-xl hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 p-2 items-center gap-x-2 transition-colors duration-300">
             <DotLottieReact
               src="/animations/marcador-de-posicion.json"
               className="w-6 h-6"
@@ -62,7 +62,7 @@ const HeaderDesktop = () => {
             />
             UBICA TU SUCURSAL
           </Link>
-          <Link href="/recomendaciones" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
+          <Link href="/recomendaciones" className="flex border-4 border-blue-800 rounded-xl hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 p-2 items-center gap-x-2 transition-colors duration-300">
             <DotLottieReact
               src="/animations/garantia.json"
               className="w-6 h-6"
@@ -71,7 +71,7 @@ const HeaderDesktop = () => {
             />
             EXPERIENCIA LTH
           </Link>
-          <Link href="/garantias-y-ajustes" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
+          <Link href="/garantias-y-ajustes" className="flex border-4 border-blue-800 rounded-xl hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 p-2 items-center gap-x-2 transition-colors duration-300">
             <DotLottieReact
               src="/animations/mesa-de-ayuda.json"
               className="w-6 h-6"
@@ -80,7 +80,7 @@ const HeaderDesktop = () => {
             />
             SOPORTE
           </Link>
-          <Link href="/nosotros" className="flex items-center gap-x-2 hover:text-red-600 transition-colors duration-300">
+          <Link href="/nosotros" className="flex border-4 border-blue-800 rounded-xl hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 p-2 items-center gap-x-2 transition-colors duration-300">
             <DotLottieReact
               src="/animations/presentacion.json"
               className="w-6 h-6"
