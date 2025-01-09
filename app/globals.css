@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ==== Grid Styling ==== */
-.header-grid {
-  display: grid;
-  grid-template-columns: 50px auto 50px;
-}
-
 /* ==== Form Background Styling ==== */
 .main-form {
   background-image: url('/background-form.png');
@@ -47,27 +41,9 @@
   transition: fill 0.3s;
 }
 
-.menu-divs, .menu-divs > p {
-  transition: all 0.3s;
-}
-
-.menu-divs:hover, .menu-divs:hover > p {
-  color: #D3172E !important;
-  font-weight: 600;
-}
-
 .more-info-button:hover {
   border: 2px solid #b01325 !important;
   color: #b01325 !important;
-}
-
-/* ==== Text Transformations ==== */
-.option-form {
-  text-transform: lowercase;
-}
-
-.option-form::first-letter {
-  text-transform: uppercase;
 }
 
 /* ==== Global Styles ==== */
@@ -116,7 +92,7 @@ body {
 
 @media (min-height: 800px) and (max-width: 1023px) {
   .motociclista img {
-    width: 300px !important;
+    width: 280px !important;
   }
   .motociclista {
     bottom: 20% !important;
@@ -125,7 +101,7 @@ body {
 
 @media (min-height: 1200px) and (max-width: 1023px) {
   .motociclista img {
-    width: 380px !important;
+    width: 360px !important;
   }
   .motociclista {
     bottom: 20% !important;
@@ -134,7 +110,7 @@ body {
 
 @media (min-height: 800px) and (max-width: 600px) {
   .motociclista img {
-    width: 380px !important;
+    width: 360px !important;
   }
   .motociclista {
     bottom: 20% !important;
@@ -143,7 +119,7 @@ body {
 
 @media (min-width: 1024px) {
   .motociclista img {
-    width: 310px !important;
+    width: 300px !important;
   }
   .motociclista {
     bottom: 15% !important;
@@ -208,21 +184,48 @@ body {
   }
 }
 
-@media (max-height: 344px) {
+@media (max-height: 399px) {
   .motociclista {
-    bottom: 20% !important;
+    bottom: 15% !important;
   }
   .motociclista img {
     width: 110px !important;
   }
 }
 
-@media (max-height: 360px) {
+@media (max-height: 370px) {
   .motociclista {
-    bottom: 10% !important;
+    bottom: 8% !important;
   }
   .motociclista img {
     width: 120px !important;
+  }
+}
+
+@media (max-height: 330px) {
+  .motociclista {
+    bottom: 5% !important;
+  }
+  .motociclista img {
+    width: 80px !important;
+  }
+}
+
+@media (max-height: 270px) {
+  .motociclista {
+    bottom: 8% !important;
+  }
+  .motociclista img {
+    width: 60px !important;
+  }
+}
+
+@media (max-height: 250px) {
+  .motociclista {
+    bottom: 5% !important;
+  }
+  .motociclista img {
+    width: 55px !important;
   }
 }
 

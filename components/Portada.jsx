@@ -41,27 +41,27 @@ const Portada = ({ onMotociclistaClick }) => {
         <img
           src="/motociclista.png"
           alt="Motociclista"
-          className="w-[180px] sm:w-[140px] md:w-[160px] lg:w-[280px] h-auto"
+          className="w-auto h-auto"
         />
-        {/* Ocultar el botón solo en la resolución 1024x600 */}
-        {!isSpecificResolution && (
           <button
             className="bg-gradient-to-r from-blue-950 via-blue-600 to-blue-950
-                       shadow-2xl text-white rounded-full font-bold py-2 px-4 mt-2 
-                       md:hidden lg:block hover:from-blue-700 hover:via-blue-500 hover:to-blue-700"
+                       text-white rounded-full font-bold shadow-md mt-4
+                       px-3 py-1 text-sm
+                       hover:from-blue-700 hover:via-blue-500 hover:to-blue-700
+                       transition-all duration-300 ease-in-out"
           >
-            BUSCA TU BATERIA
+            BUSCA TU BATERÍA
           </button>
-        )}
+
       </div>
 
       {/* Contenedor del círculo de baterías */}
-      <div className="circulo-baterias absolute bottom-20 md:bottom-10 right-[10%] md:right-[8%] w-auto h-auto hidden lg:block cursor-pointer hover:scale-110 transition-transform">
+      <div className="circulo-baterias absolute bottom-2 md:bottom-24 right-[10%] md:right-[5%] w-auto h-auto hidden lg:block cursor-pointer hover:scale-110 transition-transform">
         <Link href="/catalogo">
           <img
             src="/circulo_baterias.svg"
             alt="Círculo de Baterías"
-            className="w-[180px] md:w-[240px] lg:w-[340px] h-auto"
+            className="w-[180px] md:w-[240px] lg:w-[320px] xl:w[340px] h-auto"
           />
         </Link>
       </div>

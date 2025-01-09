@@ -26,7 +26,8 @@ const HeaderDesktop = () => {
           : "absolute top-0 left-0 w-full z-40"
       }`}
     >
-      <div className="flex justify-between items-center px-8 py-4">
+      <div className="mx-auto flex justify-between items-center px-4 py-4">
+        {/* Logo */}
         <Link href="/">
           <img
             src="/logo.svg"
@@ -34,61 +35,31 @@ const HeaderDesktop = () => {
             className="h-[70px]"
           />
         </Link>
-        <nav className="flex space-x-8 text-white font-medium text-lg">
-          <Link href="/search/default" className="flex border-4 border-blue-800 rounded-xl hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 p-2 items-center gap-x-2 transition-colors duration-300">
-            <DotLottieReact
-              src="/animations/buscar.json"
-              className="w-6 h-6"
-              autoplay
-              loop
-            />
-            BUSCA TU BATERÍA
-          </Link>
-          <Link href="/catalogo" className="flex border-4 border-blue-800 rounded-xl hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 p-2 items-center gap-x-2 transition-colors duration-300">
-            <DotLottieReact
-              src="/animations/catalogo.json"
-              className="w-6 h-6"
-              autoplay
-              loop
-            />
-            CATÁLOGO
-          </Link>
-          <Link href="/centros" className="flex border-4 border-blue-800 rounded-xl hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 p-2 items-center gap-x-2 transition-colors duration-300">
-            <DotLottieReact
-              src="/animations/marcador-de-posicion.json"
-              className="w-6 h-6"
-              autoplay
-              loop
-            />
-            UBICA TU SUCURSAL
-          </Link>
-          <Link href="/recomendaciones" className="flex border-4 border-blue-800 rounded-xl hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 p-2 items-center gap-x-2 transition-colors duration-300">
-            <DotLottieReact
-              src="/animations/garantia.json"
-              className="w-6 h-6"
-              autoplay
-              loop
-            />
-            EXPERIENCIA LTH
-          </Link>
-          <Link href="/garantias-y-ajustes" className="flex border-4 border-blue-800 rounded-xl hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 p-2 items-center gap-x-2 transition-colors duration-300">
-            <DotLottieReact
-              src="/animations/mesa-de-ayuda.json"
-              className="w-6 h-6"
-              autoplay
-              loop
-            />
-            SOPORTE
-          </Link>
-          <Link href="/nosotros" className="flex border-4 border-blue-800 rounded-xl hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 p-2 items-center gap-x-2 transition-colors duration-300">
-            <DotLottieReact
-              src="/animations/presentacion.json"
-              className="w-6 h-6"
-              autoplay
-              loop
-            />
-            ACERCA DE BEC
-          </Link>
+
+        {/* Navigation */}
+        <nav className="flex px-6 py-1 xl:px-8 xl:py-2 max-w-screen-2xl space-x-2 xl:space-x-4 text-white font-medium text-sm xl:text-md">
+          {[
+            { href: "/search/default", label: "BUSCA TU BATERÍA", animation: "/animations/buscar.json" },
+            { href: "/catalogo", label: "CATÁLOGO", animation: "/animations/catalogo.json" },
+            { href: "/centros", label: "UBICA TU SUCURSAL", animation: "/animations/marcador-de-posicion.json" },
+            { href: "/recomendaciones", label: "EXPERIENCIA LTH", animation: "/animations/garantia.json" },
+            { href: "/garantias-y-ajustes", label: "SOPORTE", animation: "/animations/mesa-de-ayuda.json" },
+            { href: "/nosotros", label: "ACERCA DE BEC", animation: "/animations/presentacion.json" },
+          ].map(({ href, label, animation }) => (
+            <Link
+              key={href}
+              href={href}
+              className="flex mx-auto items-center gap-x-0 xl:gap-x-2 border-2 border-blue-700 rounded-md hover:bg-blue-700 hover:text-white px-0 py-1 xl:px-2 xl:py-2 transition-all duration-300"
+            >
+              <DotLottieReact
+                src={animation}
+                className="w-4 h-4 lg:w-6 lg:h-6 xl:w-7 xl:h-7"
+                autoplay
+                loop
+              />
+              <span>{label}</span>
+            </Link>
+          ))}
         </nav>
       </div>
     </header>

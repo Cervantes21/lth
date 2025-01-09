@@ -66,7 +66,7 @@ export default function ParagraphFooter() {
                 </div>
                 <div className="space-y-4">
                     <h2 className="text-xl font-semibold text-blue-lth underline text-center">
-                        {""}<Link href="/agm">NUESTRAS MARCAS</Link>
+                        {""}<Link href="/catalogo">NUESTRAS MARCAS</Link>
                     </h2>
                     <p className="leading-relaxed">
                         <strong className="font-extrabold text-blue-lth">BATERÍA EN CASA</strong> cuenta con amplio surtido de baterías automotrices y te ofrecemos las mejores marcas de acumuladores del mercado. Si tienes un vehículo híbrido o eléctrico, contamos con la batería de última generación: <strong className="text-blue-lth">LTH Protect</strong>, que protege los sistemas de seguridad y respalda en caso de falla en la batería de tracción.
@@ -87,7 +87,7 @@ export default function ParagraphFooter() {
                         ¡Acudimos el mismo día a instalar tu Batería LTH sin costo!
                     </h2>
                     <p className="leading-relaxed text-right p-2 rounded-lg">
-                        Batería en casa es un servicio proporcionado por un <u className="text-blue-lth">Distribuidor LTH</u>, y tiene el respaldo del <Link href="https://www.clarios.com/privacy-policy"><strong className="text-blue-lth underline">fabricante Clarios.</strong></Link>
+                        Batería en casa es un servicio proporcionado por un <u className="text-blue-lth">{""}<Link href="/garantias-y-ajustes">Distribuidor LTH</Link></u>.
                     </p>
                 </div>
             </div>

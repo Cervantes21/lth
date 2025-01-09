@@ -2,7 +2,7 @@ import { Cards } from "@/components/Cards";
 import { Location } from "@/components/Location";
 import { MoreInfoCard } from "@/components/MoreInfoCard";
 import { Whatsapp } from "@/components/Whatsapp";
-
+import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
@@ -11,6 +11,7 @@ export default function Home() {
         <Location />
       </div>
       <Cards page="location" />
+      <Footer />
       <Whatsapp />
     </>
   );

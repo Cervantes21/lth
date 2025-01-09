@@ -73,7 +73,7 @@ export default function Footer() {
                             </li>
                         ))}
                         <li className="mt-4">
-                            <Link href="/https://www.clarios.com/privacy-policy" className="hover:underline">
+                            <Link href="/garantias-y-ajustes" className="hover:underline">
                                 Aviso de Privacidad
                             </Link>
                         </li>

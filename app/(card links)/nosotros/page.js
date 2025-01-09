@@ -1,8 +1,8 @@
 import { Cards } from "@/components/Cards";
 import { MoreInfoCard } from "@/components/MoreInfoCard";
 import { Whatsapp } from "@/components/Whatsapp";
+import Footer from "@/components/Footer"
 import Link from "next/link";
-
 export default function Home() {
     return (
         <>
@@ -85,6 +85,7 @@ export default function Home() {
             </div>
                 
             <Cards page="nosotros" />
+            <Footer />
             <Whatsapp />
         </>
     );

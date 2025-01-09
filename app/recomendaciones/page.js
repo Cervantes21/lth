@@ -2,7 +2,7 @@ import { Cards } from "@/components/Cards";
 import { Whatsapp } from "@/components/Whatsapp";
 import Link from "next/link";
 import ParagraphFooter from "@/components/ParagraphFooter";
-
+import Footer from "@/components/Footer"
 export default function Home() {
     return (
         <>
@@ -35,7 +35,8 @@ export default function Home() {
 
             {/* Componente de texto estilizado */}
             <ParagraphFooter />
-
+            {/* Componente de pie de página */}
+            <Footer />
             {/* Botón de WhatsApp */}
             <Whatsapp />
         </>
