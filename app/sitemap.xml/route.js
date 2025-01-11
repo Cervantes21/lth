@@ -2,28 +2,29 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  // Lista todas las rutas que quieres *potencialmente* incluir.
+
   const pages = [
-    '',                     // Representa la página principal (home -> "/")
+    '',               // Representa la página principal (home -> "/")
     'catalogo',
-    'recomendaciones',
     'centros',
-    'garantias-y-ajustes',
+    'evolution',
+    'hitec',
+    'lth',
+    'moto',
+    'nosotros',
+    'protect',
+    'recomendaciones',
+    'taxi',
   ];
 
-  // Filtra para excluir "garantias-y-ajustes"
-  const filteredPages = pages.filter((page) => page !== 'garantias-y-ajustes');
-
-  // Ajusta el dominio base a tu dominio real
   const baseUrl = 'https://bateriaencasa.com';
 
-  // Generamos el contenido XML
+  // Generamos el contenido XML del sitemap
   const sitemap = `
     <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${filteredPages
+      ${pages
         .map((page) => {
-          // Si page es '', corresponde a la home. Caso contrario, /page
           const route = page ? `/${page}` : '';
           return `
             <url>
@@ -42,4 +43,3 @@ export async function GET() {
     },
   });
 }
-
