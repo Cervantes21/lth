@@ -76,7 +76,7 @@ export const MoreInfoCard = ({ page, text }) => {
         </svg>
       </Link>
 
-      <div className="w-full px-5">
+      <div className="w-full px-5 mt-8 lg:mt-0">
         <div className="more-info-card rounded-xl min-h-60 lg:h-[500px]">
           <div className=" h-20 w-20 flex rounded-full mx-auto -translate-y-10 bg-white">
             {cards.map((card) => {

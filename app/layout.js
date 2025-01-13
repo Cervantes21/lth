@@ -1,15 +1,13 @@
-// app/layout.js
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import HeaderDesktop from "@/components/HeaderDesktop";
-// Importa el componente Script
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Batería en casa",
+  title: "Batería en Casa",
   description:
     "Llevamos la batería a tu casa en cualquier momento en tan solo 90 minutos en Todo Morelos.",
 };
@@ -17,19 +15,33 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>Batería en Casa</title>
+        <meta name="description" content={metadata.description} />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.bateriaencasa.com" />
+        <meta property="og:title" content="Batería en Casa" />
+        <meta property="og:description" content="Llevamos la batería a tu casa en cualquier momento en tan solo 90 minutos en Todo Morelos." />
+        <meta property="og:image" content="https://www.bateriaencasa.com/og-image.png" />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Batería en Casa" />
+        <meta name="twitter:description" content="Llevamos la batería a tu casa en cualquier momento en tan solo 90 minutos en Todo Morelos." />
+        <meta name="twitter:image" content="https://www.bateriaencasa.com/og-image.png" />
+      </head>
       <body className={inter.className}>
-        {/* Script de Google Tag Manager: primero la librería */}
+        {/* Script de Google Tag Manager */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-18GMZTN95Y"
           strategy="afterInteractive"
         />
-        
-        {/* Script de configuración de GA */}
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){ dataLayer.push(arguments); }
-            
             gtag('js', new Date());
             gtag('config', 'G-18GMZTN95Y', {
               page_path: window.location.pathname,
@@ -37,7 +49,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        {/* Tus componentes de cabecera */}
+        {/* Componentes de cabecera */}
         <Header />
         <HeaderDesktop />
 

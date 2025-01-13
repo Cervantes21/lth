@@ -35,7 +35,7 @@ export default function Home() {
         </Link>
       </div>
       <p className="mb-16 px-4 text-center text-lg font-light sm:font-normal lg:text-xl lg:max-w-4xl lg:mx-auto">
-        Trabajamos con las mejores marcas de baterias en México:{" "}
+        Somos una Marca Registrada.® Nuestra empresa trabaja con las mejores marcas de baterias en México:{" "}
         <strong className="text-blue-lth">LTH®</strong>,{" "}
         <strong className="text-blue-lth"> LTH® PROTECT</strong>,{" "}
         <strong className="text-blue-lth"> LTH® AGM EVOLUTION</strong>,{" "}

@@ -2,29 +2,74 @@ import Link from "next/link";
 
 export default function ParagraphFooter() {
     return (
-        <div className="p-6 lg:p-12 bg-white rounded-lg shadow-lg">
-            <h1 className="text-2xl lg:text-4xl font-bold text-blue-lth text-center mb-8">
+        <div className="p-8 lg:p-12 bg-white rounded-lg shadow-lg">
+            <h1 className="text-2xl lg:text-4xl font-bold text-blue-lth underline text-center mb-8">
                 Conócenos...
             </h1>
-            <div className=" p-3 mt-5 md:mx-auto lg:w-full lg:max-w-4xl lg:text-xl">
-                <p className="mb-10 flex items-center gap-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
-                        <g fill="none" stroke="#D3172E" strokeLinejoin="round" strokeWidth="4">
-                            <path d="M24 44a19.937 19.937 0 0 0 14.142-5.858A19.937 19.937 0 0 0 44 24a19.938 19.938 0 0 0-5.858-14.142A19.937 19.937 0 0 0 24 4A19.938 19.938 0 0 0 9.858 9.858A19.938 19.938 0 0 0 4 24a19.937 19.937 0 0 0 5.858 14.142A19.938 19.938 0 0 0 24 44Z" />
-                            <path strokeLinecap="round" d="m16 24l6 6l12-12" />
-                        </g>
-                    </svg>
-                    <span>Entrega en menos de 90 minutos.</span>
-                </p>
-                <p className="mb-10 flex items-center gap-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
-                        <g fill="none" stroke="#D3172E" strokeLinejoin="round" strokeWidth="4">
-                            <path d="M24 44a19.937 19.937 0 0 0 14.142-5.858A19.937 19.937 0 0 0 44 24a19.938 19.938 0 0 0-5.858-14.142A19.937 19.937 0 0 0 24 4A19.938 19.938 0 0 0 9.858 9.858A19.938 19.938 0 0 0 4 24a19.937 19.937 0 0 0 5.858 14.142A19.938 19.938 0 0 0 24 44Z" />
-                            <path strokeLinecap="round" d="m16 24l6 6l12-12" />
-                        </g>
-                    </svg>
-                    <span>Diagnóstico profesional.</span>
-                </p>
+
+            <p className="mb-16 px-4 text-center text-lg font-light sm:font-normal lg:text-xl lg:max-w-4xl lg:mx-auto">
+              Somos una Marca Registrada.® Nuestra empresa trabaja con las mejores marcas de baterias en México:{" "}
+              <strong className="text-blue-lth">LTH®</strong>,{" "}
+              <strong className="text-blue-lth"> LTH® PROTECT</strong>,{" "}
+              <strong className="text-blue-lth"> LTH® AGM EVOLUTION</strong>,{" "}
+              <strong className="text-blue-lth"> HITEC®</strong>,{" "}
+              <strong className="text-blue-lth"> FULLPOWER®</strong>,{" "}
+              <strong className="text-blue-lth"> ÁMERICA®</strong>, y más.
+            </p>
+
+            <div className="p-5 mt-5 md:mx-auto lg:w-full lg:max-w-4xl lg:text-xl">
+              <p className="mb-10 flex items-center gap-x-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 48 48"
+                >
+                  <g fill="none" stroke="#d3172e" strokeLinejoin="round" strokeWidth="4">
+                    <path d="M24 44a19.937 19.937 0 0 0 14.142-5.858A19.937 19.937 0 0 0 44 24a19.938 19.938 0 0 0-5.858-14.142A19.937 19.937 0 0 0 24 4A19.938 19.938 0 0 0 9.858 9.858A19.938 19.938 0 0 0 4 24a19.937 19.937 0 0 0 5.858 14.142A19.938 19.938 0 0 0 24 44Z" />
+                    <path strokeLinecap="round" d="m16 24l6 6l12-12" />
+                  </g>
+                </svg>
+                <span>Entrega en menos de 90 minutos.</span>
+              </p>
+              <p className="mb-10 flex items-center gap-x-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 48 48"
+                >
+                  <g fill="none" stroke="#d3172e" strokeLinejoin="round" strokeWidth="4">
+                    <path d="M24 44a19.937 19.937 0 0 0 14.142-5.858A19.937 19.937 0 0 0 44 24a19.938 19.938 0 0 0-5.858-14.142A19.937 19.937 0 0 0 24 4A19.938 19.938 0 0 0 9.858 9.858A19.938 19.938 0 0 0 4 24a19.937 19.937 0 0 0 5.858 14.142A19.938 19.938 0 0 0 24 44Z" />
+                    <path strokeLinecap="round" d="m16 24l6 6l12-12" />
+                  </g>
+                </svg>
+                <span>Diagnóstico profesional.</span>
+              </p>
+              <p className="flex items-center gap-x-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 48 48"
+                >
+                  <g fill="none" stroke="#d3172e" strokeLinejoin="round" strokeWidth="4">
+                    <path d="M24 44a19.937 19.937 0 0 0 14.142-5.858A19.937 19.937 0 0 0 44 24a19.938 19.938 0 0 0-5.858-14.142A19.937 19.937 0 0 0 24 4A19.938 19.938 0 0 0 9.858 9.858A19.938 19.938 0 0 0 4 24a19.937 19.937 0 0 0 5.858 14.142A19.938 19.938 0 0 0 24 44Z" />
+                    <path strokeLinecap="round" d="m16 24l6 6l12-12" />
+                  </g>
+                </svg>
+                <span>Instalación eficiente:</span>
+              </p>
+              <ul className="pl-10 list-disc space-y-2">
+                <li>Todas nuestras baterías tienen garantía y respaldo de la marca LTH.</li>
+                <li>Realizamos el diagnóstico del sistema eléctrico de tu vehículo.</li>
+                <li>Nuestro servicio es profesional y eficiente.</li>
+                <li>
+                  Puedes pagar con tarjeta, efectivo o transferencia al término de la instalación
+                  y/o diagnóstico.
+                </li>
+              </ul>
+            <p className="mt-10 italic text-gray-600">*Pregunta por métodos alternos de pago.</p>
             </div>
             <div className="space-y-8">
                 <p className="leading-relaxed ">

@@ -16,6 +16,7 @@ export const CatalogoData = ({ page }) => {
       } else {
         setItemsPerPage(4); // Si es menor o igual a 1024px, mostrar 4 elementos por página
       }
+      setCurrentPage(0); // Reinicia la paginación
     };
 
     // Ejecutar la función una vez al montar el componente para establecer itemsPerPage inicial
@@ -74,7 +75,7 @@ export const CatalogoData = ({ page }) => {
             {/* Mostrar imagen del producto */}
             <div className="min-h-40 overflow-hidden flex items-center">
               <Image
-                src={`/${producto.IMAGEN}`}
+                src={`${producto.IMAGEN.startsWith('/') ? '' : '/'}${producto.IMAGEN}`}
                 alt={replacePipeWithSlash(producto.BCI)}
                 width={600}
                 height={300}

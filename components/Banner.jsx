@@ -150,7 +150,7 @@ export default function Banner() {
                     width={40}
                     height={40}
                   />
-                  <span>Auxiliar</span>
+                  <span>LTH® EVOLUTION AUXILIAR</span>
                 </a>
               </li>
               <li>
@@ -164,7 +164,7 @@ export default function Banner() {
                     width={40}
                     height={40}
                   />
-                  <span>Protect</span>
+                  <span>LTH® PROTECT</span>
                 </a>
               </li>
               <li>
@@ -178,7 +178,7 @@ export default function Banner() {
                     width={40}
                     height={40}
                   />
-                  <span>Hi Tec</span>
+                  <span>LTH® HI-TEC</span>
                 </a>
               </li>
               <li>
@@ -192,7 +192,7 @@ export default function Banner() {
                     width={40}
                     height={40}
                   />
-                  <span>Estandar</span>
+                  <span>LTH® ESTANDAR</span>
                 </a>
               </li>
               <li>
@@ -206,7 +206,7 @@ export default function Banner() {
                     width={40}
                     height={40}
                   />
-                  <span>LTH TAXI</span>
+                  <span>LTH® TAXI</span>
                 </a>
               </li>
             </ul>

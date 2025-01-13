@@ -73,7 +73,7 @@ export default function Bateria() {
         <>
             {bateria ?
                 <>
-                    <div className="bg-grey-lth pt-5 pb-5">
+                    <div className="bg-grey-lth mt-20 lg:mt-0 pt-5 pb-5">
                         <Link href={lastUrl}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ export default function Bateria() {
                                         "Más de 85 años siendo la marca líder, la más recomendada por los consumidores, podemos ofrecerte el RESPALDO que ninguna otra puede."</p>
                                     <h3 className="uppercase text-blue-lth font-semibold text-xl text-center lg:text-3xl">Beneficios</h3>
                                     <ul className=" mt-5 flex flex-col w-fit mx-auto px-5 lg:text-lg">
-                                        <li className="list-disc">48 MESES de garantía.</li>
+                                        <li className="list-disc">36 MESES de garantía.</li>
                                         <li className="list-disc">12 MESES de reemplazo sin costo.</li>
                                         <li className="list-disc">Cobertura del 99% de las aplicaciones vehiculares.</li>
                                         <li className="list-disc">Potencia igual a las baterías de equipo original.</li>
@@ -152,7 +152,7 @@ export default function Bateria() {
                                     </p>
                                     <h3 className="uppercase text-blue-lth font-semibold text-xl text-center lg:text-3xl">Beneficios</h3>
                                     <ul className=" mt-5 flex flex-col w-fit mx-auto px-5 lg:text-lg">
-                                        <li className="list-disc">60 MESES de garantía.</li>
+                                        <li className="list-disc">48 MESES de garantía.</li>
                                         <li className="list-disc">12 MESES de reemplazo sin costo.</li>
                                         <li className="list-disc">Mayor potencia y desempeño.</li>
                                         <li className="list-disc">Tecnología de calidad premium.</li>
@@ -169,7 +169,7 @@ export default function Bateria() {
                                     </p>
                                     <h3 className="uppercase text-blue-lth font-semibold text-xl text-center lg:text-3xl">Beneficios</h3>
                                     <ul className=" mt-5 flex flex-col w-fit mx-auto px-5 lg:text-lg">
-                                        <li className="list-disc">72 MESES de garantía.</li>
+                                        <li className="list-disc">48 MESES de garantía.</li>
                                         <li className="list-disc">18 MESES de reemplazo sin costo.</li>
                                         <li className="list-disc">Accesorios equipados.</li>
                                         <li className="list-disc">Alta demanda eléctrica en vehículos premium.</li>
@@ -199,12 +199,29 @@ export default function Bateria() {
                             bateria.MARCA === "LTH TAXI" ?
                                 <>
                                     <p className="mt-5 mb-10 w-11/12 mx-auto text-center text-lg font-normal lg:text-xl lg:max-w-[1300px] italic">
-                                        "Es una batería de alto desempeño, con tecnología AGM. Optimizada para vehículos híbridos y eléctricos. Protege los sistemas de seguridad en caso de falla de la batería de tracción y respalda funciones de confort de tu vehículo."
+                                        "Acumuladores LTH® de ALTA DURACIÓN, diseñado especialmente para los profesionales del volante."
                                     </p>
                                     <h3 className="uppercase text-blue-lth font-semibold text-xl text-center lg:text-3xl">Beneficios</h3>
                                     <ul className=" mt-5 flex flex-col w-fit mx-auto px-5 lg:text-lg">
                                         <li className="list-disc">30 MESES de garantía.</li>
                                         <li className="list-disc">6 MESES de reemplazo sin costo.</li>
+                                        <li className="list-disc">Accesorios equipados.</li>
+                                        <li className="list-disc">Alimenta funciones como la alarma, iluminación y actualizaciones inalámbricas, aún con el vehículo apagado.</li>
+                                        <li className="list-disc">Potencia igual a las baterías de equipo original.</li>
+                                        <li className="list-disc">Libre de mantenimiento</li>
+                                    </ul>
+                                </> : ""
+                        }
+                        {
+                            bateria.MARCA === "LTH EVOLUTION AUX" ?
+                                <>
+                                    <p className="mt-5 mb-10 w-11/12 mx-auto text-center text-lg font-normal lg:text-xl lg:max-w-[1300px] italic">
+                                        "Batería secundaria LTH® con tecnología AGM. Diseñada para vehículos Start-Stop. Funciona como soporte de emergencia."
+                                    </p>
+                                    <h3 className="uppercase text-blue-lth font-semibold text-xl text-center lg:text-3xl">Beneficios</h3>
+                                    <ul className=" mt-5 flex flex-col w-fit mx-auto px-5 lg:text-lg">
+                                        <li className="list-disc">12 MESES de garantía.</li>
+                                        <li className="list-disc">12 MESES de reemplazo sin costo.</li>
                                         <li className="list-disc">Accesorios equipados.</li>
                                         <li className="list-disc">Alimenta funciones como la alarma, iluminación y actualizaciones inalámbricas, aún con el vehículo apagado.</li>
                                         <li className="list-disc">Potencia igual a las baterías de equipo original.</li>
