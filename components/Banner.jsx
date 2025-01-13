@@ -136,7 +136,7 @@ export default function Banner() {
                     width={40}
                     height={40}
                   />
-                  <span>Evolution</span>
+                  <span>LTH® EVOLUTION</span>
                 </a>
               </li>
               <li>
@@ -150,7 +150,7 @@ export default function Banner() {
                     width={40}
                     height={40}
                   />
-                  <span>LTH® EVOLUTION AUXILIAR</span>
+                  <span>LTH® AUXILIAR</span>
                 </a>
               </li>
               <li>
