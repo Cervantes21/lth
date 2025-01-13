@@ -18,19 +18,32 @@ export default function RootLayout({ children }) {
       <head>
         <title>Batería en Casa</title>
         <meta name="description" content={metadata.description} />
-        
+
         {/* Open Graph Meta Tags */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.bateriaencasa.com" />
         <meta property="og:title" content="Batería en Casa" />
-        <meta property="og:description" content="Llevamos la batería a tu casa en cualquier momento en tan solo 90 minutos en Todo Morelos." />
+        <meta
+          property="og:description"
+          content="Llevamos la batería a tu casa en cualquier momento en tan solo 90 minutos en Todo Morelos."
+        />
         <meta property="og:image" content="https://www.bateriaencasa.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Batería en Casa" />
-        <meta name="twitter:description" content="Llevamos la batería a tu casa en cualquier momento en tan solo 90 minutos en Todo Morelos." />
+        <meta
+          name="twitter:description"
+          content="Llevamos la batería a tu casa en cualquier momento en tan solo 90 minutos en Todo Morelos."
+        />
         <meta name="twitter:image" content="https://www.bateriaencasa.com/og-image.png" />
+
+        {/* General Meta Tags */}
+        <meta name="author" content="Batería en Casa Team" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="UTF-8" />
       </head>
       <body className={inter.className}>
         {/* Script de Google Tag Manager */}
