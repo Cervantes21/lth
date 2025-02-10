@@ -7,12 +7,12 @@ const productos = [
     "CR":"100 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":244.0,
     "ALTO":207.0,
     "ANCHO":174.0,
-    "IMAGEN":"HITEC/h-22f-550-front-nac.png"
+    "IMAGEN":"HITEC/h-22f-550-front-nac.webp"
   },
   {
     "BCI":"H-24-600",
@@ -22,12 +22,12 @@ const productos = [
     "CR":"110 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":278.0,
     "ALTO":221.0,
     "ANCHO":174.0,
-    "IMAGEN":"HITEC/h-24-600-front.png"
+    "IMAGEN":"HITEC/h-24-600-front.webp"
   },
   {
     "BCI":"H-24R-600",
@@ -37,12 +37,12 @@ const productos = [
     "CR":"110 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":278.0,
     "ALTO":221.0,
     "ANCHO":174.0,
-    "IMAGEN":"HITEC/h-24r-600-front-nac.png"
+    "IMAGEN":"HITEC/h-24r-600-front-nac.webp"
   },
   {
     "BCI":"H-26R-500",
@@ -52,12 +52,12 @@ const productos = [
     "CR":"85 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":220.0,
     "ALTO":200.0,
     "ANCHO":172.0,
-    "IMAGEN":"HITEC/h-26r-500-front-nac.png"
+    "IMAGEN":"HITEC/h-26r-500-front-nac.webp"
   },
   {
     "BCI":"H-27-750",
@@ -67,12 +67,12 @@ const productos = [
     "CR":"160 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":324.0,
     "ALTO":223.0,
     "ANCHO":174.0,
-    "IMAGEN":"HITEC/h-27-810-front-nacional.png"
+    "IMAGEN":"HITEC/h-27-810-front-nacional.webp"
   },
   {
     "BCI":"H-27F-810.",
@@ -82,12 +82,12 @@ const productos = [
     "CR":"160 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":324.0,
     "ALTO":223.0,
     "ANCHO":174.0,
-    "IMAGEN":"HITEC/h-27f-810-front-nacional.png"
+    "IMAGEN":"HITEC/h-27f-810-front-nacional.webp"
   },
   {
     "BCI":"H-34/78-800",
@@ -97,12 +97,12 @@ const productos = [
     "CR":"115 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":278.0,
     "ALTO":203.0,
     "ANCHO":186.0,
-    "IMAGEN":"HITEC/h-34-78-800-front-nac.png"
+    "IMAGEN":"HITEC/h-34-78-800-front-nac.webp"
   },
   {
     "BCI":"H-34-650",
@@ -112,12 +112,12 @@ const productos = [
     "CR":"110 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":278.13,
     "ALTO":196.95,
     "ANCHO":174.27,
-    "IMAGEN":"HITEC/h-34-650-front-nacional.png"
+    "IMAGEN":"HITEC/h-34-650-front-nacional.webp"
   },
   {
     "BCI":"H-35-585",
@@ -127,12 +127,12 @@ const productos = [
     "CR":"100 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":224.0,
     "ALTO":224.0,
     "ANCHO":174.0,
-    "IMAGEN":"HITEC/h-35-585-front-nac.png"
+    "IMAGEN":"HITEC/h-35-585-front-nac.webp"
   },
   {
     "BCI":"H-41-750",
@@ -142,12 +142,12 @@ const productos = [
     "CR":"130 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":297.0,
     "ALTO":174.0,
     "ANCHO":175.0,
-    "IMAGEN":"HITEC/h-41-750-front.png"
+    "IMAGEN":"HITEC/h-41-750-front.webp"
   },
   {
     "BCI":"H-42-550",
@@ -157,12 +157,12 @@ const productos = [
     "CR":"95 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":241.0,
     "ALTO":175.0,
     "ANCHO":174.0,
-    "IMAGEN":"HITEC/h-42-550-front-nac.png"
+    "IMAGEN":"HITEC/h-42-550-front-nac.webp"
   },
   {
     "BCI":"H-47(LN2)-600",
@@ -172,12 +172,12 @@ const productos = [
     "CR":"102 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":241.0,
     "ALTO":189.0,
     "ANCHO":174.0,
-    "IMAGEN":"HITEC/h-47-ln2-600-front-nac.png"
+    "IMAGEN":"HITEC/h-47-ln2-600-front-nac.webp"
   },
   {
     "BCI":"H-48/91(LN3)-730",
@@ -187,12 +187,12 @@ const productos = [
     "CR":"115 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":277.0,
     "ALTO":190.0,
     "ANCHO":174.0,
-    "IMAGEN":"HITEC/h-48_91ln3-730-front-nac.png"
+    "IMAGEN":"HITEC/h-48_91ln3-730-front-nac.webp"
   },
   {
     "BCI":"H-49(LN5)-850",
@@ -202,12 +202,12 @@ const productos = [
     "CR":"150 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":352.0,
     "ALTO":190.0,
     "ANCHO":174.0,
-    "IMAGEN":"HITEC/h-49ln5-850-front.png"
+    "IMAGEN":"HITEC/h-49ln5-850-front.webp"
   },
   {
     "BCI":"H-58-650",
@@ -217,12 +217,12 @@ const productos = [
     "CR":"110 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":253.0,
     "ALTO":177.0,
     "ANCHO":183.0,
-    "IMAGEN":"HITEC/h-58-650-front.png"
+    "IMAGEN":"HITEC/h-58-650-front.webp"
   },
   {
     "BCI":"H-65-850",
@@ -232,12 +232,12 @@ const productos = [
     "CR":"150 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":305.0,
     "ALTO":189.0,
     "ANCHO":190.0,
-    "IMAGEN":"HITEC/h-65-850-front.png"
+    "IMAGEN":"HITEC/h-65-850-front.webp"
   },
   {
     "BCI":"H-75/86-700",
@@ -247,12 +247,12 @@ const productos = [
     "CR":"100 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":245.0,
     "ALTO":203.0,
     "ANCHO":186.0,
-    "IMAGEN":"HITEC/h-75_86-700-front.png"
+    "IMAGEN":"HITEC/h-75_86-700-front.webp"
   },
   {
     "BCI":"H-75-650",
@@ -262,12 +262,12 @@ const productos = [
     "CR":"95 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":245.0,
     "ALTO":186.0,
     "ANCHO":184.0,
-    "IMAGEN":"HITEC/h-75-650-front.png"
+    "IMAGEN":"HITEC/h-75-650-front.webp"
   },
   {
     "BCI":"H-78-800",
@@ -277,12 +277,12 @@ const productos = [
     "CR":"110 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":278.0,
     "ALTO":184.0,
     "ANCHO":170.0,
-    "IMAGEN":"HITEC/h-78-800-front.png"
+    "IMAGEN":"HITEC/h-78-800-front.webp"
   },
   {
     "BCI":"H-99(LBN1)-470",
@@ -292,12 +292,12 @@ const productos = [
     "CR":"65 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":206.0,
     "ALTO":174.0,
     "ANCHO":174.0,
-    "IMAGEN":"HITEC/h-99(lbn1)-470-front.png"
+    "IMAGEN":"HITEC/h-99(lbn1)-470-front.webp"
   },
   {
     "BCI":"L-22F-450",
@@ -307,12 +307,12 @@ const productos = [
     "CR":"75 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":244.0,
     "ALTO":207.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-22f-450-front-nac.png"
+    "IMAGEN":"LTH/l-22f-450-front-nac.webp"
   },
   {
     "BCI":"L-24-420",
@@ -322,12 +322,12 @@ const productos = [
     "CR":"70 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":278.0,
     "ALTO":220.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-24-420-front.png"
+    "IMAGEN":"LTH/l-24-420-front.webp"
   },
   {
     "BCI":"L-24-530",
@@ -337,12 +337,12 @@ const productos = [
     "CR":"90 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":278.0,
     "ALTO":220.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-24-530-front-nac.png"
+    "IMAGEN":"LTH/l-24-530-front-nac.webp"
   },
   {
     "BCI":"L-24R-530",
@@ -352,12 +352,12 @@ const productos = [
     "CR":"90 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":278.0,
     "ALTO":220.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-24r-530-front-nac.png"
+    "IMAGEN":"LTH/l-24r-530-front-nac.webp"
   },
   {
     "BCI":"L-26R-500",
@@ -367,12 +367,12 @@ const productos = [
     "CR":"85 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":220.0,
     "ALTO":200.0,
     "ANCHO":172.0,
-    "IMAGEN":"LTH/l-26r-500-front-nac.png"
+    "IMAGEN":"LTH/l-26r-500-front-nac.webp"
   },
   {
     "BCI":"L-27-700",
@@ -382,12 +382,12 @@ const productos = [
     "CR":"160 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":324.0,
     "ALTO":223.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-27-700-front-nac.png"
+    "IMAGEN":"LTH/l-27-700-front-nac.webp"
   },
   {
     "BCI":"L-27F-520",
@@ -397,27 +397,12 @@ const productos = [
     "CR":"102 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":324.0,
     "ALTO":223.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-27f-520-front-nac.png"
-  },
-  {
-    "BCI":"L-27F-700",
-    "VOLTAJE":"12 Voltios",
-    "CA":"875 Amp",
-    "CCA":"700 Amp",
-    "CR":"160 Minutes",
-    "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
-    "MARCA":"LTH",
-    "GARANTIA":48,
-    "REEMPLAZOS_COSTO":12,
-    "LARGO":324.0,
-    "ALTO":223.0,
-    "ANCHO":174.0,
-    "IMAGEN":"LTH/l-27f-700-front-nac.png"
+    "IMAGEN":"LTH/l-27f-520-front-nac.webp"
   },
   {
     "BCI":"L-34/78-750",
@@ -427,12 +412,12 @@ const productos = [
     "CR":"115 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":324.0,
     "ALTO":223.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-34-78-750-front-nac.png"
+    "IMAGEN":"LTH/l-34-78-750-front-nac.webp"
   },
   {
     "BCI":"L-34-600",
@@ -442,12 +427,12 @@ const productos = [
     "CR":"110 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":278.0,
     "ALTO":197.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-34-600-front-nac.png"
+    "IMAGEN":"LTH/l-34-600-front-nac.webp"
   },
   {
     "BCI":"L-35-575",
@@ -457,12 +442,12 @@ const productos = [
     "CR":"100 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":245.0,
     "ALTO":223.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-35-575-front-nac.png"
+    "IMAGEN":"LTH/l-35-575-front-nac.webp"
   },
   {
     "BCI":"L-41-650",
@@ -472,12 +457,12 @@ const productos = [
     "CR":"120 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":295.0,
     "ALTO":174.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-41-650-front-nac.png"
+    "IMAGEN":"LTH/l-41-650-front-nac.webp"
   },
   {
     "BCI":"L-42-400",
@@ -487,12 +472,12 @@ const productos = [
     "CR":"70 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":241.0,
     "ALTO":175.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-42-400-front-nac.png"
+    "IMAGEN":"LTH/l-42-400-front-nac.webp"
   },
   {
     "BCI":"L-42-500",
@@ -502,12 +487,12 @@ const productos = [
     "CR":"90 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":241.0,
     "ALTO":175.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-42-500-front-nac.png"
+    "IMAGEN":"LTH/l-42-500-front-nac.webp"
   },
   {
     "BCI":"L-42R-500",
@@ -517,12 +502,12 @@ const productos = [
     "CR":"90 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":241.0,
     "ALTO":175.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-42r-500-front-nac.png"
+    "IMAGEN":"LTH/l-42r-500-front-nac.webp"
   },
   {
     "BCI":"L-44B19-335",
@@ -532,12 +517,12 @@ const productos = [
     "CR":"55 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":187.0,
     "ALTO":221.0,
     "ANCHO":127.0,
-    "IMAGEN":"LTH/l-44b19-335-front-nac.png"
+    "IMAGEN":"LTH/l-44b19-335-front-nac.webp"
   },
   {
     "BCI":"L-47(LN2)-550",
@@ -547,27 +532,12 @@ const productos = [
     "CR":"100 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":241.0,
     "ALTO":189.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-47-ln2-550-front-nac.png"
-  },
-  {
-    "BCI":"L-48/91(LN3)-615",
-    "VOLTAJE":"12 Voltios",
-    "CA":"768 Amp",
-    "CCA":"615 Amp",
-    "CR":"95 Minutes",
-    "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
-    "MARCA":"LTH",
-    "GARANTIA":48,
-    "REEMPLAZOS_COSTO":12,
-    "LARGO":277.0,
-    "ALTO":190.0,
-    "ANCHO":174.0,
-    "IMAGEN":"LTH/l-48-91ln3-615-front-nac.png"
+    "IMAGEN":"LTH/l-47-ln2-550-front-nac.webp"
   },
   {
     "BCI":"L-51-500",
@@ -577,12 +547,12 @@ const productos = [
     "CR":"85 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":236.0,
     "ALTO":220.0,
     "ANCHO":127.0,
-    "IMAGEN":"LTH/l-51-500-front-nac.png"
+    "IMAGEN":"LTH/l-51-500-front-nac.webp"
   },
   {
     "BCI":"L-51R-500",
@@ -592,12 +562,12 @@ const productos = [
     "CR":"85 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":236.0,
     "ALTO":220.0,
     "ANCHO":127.0,
-    "IMAGEN":"LTH/l-51r-500-front-nac.png"
+    "IMAGEN":"LTH/l-51r-500-front-nac.webp"
   },
   {
     "BCI":"L-58-575",
@@ -607,12 +577,12 @@ const productos = [
     "CR":"100 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":254.0,
     "ALTO":173.0,
     "ANCHO":183.0,
-    "IMAGEN":"LTH/l-58-575-front-nac.png"
+    "IMAGEN":"LTH/l-58-575-front-nac.webp"
   },
   {
     "BCI":"L-58R-575",
@@ -622,12 +592,12 @@ const productos = [
     "CR":"95 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":253.0,
     "ALTO":177.0,
     "ANCHO":183.0,
-    "IMAGEN":"LTH/l-58r-575-front.png"
+    "IMAGEN":"LTH/l-58r-575-front.webp"
   },
   {
     "BCI":"L-65-800",
@@ -637,12 +607,12 @@ const productos = [
     "CR":"150 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":305.0,
     "ALTO":189.0,
     "ANCHO":190.0,
-    "IMAGEN":"LTH/l-65-800-front.png"
+    "IMAGEN":"LTH/l-65-800-front.webp"
   },
   {
     "BCI":"L-75/86-650",
@@ -652,12 +622,12 @@ const productos = [
     "CR":"93 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":245.0,
     "ALTO":203.0,
     "ANCHO":186.0,
-    "IMAGEN":"LTH/l-75_86-650-front.png"
+    "IMAGEN":"LTH/l-75_86-650-front.webp"
   },
   {
     "BCI":"L-75-575",
@@ -667,12 +637,12 @@ const productos = [
     "CR":"105 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":245.0,
     "ALTO":185.0,
     "ANCHO":185.0,
-    "IMAGEN":"LTH/l-75-575-front-nac.png"
+    "IMAGEN":"LTH/l-75-575-front-nac.webp"
   },
   {
     "BCI":"L-94R-800",
@@ -682,12 +652,12 @@ const productos = [
     "CR":"140 Minutos",
     "POLARIDAD":"Postes al Frente Izq/Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":314.0,
     "ALTO":190.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-94r-800-front.png"
+    "IMAGEN":"LTH/l-94r-800-front.webp"
   },
   {
     "BCI":"L-99(LBN1)-400",
@@ -697,12 +667,12 @@ const productos = [
     "CR":"65 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":206.0,
     "ALTO":174.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-99(lbn1)-400-front.png"
+    "IMAGEN":"LTH/l-99(lbn1)-400-front.webp"
   },
   {
     "BCI":"L-NS40-320",
@@ -712,12 +682,12 @@ const productos = [
     "CR":"55 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":187.0,
     "ALTO":221.0,
     "ANCHO":140.0,
-    "IMAGEN":"LTH/l-ns40-320-front.png"
+    "IMAGEN":"LTH/l-ns40-320-front.webp"
   },
   {
     "BCI":"L-NS40L-340",
@@ -727,12 +697,12 @@ const productos = [
     "CR":"55 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":187.0,
     "ALTO":221.0,
     "ANCHO":127.0,
-    "IMAGEN":"LTH/l-ns40l-340-front.png"
+    "IMAGEN":"LTH/l-ns40l-340-front.webp"
   },
   {
     "BCI":"L-NS40Z-320",
@@ -742,12 +712,12 @@ const productos = [
     "CR":"55 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":187.0,
     "ALTO":221.0,
     "ANCHO":127.0,
-    "IMAGEN":"LTH/l-ns40z-320-front-nac.png"
+    "IMAGEN":"LTH/l-ns40z-320-front-nac.webp"
   },
   {
     "BCI":"L-24F-710 AGM",
@@ -757,12 +727,12 @@ const productos = [
     "CR":"120 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH EVOLUTION",
-    "GARANTIA":72,
-    "REEMPLAZOS_COSTO":24,
+    "GARANTIA":48,
+    "REEMPLAZOS_COSTO":18,
     "LARGO":278.13,
     "ALTO":219.26,
     "ANCHO":173.87,
-    "IMAGEN":"EVOLUTION/lth_evolution_auto_24f-710_agm_front_mx.png"
+    "IMAGEN":"EVOLUTION/lth_evolution_auto_24f-710_agm_front_mx.webp"
   },
   {
     "BCI":"L-31T-825 AGM",
@@ -772,12 +742,12 @@ const productos = [
     "CR":"200 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH EVOLUTION",
-    "GARANTIA":72,
-    "REEMPLAZOS_COSTO":24,
+    "GARANTIA":48,
+    "REEMPLAZOS_COSTO":18,
     "LARGO":330.0,
     "ALTO":237.0,
     "ANCHO":172.0,
-    "IMAGEN":"EVOLUTION/lth_evolution_sp_31t-825_agm_front_mx.png"
+    "IMAGEN":"EVOLUTION/lth_evolution_sp_31t-825_agm_front_mx.webp"
   },
   {
     "BCI":"L-35-650 AGM",
@@ -787,12 +757,12 @@ const productos = [
     "CR":"100 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH EVOLUTION",
-    "GARANTIA":72,
-    "REEMPLAZOS_COSTO":24,
+    "GARANTIA":48,
+    "REEMPLAZOS_COSTO":18,
     "LARGO":245.0,
     "ALTO":225.0,
     "ANCHO":171.0,
-    "IMAGEN":"EVOLUTION/lth_evolution_auto_35-650_agm_front_mx.png"
+    "IMAGEN":"EVOLUTION/lth_evolution_auto_35-650_agm_front_mx.webp"
   },
   {
     "BCI":"L-47-660 AGM",
@@ -802,12 +772,12 @@ const productos = [
     "CR":"100 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH EVOLUTION",
-    "GARANTIA":72,
-    "REEMPLAZOS_COSTO":24,
+    "GARANTIA":48,
+    "REEMPLAZOS_COSTO":18,
     "LARGO":241.0,
     "ALTO":189.0,
     "ANCHO":174.0,
-    "IMAGEN":"EVOLUTION/lth_evolution_auto_47-660_agm_front_mx.png"
+    "IMAGEN":"EVOLUTION/lth_evolution_auto_47-660_agm_front_mx.webp"
   },
   {
     "BCI":"L-49-900 AGM",
@@ -817,12 +787,12 @@ const productos = [
     "CR":"160 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH EVOLUTION",
-    "GARANTIA":72,
-    "REEMPLAZOS_COSTO":24,
+    "GARANTIA":48,
+    "REEMPLAZOS_COSTO":18,
     "LARGO":352.5,
     "ALTO":189.5,
     "ANCHO":174.8,
-    "IMAGEN":"EVOLUTION/lth_evolution_auto_49-900_agm_front_mx.png"
+    "IMAGEN":"EVOLUTION/lth_evolution_auto_49-900_agm_front_mx.webp"
   },
   {
     "BCI":"L-65-750 AGM",
@@ -832,12 +802,12 @@ const productos = [
     "CR":"120 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH EVOLUTION",
-    "GARANTIA":72,
-    "REEMPLAZOS_COSTO":24,
+    "GARANTIA":48,
+    "REEMPLAZOS_COSTO":18,
     "LARGO":305.31,
     "ALTO":188.24,
     "ANCHO":189.36,
-    "IMAGEN":"EVOLUTION/lth_evolution_auto_65-750_agm_front_mx.png"
+    "IMAGEN":"EVOLUTION/lth_evolution_auto_65-750_agm_front_mx.webp"
   },
   {
     "BCI":"L-94R(LN4)-850 AGM",
@@ -847,12 +817,12 @@ const productos = [
     "CR":"140 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH EVOLUTION",
-    "GARANTIA":72,
-    "REEMPLAZOS_COSTO":24,
+    "GARANTIA":48,
+    "REEMPLAZOS_COSTO":18,
     "LARGO":315.0,
     "ALTO":190.0,
     "ANCHO":175.0,
-    "IMAGEN":"EVOLUTION/lth_evolution_auto_94r-850_agm_front_mx.png"
+    "IMAGEN":"EVOLUTION/lth_evolution_auto_94r-850_agm_front_mx.webp"
   },
   {
     "BCI":"LTX-22F-600",
@@ -867,7 +837,7 @@ const productos = [
     "LARGO":244.0,
     "ALTO":207.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH TAXI/ltx-22f-600-front-nac.png"
+    "IMAGEN":"LTH TAXI/ltx-22f-600-front-nac.webp"
   },
   {
     "BCI":"LTX-35-600",
@@ -882,7 +852,7 @@ const productos = [
     "LARGO":224.0,
     "ALTO":224.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH TAXI/ltx-35-600-front-nac.png"
+    "IMAGEN":"LTH TAXI/ltx-35-600-front-nac.webp"
   },
   {
     "BCI":"LTX-47(LN2)-625",
@@ -897,7 +867,7 @@ const productos = [
     "LARGO":241.0,
     "ALTO":188.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH TAXI/ltx-47(ln2)-625-front-nac.png"
+    "IMAGEN":"LTH TAXI/ltx-47(ln2)-625-front-nac.webp"
   },
   {
     "BCI":"L-51R(B24L)-410 XEV",
@@ -912,7 +882,7 @@ const productos = [
     "LARGO":238.0,
     "ALTO":223.0,
     "ANCHO":129.0,
-    "IMAGEN":"PROTECT/179708-lth_protect_auto_51r_b24l_xev_front.png"
+    "IMAGEN":"PROTECT/179708-lth_protect_auto_51r_b24l_xev_front.webp"
   },
   {
     "BCI":"L-52JIS-410 XEV",
@@ -927,7 +897,7 @@ const productos = [
     "LARGO":238.0,
     "ALTO":223.0,
     "ANCHO":129.0,
-    "IMAGEN":"PROTECT/179707-lth_protect_auto_51_b24pp_xev_front.png"
+    "IMAGEN":"PROTECT/179707-lth_protect_auto_51_b24pp_xev_front.webp"
   },
   {
     "BCI":"L-47(LN2)-660 XEV",
@@ -942,7 +912,7 @@ const productos = [
     "LARGO":242.0,
     "ALTO":190.0,
     "ANCHO":175.0,
-    "IMAGEN":"PROTECT/179711-lth_protect_auto_h5_xev_front.png"
+    "IMAGEN":"PROTECT/179711-lth_protect_auto_h5_xev_front.webp"
   },
   {
     "BCI":"L-153R(LN0)-420 XEV",
@@ -957,7 +927,7 @@ const productos = [
     "LARGO":175.0,
     "ALTO":190.0,
     "ANCHO":175.0,
-    "IMAGEN":"PROTECT/179709-lth_protect_auto_h3_xev_front.png"
+    "IMAGEN":"PROTECT/179709-lth_protect_auto_h3_xev_front.webp"
   },
   {
     "BCI":"L-140R(LN1)-570 XEV",
@@ -972,7 +942,7 @@ const productos = [
     "LARGO":207.0,
     "ALTO":190.0,
     "ANCHO":175.0,
-    "IMAGEN":"PROTECT/179710-lth_protect_auto_h4_xev_front.png"
+    "IMAGEN":"PROTECT/179710-lth_protect_auto_h4_xev_front.webp"
   },
   {
     "BCI":"AUX14",
@@ -987,7 +957,7 @@ const productos = [
     "LARGO":150.0,
     "ALTO":145.0,
     "ANCHO":87.0,
-    "IMAGEN":"EVOLUTION AUX/179670-lth_evolution_auto_aux14_front.png"
+    "IMAGEN":"EVOLUTION AUX/179670-lth_evolution_auto_aux14_front.webp"
   },
   {
     "BCI":"AUX12",
@@ -1002,7 +972,7 @@ const productos = [
     "LARGO":150.0,
     "ALTO":130.0,
     "ANCHO":87.0,
-    "IMAGEN":"EVOLUTION AUX/179669-lth_evolution_auto_aux12_front.png"
+    "IMAGEN":"EVOLUTION AUX/179669-lth_evolution_auto_aux12_front.webp"
   },
   {
     "BCI":"H-34|78-800",
@@ -1012,12 +982,12 @@ const productos = [
     "CR":"115 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":278.0,
     "ALTO":203.0,
     "ANCHO":186.0,
-    "IMAGEN":"HITEC/h-34-78-800-front-nac.png"
+    "IMAGEN":"HITEC/h-34-78-800-front-nac.webp"
   },
   {
     "BCI":"H-48|91(LN3)-730",
@@ -1027,12 +997,12 @@ const productos = [
     "CR":"115 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":277.0,
     "ALTO":190.0,
     "ANCHO":174.0,
-    "IMAGEN":"HITEC/h-48_91ln3-730-front-nac.png"
+    "IMAGEN":"HITEC/h-48_91ln3-730-front-nac.webp"
   },
   {
     "BCI":"H-75|86-700",
@@ -1042,12 +1012,12 @@ const productos = [
     "CR":"100 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"HI-TEC",
-    "GARANTIA":60,
+    "GARANTIA":48,
     "REEMPLAZOS_COSTO":12,
     "LARGO":245.0,
     "ALTO":203.0,
     "ANCHO":186.0,
-    "IMAGEN":"HITEC/h-75_86-700-front.png"
+    "IMAGEN":"HITEC/h-75_86-700-front.webp"
   },
   {
     "BCI":"L-34|78-750",
@@ -1057,12 +1027,12 @@ const productos = [
     "CR":"115 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":324.0,
     "ALTO":223.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-34-78-750-front-nac.png"
+    "IMAGEN":"LTH/l-34-78-750-front-nac.webp"
   },
   {
     "BCI":"L-48|91(LN3)-615",
@@ -1072,12 +1042,12 @@ const productos = [
     "CR":"95 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":277.0,
     "ALTO":190.0,
     "ANCHO":174.0,
-    "IMAGEN":"LTH/l-48-91ln3-615-front-nac.png"
+    "IMAGEN":"LTH/l-48-91ln3-615-front-nac.webp"
   },
   {
     "BCI":"L-75|86-650",
@@ -1087,12 +1057,12 @@ const productos = [
     "CR":"93 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (+) / (-)",
     "MARCA":"LTH",
-    "GARANTIA":48,
+    "GARANTIA":36,
     "REEMPLAZOS_COSTO":12,
     "LARGO":245.0,
     "ALTO":203.0,
     "ANCHO":186.0,
-    "IMAGEN":"LTH/l-75_86-650-front.png"
+    "IMAGEN":"LTH/l-75_86-650-front.webp"
   },
   {
     "BCI":"L-48|91-760 AGM",
@@ -1102,12 +1072,12 @@ const productos = [
     "CR":"120 Minutes",
     "POLARIDAD":"Postes al frente Izq / Der: (-) / (+)",
     "MARCA":"LTH EVOLUTION",
-    "GARANTIA":72,
-    "REEMPLAZOS_COSTO":24,
+    "GARANTIA":48,
+    "REEMPLAZOS_COSTO":18,
     "LARGO":278.0,
     "ALTO":190.0,
     "ANCHO":175.0,
-    "IMAGEN":"EVOLUTION/lth_auto_agm_48-91-760_front.png"
+    "IMAGEN":"EVOLUTION/lth_auto_agm_48-91-760_front.webp"
   }
 ]
 

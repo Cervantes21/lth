@@ -68,7 +68,7 @@ export default function SearchIds() {
       {/* Imagen */}
       <div className="flex justify-center mb-10">
         <Image
-          src="/bec-animation.png"
+          src="/bec-animation.webp"
           alt="BEC Animation"
           width={300}
           height={300}

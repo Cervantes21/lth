@@ -24,13 +24,13 @@ const cards = [
   },
   {
     icon: (
-      <img className="w-16 h-16" src="/card-logo.png" alt="logo-in-card"></img>
+      <img className="w-16 h-16" src="/card-logo.webp" alt="logo-in-card"></img>
     ),
     exeption: "nosotros",
   },
   {
     icon: (
-      <img className="w-16 h-16" src="/card-logo.png" alt="logo-in-card"></img>
+      <img className="w-16 h-16" src="/card-logo.webp" alt="logo-in-card"></img>
     ),
     exeption: "catalogo",
   },

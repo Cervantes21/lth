@@ -6,37 +6,37 @@ const productos = [
     nombre: 'LTH® PROTECT',
     descripcion: 'Batería LTH® con tecnología AGM. Optimizada para vehículos híbridos y eléctricos. Te protege respaldando distintos sistemas de seguridad del vehículo.',
     enlace: '/protect',
-    banner: '/banner/protect_banner.png',
+    banner: '/banner/protect_banner.webp',
   },
   {
     nombre: 'LTH® EVOLUTION',
     descripcion: 'Batería LTH® con tecnología AGM, para vehículos con alta demanda de energía o Start-Stop.',
     enlace: '/evolution',
-    banner: '/banner/evolution_banner.png',
+    banner: '/banner/evolution_banner.webp',
   },
   {
     nombre: 'LTH® EVOLUTION AUXILIAR',
     descripcion: 'Batería secundaria LTH® con tecnología AGM. Diseñada para vehículos Start-Stop. Funciona como soporte de emergencia.',
     enlace: '/auxiliar',
-    banner: '/banner/auxiliar_banner.png',
+    banner: '/banner/auxiliar_banner.webp',
   },
   {
     nombre: 'LTH® HI-TEC',
     descripcion: 'Baterías LTH® que ofrecen esa potencia extra y desempeño superior que tu vehículo requiere. Brindan el abasto de energía necesario para el uso de accesorios eléctricos adicionales.',
     enlace: '/hitec',
-    banner: '/banner/hi-tec-banner.png',
+    banner: '/banner/hi-tec-banner.webp',
   },
   {
     nombre: 'LTH®',
     descripcion: 'Marca líder que encierra poder e innovación tecnológica en su interior, para brindarte seguridad y confianza gracias a su mejor desempeño.',
     enlace: '/lth',
-    banner: '/banner/estandar_banner.png',
+    banner: '/banner/estandar_banner.webp',
   },
   {
     nombre: 'LTH® TAXI',
     descripcion: 'Acumuladores LTH de ALTA DURACIÓN, diseñado especialmente para los profesionales del volante.',
     enlace: '/taxi',
-    banner: '/banner/taxi_banner.png',
+    banner: '/banner/taxi_banner.webp',
   },
 ];
 

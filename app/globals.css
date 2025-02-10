@@ -4,7 +4,7 @@
 
 /* ==== Form Background Styling ==== */
 .main-form {
-  background-image: url('/background-form.png');
+  background-image: url('/background-form.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -22,7 +22,7 @@
 
 /* ==== Card Styling ==== */
 .more-info-card {
-  background-image: url('/3.jpg');
+  background-image: url('/3.webp');
   background-size: cover;
   display: grid;
   grid-template-rows: 46% 54%;

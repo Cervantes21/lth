@@ -35,7 +35,7 @@ export default function Banner() {
     <div
       className="relative flex flex-col justify-center items-center bg-cover bg-center text-white pt-8 px-4"
       style={{
-        backgroundImage: `url('/banner/LTH-FONDO-BANNER-SUPERIOR.png')`,
+        backgroundImage: `url('/banner/LTH-FONDO-BANNER-SUPERIOR.webp')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -45,25 +45,25 @@ export default function Banner() {
         <>
           <div className="flex justify-items-center items-center lg:flex absolute top-1/2 -translate-y-1/2 left-8 space-x-4">
             <a href="/evolution" className="transform hover:scale-105 transition-transform banner-bateria">
-              <Image src="/banner/evolution_banner.png" alt="Evolution" width={100} height={100} />
+              <Image src="/banner/evolution_banner.webp" alt="Evolution" width={100} height={100} />
             </a>
             <a href="/protect" className="transform hover:scale-105 transition-transform banner-bateria">
-              <Image src="/banner/protect_banner.png" alt="Protect" width={100} height={100} />
+              <Image src="/banner/protect_banner.webp" alt="Protect" width={100} height={100} />
             </a>
             <a href="/auxiliar" className="transform hover:scale-105 transition-transform banner-bateria">
-              <Image src="/banner/auxiliar_banner.png" alt="Auxiliar" width={100} height={100} />
+              <Image src="/banner/auxiliar_banner.webp" alt="Auxiliar" width={100} height={100} />
             </a>
           </div>
 
           <div className="flex justify-center items-center lg:flex absolute top-1/2 -translate-y-1/2 right-8 space-x-4">
             <a href="/hitec" className="transform hover:scale-105 transition-transform banner-bateria">
-              <Image src="/banner/hi-tec-banner.png" alt="Hi Tec" width={100} height={100} />
+              <Image src="/banner/hi-tec-banner.webp" alt="Hi Tec" width={100} height={100} />
             </a>
             <a href="/lth" className="transform hover:scale-105 transition-transform banner-bateria">
-              <Image src="/banner/estandar_banner.png" alt="Estandar" width={100} height={100} />
+              <Image src="/banner/estandar_banner.webp" alt="Estandar" width={100} height={100} />
             </a>
             <a href="/taxi" className="transform hover:scale-105 transition-transform banner-bateria">
-              <Image src="/banner/taxi_banner.png" alt="Taxi" width={100} height={100} />
+              <Image src="/banner/taxi_banner.webp" alt="Taxi" width={100} height={100} />
             </a>
           </div>
         </>
@@ -131,7 +131,7 @@ export default function Banner() {
                   className="flex items-center space-x-2 p-2 rounded hover:bg-red-600 hover:text-white transition-all"
                 >
                   <Image
-                    src="/banner/evolution_banner.png"
+                    src="/banner/evolution_banner.webp"
                     alt="Evolution"
                     width={40}
                     height={40}
@@ -145,7 +145,7 @@ export default function Banner() {
                   className="flex items-center space-x-2 p-2 rounded hover:bg-red-600 hover:text-white transition-all"
                 >
                   <Image
-                    src="/banner/auxiliar_banner.png"
+                    src="/banner/auxiliar_banner.webp"
                     alt="Auxiliar"
                     width={40}
                     height={40}
@@ -159,7 +159,7 @@ export default function Banner() {
                   className="flex items-center space-x-2 p-2 rounded hover:bg-red-600 hover:text-white transition-all"
                 >
                   <Image
-                    src="/banner/protect_banner.png"
+                    src="/banner/protect_banner.webp"
                     alt="Protect"
                     width={40}
                     height={40}
@@ -173,7 +173,7 @@ export default function Banner() {
                   className="flex items-center space-x-2 p-2 rounded hover:bg-red-600 hover:text-white transition-all"
                 >
                   <Image
-                    src="/banner/hi-tec-banner.png"
+                    src="/banner/hi-tec-banner.webp"
                     alt="Hi Tec"
                     width={40}
                     height={40}
@@ -187,7 +187,7 @@ export default function Banner() {
                   className="flex items-center space-x-2 p-2 rounded hover:bg-red-600 hover:text-white transition-all"
                 >
                   <Image
-                    src="/banner/estandar_banner.png"
+                    src="/banner/estandar_banner.webp"
                     alt="Estandar"
                     width={40}
                     height={40}
@@ -201,7 +201,7 @@ export default function Banner() {
                   className="flex items-center space-x-2 p-2 rounded hover:bg-red-600 hover:text-white transition-all"
                 >
                   <Image
-                    src="/banner/taxi_banner.png"
+                    src="/banner/taxi_banner.webp"
                     alt="LTH TAXI"
                     width={40}
                     height={40}

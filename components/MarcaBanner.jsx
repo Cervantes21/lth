@@ -8,12 +8,12 @@ export const MarcaBanner = () => {
   const toggleCatalog = () => setShowCatalog(!showCatalog);
 
   const brands = [
-    { name: "Evolution", src: "/banner/evolution_banner.png", link: "/evolution" },
-    { name: "Auxiliar", src: "/banner/auxiliar_banner.png", link: "/auxiliar" },
-    { name: "Protect", src: "/banner/protect_banner.png", link: "/protect" },
-    { name: "Hi Tec", src: "/banner/hi-tec-banner.png", link: "/hitec" },
-    { name: "Estandar", src: "/banner/estandar_banner.png", link: "/lth" },
-    { name: "LTH TAXI", src: "/banner/taxi_banner.png", link: "/taxi" },
+    { name: "Evolution", src: "/banner/evolution_banner.webp", link: "/evolution" },
+    { name: "Auxiliar", src: "/banner/auxiliar_banner.webp", link: "/auxiliar" },
+    { name: "Protect", src: "/banner/protect_banner.webp", link: "/protect" },
+    { name: "Hi Tec", src: "/banner/hi-tec-banner.webp", link: "/hitec" },
+    { name: "Estandar", src: "/banner/estandar_banner.webp", link: "/lth" },
+    { name: "LTH TAXI", src: "/banner/taxi_banner.webp", link: "/taxi" },
   ];
 
   return (
@@ -23,7 +23,7 @@ export const MarcaBanner = () => {
           <img
             className="mx-auto w-36 lg:w-72 cursor-pointer"
             alt="lth logo"
-            src="/lth-logo-1.png"
+            src="/lth-logo-1.webp"
           />
         </button>
       </div>

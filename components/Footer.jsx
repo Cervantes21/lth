@@ -52,12 +52,12 @@ export default function Footer() {
                             </Link>
                         </li>
                         {[
-                            { href: "/lth", text: "Baterías LTH", img: "/banner/estandar_banner.png" },
-                            { href: "/taxi", text: "Baterías LTH Taxi", img: "/banner/taxi_banner.png" },
-                            { href: "/auxiliar", text: "Baterías Evolution Auxiliar", img: "/banner/auxiliar_banner.png" },
-                            { href: "/evolution", text: "Baterías LTH Evolution", img: "/banner/evolution_banner.png" },
-                            { href: "/protect", text: "Baterías LTH Protect", img: "/banner/protect_banner.png" },
-                            { href: "/hitec", text: "Baterías LTH Hi-Tec", img: "/banner/hi-tec-banner.png" },
+                            { href: "/lth", text: "Baterías LTH", img: "/banner/estandar_banner.webp" },
+                            { href: "/taxi", text: "Baterías LTH Taxi", img: "/banner/taxi_banner.webp" },
+                            { href: "/auxiliar", text: "Baterías Evolution Auxiliar", img: "/banner/auxiliar_banner.webp" },
+                            { href: "/evolution", text: "Baterías LTH Evolution", img: "/banner/evolution_banner.webp" },
+                            { href: "/protect", text: "Baterías LTH Protect", img: "/banner/protect_banner.webp" },
+                            { href: "/hitec", text: "Baterías LTH Hi-Tec", img: "/banner/hi-tec-banner.webp" },
                         ].map((link, index) => (
                             <li key={index} className="flex items-center mb-2">
                                 <Image

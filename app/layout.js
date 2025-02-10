@@ -7,14 +7,14 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Batería en Casa",
+  title: "Batería en Casa | Servicio a Domicilio",
   description:
-    "Llevamos la batería a tu casa en cualquier momento en tan solo 90 minutos en Todo Morelos.",
+    "Llevamos tu batería a domicilio, en cualquier momento en tan solo 90 minutos en Todo Morelos.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <title>Batería en Casa</title>
         <meta name="description" content={metadata.description} />
@@ -25,24 +25,26 @@ export default function RootLayout({ children }) {
         <meta property="og:title" content="Batería en Casa" />
         <meta
           property="og:description"
-          content="Llevamos la batería a tu casa en cualquier momento en tan solo 90 minutos en Todo Morelos."
+          content="Llevamos tu batería a domicilio, en cualquier momento en tan solo 90 minutos en Todo Morelos."
         />
-        <meta property="og:image" content="https://www.bateriaencasa.com/og-image.png" />
+        <meta property="og:image" content="https://www.bateriaencasa.com/og-image.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Batería en Casa" />
+        <meta name="twitter:site" content="@bateriaencasa_" />
         <meta
           name="twitter:description"
-          content="Llevamos la batería a tu casa en cualquier momento en tan solo 90 minutos en Todo Morelos."
+          content="Llevamos tu batería a domicilio, en cualquier momento en tan solo 90 minutos en Todo Morelos."
         />
-        <meta name="twitter:image" content="https://www.bateriaencasa.com/og-image.png" />
+        <meta name="twitter:image" content="https://www.bateriaencasa.com/og-image.webp" />
 
         {/* General Meta Tags */}
         <meta name="author" content="Batería en Casa Team" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
         <meta charSet="UTF-8" />
       </head>
       <body className={inter.className}>

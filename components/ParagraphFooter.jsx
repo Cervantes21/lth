@@ -100,7 +100,7 @@ export default function ParagraphFooter() {
                         <br />
                         <Link href="/catalogo">
                         <img
-                            src="/bec-animation.png"
+                            src="/bec-animation.webp"
                             alt="Logo de baterías"
                             className="mx-auto my-4 w-20 h-auto"
                         />

@@ -28,7 +28,7 @@ export default function Home() {
       <div className="flex justify-center my-6">
         <Link href="/">
           <img
-            src="/bec-animation.png"
+            src="/bec-animation.webp"
             alt="Animación de BEC Batería en Casa"
             className="w-40 h-auto cursor-pointer transition-transform duration-300 hover:scale-105"
           />
@@ -117,7 +117,7 @@ export default function Home() {
           {/* Columna de la imagen */}
           <div className="image-block">
             <img 
-              src="/nosotros.png" 
+              src="/nosotros.webp" 
               alt="Cambio de batería" 
             />
           </div>

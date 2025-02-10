@@ -7,7 +7,7 @@ import productos from "@/data/Catalogo";
 export const BotonGarantia = () => {
   const handleDownloadPDF = async () => {
     // Ruta del archivo PDF dentro del proyecto
-    const pdfURL = "/Garantias-LTH.pdf"; // Asegúrate de que el archivo está en la carpeta public/data
+    const pdfURL = "/Garantias-LTH.webp";
   
     // Obtén el archivo como un Blob
     const response = await fetch(pdfURL);
@@ -19,7 +19,7 @@ export const BotonGarantia = () => {
   
     const blob = await response.blob();
   
-    saveAs(blob, "Garantias-LTH.pdf");
+    saveAs(blob, "Garantias-LTH.webp");
   };
   return (
     <button

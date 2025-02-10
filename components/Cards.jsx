@@ -129,7 +129,7 @@ export const Cards = ({ page }) => {
     },
     {
       key: "info-empresa",
-      icon: <img className="w-12 h-12" src="/card-logo.png" alt="logo-in-card" />,
+      icon: <img className="w-12 h-12" src="/card-logo.webp" alt="logo-in-card" />,
       title: <>Batería en Casa es la empresa <br /> creada para ti</>,
       button: "Ver más información",
       buttonLink: "/nosotros",
@@ -148,9 +148,9 @@ export const Cards = ({ page }) => {
           Aceptamos todas las tarjetas <br /> de crédito
         </h2>
         <div className="grid grid-cols-3 gap-x-2 overflow-hidden max-w-[400px]">
-          <img src="/visa-logo.png" className="h-[70px] md:h-full" alt="Visa logo" />
-          <img src="/mastercard-logo.png" className="h-[70px] md:h-full" alt="MasterCard logo" />
-          <img src="/meli.jpg" className="h-[70px] md:h-full" alt="Mercado Libre logo" />
+          <img src="/visa-logo.webp" className="h-[70px] md:h-full" alt="Visa logo" />
+          <img src="/mastercard-logo.webp" className="h-[70px] md:h-full" alt="MasterCard logo" />
+          <img src="/meli.webp" className="h-[70px] md:h-full" alt="Mercado Libre logo" />
         </div>
       </div>
 

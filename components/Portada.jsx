@@ -39,7 +39,7 @@ const Portada = ({ onMotociclistaClick }) => {
         onClick={onMotociclistaClick}
       >
         <img
-          src="/motociclista.png"
+          src="/motociclista.webp"
           alt="Motociclista"
           className="w-auto h-auto"
         />

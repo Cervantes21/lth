@@ -95,7 +95,7 @@ export default function Home() {
         <p>
           Le informamos que nuestro aviso de privacidad se encuentra en{" "}
           <a
-            href="https://www.bateriaencasa.com"
+            href="https://www.bateriaencasa.com/garantias-y-ajustes"
             className="text-blue-lth underline"
           >
             www.bateriaencasa.com/garantias-y-ajustes
