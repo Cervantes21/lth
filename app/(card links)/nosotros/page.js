@@ -1,12 +1,31 @@
+import Head from "next/head";
 import { Cards } from "@/components/Cards";
 import { MoreInfoCard } from "@/components/MoreInfoCard";
 import { Whatsapp } from "@/components/Whatsapp";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 
-export default function Home() {
+export default function AboutUs() {
   return (
     <>
+      <Head>
+        <title>Sobre Nosotros - Batería en Casa</title>
+        <meta name="description" content="Conoce más sobre Batería en Casa, la empresa líder en instalación y reemplazo de baterías para autos y motos en Morelos. Descubre nuestros servicios profesionales y eficientes." />
+        <meta name="keywords" content="baterías para autos, baterías para motos, instalación de baterías, reemplazo de baterías, Morelos" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Sobre Nosotros - Batería en Casa" />
+        <meta property="og:description" content="Conoce más sobre Batería en Casa, la empresa líder en instalación y reemplazo de baterías para autos y motos en Morelos. Descubre nuestros servicios profesionales y eficientes." />
+        <meta property="og:url" content="https://www.bateriaencasa.com/sobre-nosotros" />
+        <meta property="og:image" content="https://www.bateriaencasa.com/og-image.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sobre Nosotros - Batería en Casa" />
+        <meta name="twitter:description" content="Conoce más sobre Batería en Casa, la empresa líder en instalación y reemplazo de baterías para autos y motos en Morelos. Descubre nuestros servicios profesionales y eficientes." />
+        <meta name="twitter:image" content="https://www.bateriaencasa.com/og-image.webp" />
+        <meta name="twitter:site" content="@bateriaencasa_" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="UTF-8" />
+      </Head>
+
       <MoreInfoCard page="nosotros" text="Batería En Casa es la empresa creada para ti." />
 
       {/* Sección de encabezado */}
@@ -15,13 +34,10 @@ export default function Home() {
           Acerca de nosotros
         </h2>
       </div>
+
       <p className="mt-10 mb-4 px-4 text-center text-lg font-light sm:font-normal lg:text-xl lg:max-w-4xl lg:mx-auto">
-        <strong className="text-blue-lth">BEC Batería en Casa</strong> es una
-        empresa de{" "}
-        <strong className="text-blue-lth">
-          instalación y reemplazo de baterías
-        </strong>{" "}
-        de automóviles, equipo pesado y otras aplicaciones.
+        <strong className="text-blue-lth">BEC Batería en Casa</strong> es una empresa de{" "}
+        <strong className="text-blue-lth">instalación y reemplazo de baterías</strong> de automóviles, equipo pesado y otras aplicaciones.
       </p>
 
       {/* Imagen animada o logotipo */}
@@ -34,14 +50,15 @@ export default function Home() {
           />
         </Link>
       </div>
+
       <p className="mb-16 px-4 text-center text-lg font-light sm:font-normal lg:text-xl lg:max-w-4xl lg:mx-auto">
-        Somos una Marca Registrada.® Nuestra empresa trabaja con las mejores marcas de baterias en México:{" "}
+        Somos una Marca Registrada.® Nuestra empresa trabaja con las mejores marcas de baterías en México:{" "}
         <strong className="text-blue-lth">LTH®</strong>,{" "}
-        <strong className="text-blue-lth"> LTH® PROTECT</strong>,{" "}
-        <strong className="text-blue-lth"> LTH® AGM EVOLUTION</strong>,{" "}
-        <strong className="text-blue-lth"> HITEC®</strong>,{" "}
-        <strong className="text-blue-lth"> FULLPOWER®</strong>,{" "}
-        <strong className="text-blue-lth"> ÁMERICA®</strong>, y más.
+        <strong className="text-blue-lth">LTH® PROTECT</strong>,{" "}
+        <strong className="text-blue-lth">LTH® AGM EVOLUTION</strong>,{" "}
+        <strong className="text-blue-lth">HITEC®</strong>,{" "}
+        <strong className="text-blue-lth">FULLPOWER®</strong>,{" "}
+        <strong className="text-blue-lth">ÁMERICA®</strong>, y más.
       </p>
 
       <div className="p-5 mt-5 md:mx-auto lg:w-full lg:max-w-4xl lg:text-xl">
@@ -92,8 +109,7 @@ export default function Home() {
           <li>Realizamos el diagnóstico del sistema eléctrico de tu vehículo.</li>
           <li>Nuestro servicio es profesional y eficiente.</li>
           <li>
-            Puedes pagar con tarjeta, efectivo o transferencia al término de la instalación
-            y/o diagnóstico.
+            Puedes pagar con tarjeta, efectivo o transferencia al término de la instalación y/o diagnóstico.
           </li>
         </ul>
         <p className="mt-10 italic text-gray-600">
@@ -108,17 +124,15 @@ export default function Home() {
           <div className="text-block">
             <h2>SOMOS LA SOLUCIÓN PARA QUE TU DÍA NO SE DETENGA</h2>
             <p>
-              Resolvemos el cambio de batería en tu casa, negocio u oficina. 
-              Llámanos y uno de nuestros técnicos te visitará para realizar 
-              el cambio de tu batería de manera rápida, eficiente y profesional.
+              Resolvemos el cambio de batería en tu casa, negocio u oficina. Llámanos y uno de nuestros técnicos te visitará para realizar el cambio de tu batería de manera rápida, eficiente y profesional.
             </p>
           </div>
 
           {/* Columna de la imagen */}
           <div className="image-block">
-            <img 
-              src="/nosotros.webp" 
-              alt="Cambio de batería" 
+            <img
+              src="/nosotros.webp"
+              alt="Cambio de batería"
             />
           </div>
         </div>
