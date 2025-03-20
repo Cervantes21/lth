@@ -53,6 +53,9 @@ export default function Banner() {
             <a href="/auxiliar" className="transform hover:scale-105 transition-transform banner-bateria">
               <Image src="/banner/auxiliar_banner.webp" alt="Auxiliar" width={100} height={100} />
             </a>
+            <a href="/motobaterias" className="transform hover:scale-105 transition-transform banner-bateria">
+              <Image src="/banner/motobateria_banner.webp" alt="Moto-baterías" width={100} height={100} />
+            </a>
           </div>
 
           <div className="flex justify-center items-center lg:flex absolute top-1/2 -translate-y-1/2 right-8 space-x-4">
@@ -65,6 +68,7 @@ export default function Banner() {
             <a href="/taxi" className="transform hover:scale-105 transition-transform banner-bateria">
               <Image src="/banner/taxi_banner.webp" alt="Taxi" width={100} height={100} />
             </a>
+
           </div>
         </>
       )}
@@ -207,6 +211,18 @@ export default function Banner() {
                     height={40}
                   />
                   <span>LTH® TAXI</span>
+                </a>
+                <a
+                  href="/motobaterias"
+                  className="flex items-center space-x-2 p-2 rounded hover:bg-red-600 hover:text-white transition-all"
+                >
+                  <Image
+                    src="/banner/motobateria_banner.webp"
+                    alt="Moto Baterías"
+                    width={40}
+                    height={40}
+                  />
+                  <span>LTH® MOTO-BATERÍAS</span>
                 </a>
               </li>
             </ul>

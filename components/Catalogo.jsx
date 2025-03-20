@@ -38,6 +38,12 @@ const productos = [
     enlace: '/taxi',
     banner: '/banner/taxi_banner.webp',
   },
+  {
+    nombre: 'LTH® MOTO-BATERÍAS',
+    descripcion: 'Con el respaldo de LTH®, nuestras moto-baterías ofrecen la mejor calidad y tecnología. Cumplen con las exigencias de los fabricantes de motocicletas, brindando una gran duración y alto desempeño, lo cual se traduce en comodidad, ahorro y seguridad.',
+    enlace: '/motobaterias',
+    banner: '/banner/motobateria_banner.webp',
+  },
 ];
 
 const Catalogo = () => {

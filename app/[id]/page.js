@@ -26,6 +26,9 @@ const url = (MARCA) => {
     if (MARCA === "LTH TAXI") {
         return "/taxi"
     }
+    if (MARCA === "MOTOBATERIA") {
+        return "/motobaterias"
+    }
 }
 
 export default function Bateria() {
@@ -224,6 +227,23 @@ export default function Bateria() {
                                         <li className="list-disc">12 MESES de reemplazo sin costo.</li>
                                         <li className="list-disc">Accesorios equipados.</li>
                                         <li className="list-disc">Alimenta funciones como la alarma, iluminación y actualizaciones inalámbricas, aún con el vehículo apagado.</li>
+                                        <li className="list-disc">Potencia igual a las baterías de equipo original.</li>
+                                        <li className="list-disc">Libre de mantenimiento</li>
+                                    </ul>
+                                </> : ""
+                        }
+                        {
+                            bateria.MARCA === "MOTOBATERIA" ?
+                                <>
+                                    <p className="mt-5 mb-10 w-11/12 mx-auto text-center text-lg font-normal lg:text-xl lg:max-w-[1300px] italic">
+                                        "Baterías de alto rendimiento para motocicletas y vehículos todo terreno. Con tecnología AGM, libre de mantenimiento y con una vida útil más larga."
+                                    </p>
+                                    <h3 className="uppercase text-blue-lth font-semibold text-xl text-center lg:text-3xl">Beneficios</h3>
+                                    <ul className=" mt-5 flex flex-col w-fit mx-auto px-5 lg:text-lg">
+                                        <li className="list-disc">6 MESES de garantía.</li>
+                                        <li className="list-disc">6 MESES de reemplazo sin costo.</li>
+                                        <li className="list-disc">Provee el máximo poder durante periodos largos sin disminuir su desempeño.</li>
+                                        <li className="list-disc">Diseñada para trabajar en condiciones extremas.</li>
                                         <li className="list-disc">Potencia igual a las baterías de equipo original.</li>
                                         <li className="list-disc">Libre de mantenimiento</li>
                                     </ul>

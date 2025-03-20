@@ -53,6 +53,7 @@ export default function Footer() {
                         </li>
                         {[
                             { href: "/lth", text: "Baterías LTH", img: "/banner/estandar_banner.webp" },
+                            { href: "/motobaterias", text: "Motobaterías AGM", img: "/banner/motobateria_banner.webp" },
                             { href: "/taxi", text: "Baterías LTH Taxi", img: "/banner/taxi_banner.webp" },
                             { href: "/auxiliar", text: "Baterías Evolution Auxiliar", img: "/banner/auxiliar_banner.webp" },
                             { href: "/evolution", text: "Baterías LTH Evolution", img: "/banner/evolution_banner.webp" },

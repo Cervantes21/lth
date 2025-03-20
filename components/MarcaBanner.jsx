@@ -14,6 +14,7 @@ export const MarcaBanner = () => {
     { name: "Hi Tec", src: "/banner/hi-tec-banner.webp", link: "/hitec" },
     { name: "Estandar", src: "/banner/estandar_banner.webp", link: "/lth" },
     { name: "LTH TAXI", src: "/banner/taxi_banner.webp", link: "/taxi" },
+    { name: "Moto Baterías", src: "/banner/motobateria_banner.webp", link: "/motobaterias" },
   ];
 
   return (

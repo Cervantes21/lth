@@ -1,8 +1,7 @@
-// components/MainForm.jsx
-
 import { useState, useEffect } from "react";
 import Portada from "./Portada";
 import { filtros } from "@/data/filtros";
+import { motos as motoFiltros } from "@/data/motoFiltros";
 
 const MainForm = ({ forceShowForm = false }) => {
   const [showForm, setShowForm] = useState(false); // Para manejar la visibilidad del formulario
@@ -18,13 +17,16 @@ const MainForm = ({ forceShowForm = false }) => {
   const [resultYears, setResultYears] = useState([]);
   const [resultBrands, setResultBrands] = useState([]);
 
+  // Seleccionamos el dataset de acuerdo al tipo de vehículo
+  const dataSet = tipoVehiculo === "moto" ? motoFiltros : filtros;
+
   useEffect(() => {
     if (anoVehiculo) {
       setMarcaVehiculo("");
       setModeloVehiculo("");
       setUniqueBrands(getUniqueBrandsForYear(anoVehiculo));
     }
-  }, [anoVehiculo]);
+  }, [anoVehiculo, tipoVehiculo]);
 
   useEffect(() => {
     if (marcaVehiculo) {
@@ -42,7 +44,7 @@ const MainForm = ({ forceShowForm = false }) => {
   // ---
 
   const getUniqueBrandsForYear = (year) => {
-    const itemsForYear = filtros.filter((item) => item.AÑO == year);
+    const itemsForYear = dataSet.filter((item) => item.AÑO == year);
     setResultYears(itemsForYear);
     const brands = itemsForYear.map((item) => item.MARCA.toUpperCase());
     return [...new Set(brands)];
@@ -134,7 +136,7 @@ const MainForm = ({ forceShowForm = false }) => {
   return (
     <div className="main-form flex flex-col items-center justify-center pt-8 z-10 rounded-b-2xl w-full">
       {/* 
-        Si NO es forceShowForm, y showForm es false, mostramos la Portada.
+        Si NO es forceShowForm y showForm es false, mostramos la Portada.
         Si es forceShowForm (true) o showForm (true), se muestra el <form> 
       */}
       {!forceShowForm && !showForm ? (
@@ -171,9 +173,9 @@ const MainForm = ({ forceShowForm = false }) => {
             className="p-3 w-full h-14 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
           >
             <option value="">Año</option>
-            {[...Array(14)].map((_, i) => (
-              <option key={i} value={2023 - i}>
-                {2023 - i}
+            {[...Array(95)].map((_, i) => (
+              <option key={i} value={2025 - i}>
+                {2025 - i}
               </option>
             ))}
           </select>
@@ -228,3 +230,4 @@ const MainForm = ({ forceShowForm = false }) => {
 };
 
 export default MainForm;
+
