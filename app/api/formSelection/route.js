@@ -7,9 +7,9 @@ export async function POST(request) {
     await dbConnect(); // Conectar a MongoDB Atlas
     const body = await request.json(); // Extrae el JSON del request
 
-    const { tipoVehiculo, anoVehiculo, marcaVehiculo, modeloVehiculo, date, baterias } = body;
+    const { tipoVehiculo, anoVehiculo, marcaVehiculo, modeloVehiculo, baterias } = body;
 
-    if (!tipoVehiculo || !anoVehiculo || !marcaVehiculo || !modeloVehiculo || !date || !baterias?.length) {
+    if (!tipoVehiculo || !anoVehiculo || !marcaVehiculo || !modeloVehiculo || !baterias?.length) {
       return NextResponse.json(
         { message: "Todos los campos son requeridos, incluyendo las baterías." },
         { status: 400 }
@@ -21,7 +21,6 @@ export async function POST(request) {
       anoVehiculo,
       marcaVehiculo,
       modeloVehiculo,
-      date,
       baterias,
     });
 

@@ -5,8 +5,6 @@ const formSelectionSchema = new mongoose.Schema({
   anoVehiculo: { type: Number, required: true },
   marcaVehiculo: { type: String, required: true },
   modeloVehiculo: { type: String, required: true },
-  date: { type: Date, default: Date.now },
-  location: { type: String, required: true },
   baterias: [
     {
       tipoBateria: { type: String, required: true },

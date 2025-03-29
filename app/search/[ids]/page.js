@@ -7,42 +7,41 @@ import Image from "next/image";
 
 import { Cards } from "@/components/Cards";
 import { Whatsapp, cotizar } from "@/components/Whatsapp";
-import MainForm from "@/components/MainForm";
+import MainForm from "@/components/MainForm";  // <--- Importamos tu formulario
 import productos from "@/data/Catalogo";
 
 export default function SearchIds() {
+  // Para mostrar/ocultar el formulario
   const [showForm, setShowForm] = useState(false);
 
   const pathname = usePathname();
+  // Extraemos la parte /search/<opciones> (por ejemplo "LTH|24,R24-etc")
   const id = pathname.replace("/search/", "");
-  const ids = id.split(",").map((id) => decodeURIComponent(id.trim()));
+  const ids = id.split(",").map((id) => decodeURIComponent(id));
 
+  // Leemos los parámetros de búsqueda (tipo, ano, marca, modelo) del querystring
   const searchParams = useSearchParams();
   const tipoVehiculo = searchParams.get("tipo") || "";
   const anoVehiculo = searchParams.get("ano") || "";
   const marcaVehiculo = searchParams.get("marca") || "";
   const modeloVehiculo = searchParams.get("modelo") || "";
 
-  // Función para normalizar los valores eliminando caracteres especiales y espacios extra
-  const normalizeString = (str) =>
-    str.replace(/[^a-zA-Z0-9]/g, "").toUpperCase();
-
-  console.log("IDs extraídos de la URL:", ids);
-  console.log("Productos disponibles en catálogo:", productos.map((p) => p.BCI));
-
+  // Filtramos los productos según IDs (BCI) obtenidos
   const filteredProducts = productos.filter((producto) =>
-    ids.some((id) => normalizeString(id) === normalizeString(producto.BCI))
+    ids.includes(producto.BCI)
   );
-
-  console.log("Productos encontrados:", filteredProducts);
 
   const handleCall = () => {
     const phoneNumber = "+527776002745";
     window.location.href = `tel:${phoneNumber}`;
   };
 
+  // Útil si algunas imágenes llevan "|" en el nombre
+  const replacePipeWithSlash = (str) => str.replace(/\|/g, "/");
+
   return (
     <>
+      {/* Botón para regresar al home */}
       <Link href="/" className="flex w-16 m-1 p-4 border-none outline-none">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -61,10 +60,12 @@ export default function SearchIds() {
         </svg>
       </Link>
 
+      {/* Título principal */}
       <h1 className="text-xl font-bold text-blue-lth uppercase w-full text-center mb-10 lg:text-3xl">
         Buscador
       </h1>
 
+      {/* Imagen */}
       <div className="flex justify-center mb-10">
         <Image
           src="/bec-animation.webp"
@@ -75,10 +76,12 @@ export default function SearchIds() {
         />
       </div>
 
+      {/* Texto mostrando el vehículo (omitimos tipoVehiculo) */}
       <h2 className="text-red-lth text-center text-xl font-semibold mb-4">
-        Tu vehículo es: {tipoVehiculo.toUpperCase()} {marcaVehiculo.toUpperCase()} {modeloVehiculo.toUpperCase()} {anoVehiculo}
+        Tu vehículo es: {marcaVehiculo.toUpperCase()} {modeloVehiculo.toUpperCase()} {anoVehiculo}
       </h2>
 
+      {/* Botón para corregir la respuesta */}
       <div className="flex justify-center mb-6">
         <button
           onClick={() => setShowForm(!showForm)}
@@ -88,6 +91,7 @@ export default function SearchIds() {
         </button>
       </div>
 
+      {/* Al hacer clic, mostramos el formulario (fuerza que sea sin portada) */}
       {showForm && (
         <div className="mb-10 w-full max-w-sm mx-auto">
           <MainForm forceShowForm={true} />
@@ -115,30 +119,46 @@ export default function SearchIds() {
         </p>
       )}
 
+      {/* Render de productos */}
       <div className="w-full px-4 grid grid-cols-2 lg:grid-cols-4 lg:px-16 gap-3 mb-40">
         {filteredProducts.map((producto, index) => (
-          <div className="bg-grey-lth flex flex-col gap-y-3 items-center p-4 rounded-xl" key={index}>
+          <div
+            className="bg-grey-lth flex flex-col gap-y-3 items-center p-4 rounded-xl"
+            key={index}
+          >
+            {/* Imagen del producto */}
             <div className="min-h-40 overflow-hidden flex items-center">
               <Image
                 src={`/${producto.IMAGEN}`}
-                alt={producto.BCI}
+                alt={replacePipeWithSlash(producto.BCI)}
                 width={500}
                 height={300}
                 className="w-36 transition-all duration-300 ease-in-out transform hover:scale-110 lg:w-48"
               />
             </div>
-            <p className="lg:text-xl font-bold text-md my-1 text-center text-blue-lth">{producto.BCI}</p>
-            <p className="lg:text-xl font-bold text-md my-1 text-center">{producto.MARCA}</p>
-            <button onClick={() => cotizar(producto.BCI, producto.MARCA)} className="lg:text-lg bg-red-lth text-white text-sm w-full py-1 rounded-lg">
+            <p className="lg:text-xl font-bold text-md my-1 text-center text-blue-lth">
+              {replacePipeWithSlash(producto.BCI)}
+            </p>
+            <p className="lg:text-xl font-bold text-md my-1 text-center">
+              {producto.MARCA}
+            </p>
+            <button
+              onClick={() => cotizar(producto.BCI, producto.MARCA)}
+              className="lg:text-lg bg-red-lth text-white text-sm w-full py-1 rounded-lg"
+            >
               Cotiza Ya
             </button>
-            <Link href={`/${producto.BCI}`} className="lg:text-lg text-center bg-transparent transition-all duration-300 more-info-button text-gray-600 border-gray-600 border-solid border-2 text-sm font-bold w-full py-0.5 rounded-lg">
+            <Link
+              href={`/${producto.BCI}`}
+              className="lg:text-lg text-center bg-transparent transition-all duration-300 more-info-button text-gray-600 border-gray-600 border-solid border-2 text-sm font-bold w-full py-0.5 rounded-lg"
+            >
               Más Información
             </Link>
           </div>
         ))}
       </div>
 
+      {/* Secciones adicionales */}
       <Cards page="all" />
       <Whatsapp />
     </>
