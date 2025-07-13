@@ -131,9 +131,9 @@ export default function ParagraphFooter() {
                     <h2 className="leading-relaxed text-center text-blue-lth underline">
                         ¡Acudimos el mismo día a instalar tu Batería LTH sin costo!
                     </h2>
-                    <p className="leading-relaxed text-right p-2 rounded-lg">
+                    {/* <p className="leading-relaxed text-right p-2 rounded-lg">
                         Batería en casa es un servicio proporcionado por un <u className="text-blue-lth">{""}<Link href="/garantias-y-ajustes">Distribuidor LTH</Link></u>.
-                    </p>
+                    </p> */}
                 </div>
             </div>
         </div>
