@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ParagraphFooter() {
     return (
@@ -95,19 +96,22 @@ export default function ParagraphFooter() {
                     <p className="leading-relaxed">
                         Si tu auto no arranca, llama al <strong className="text-blue-lth">(777) 600 27 45</strong> y te asesoramos en recomendarte la mejor batería para tu auto.
                     </p>
-                    <p className="leading-relaxed text-center text-white bg-gradient-to-r from-blue-950 via-blue-500 to-blue-950 hover:from-blue-600 hover:via-blue-800 hover:to-blue-500 p-4 rounded-lg font-semibold">
+                    <div className="leading-relaxed text-center text-white bg-gradient-to-r from-blue-950 via-blue-500 to-blue-950 hover:from-blue-600 hover:via-blue-800 hover:to-blue-500 p-4 rounded-lg font-semibold">
                         ¿No sabes cuál batería lleva tu auto?
                         <br />
                         <Link href="/catalogo">
-                        <img
-                            src="/bec-animation.webp"
+                        <Image
+                            src="/bec-logo.svg"
                             alt="Logo de baterías"
+                            width={80}
+                            height={80}
                             className="mx-auto my-4 w-20 h-auto"
+                            style={{ height: "auto" }}
                         />
                         Consulta nuestro catálogo de{" "}
                         <strong className="underline">Baterías LTH</strong>
                         </Link>
-                    </p>
+                    </div>
                 </div>
                 <div className="space-y-4">
                     <h2 className="text-xl font-semibold text-blue-lth underline text-center">

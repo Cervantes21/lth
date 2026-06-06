@@ -11,7 +11,7 @@ const formSelectionSchema = new mongoose.Schema({
       opciones: [{ type: String }], // Para almacenar múltiples opciones
     },
   ],
-});
+}, { timestamps: true });
 
 const FormSelection = mongoose.models.FormSelection || mongoose.model("FormSelection", formSelectionSchema);
 

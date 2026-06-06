@@ -21,10 +21,12 @@ export const MarcaBanner = () => {
     <div className="bg-grey-lth w-full mt-8 lg:mt-8 py-7 lg:py-16 relative">
       <div className="block w-fit mx-auto">
         <button onClick={toggleCatalog} className="mx-auto block">
-          <img
+          <Image
             className="mx-auto w-36 lg:w-72 cursor-pointer"
             alt="lth logo"
             src="/lth-logo-1.webp"
+            width={288}
+            height={100}
           />
         </button>
       </div>

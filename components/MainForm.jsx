@@ -3,7 +3,7 @@ import Portada from "./Portada";
 import { filtros } from "@/data/filtros";
 import { motos as motoFiltros } from "@/data/motoFiltros";
 
-const MainForm = ({ forceShowForm = false }) => {
+const MainForm = ({ forceShowForm = false, compact = false }) => {
   const [showForm, setShowForm] = useState(false); // Para manejar la visibilidad del formulario
   const [tipoVehiculo, setTipoVehiculo] = useState("");
   const [anoVehiculo, setAnoVehiculo] = useState("");
@@ -107,7 +107,16 @@ const MainForm = ({ forceShowForm = false }) => {
         body: JSON.stringify(dataToSend),
       });
 
-      const responseData = await response.json();
+      let responseData;
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        responseData = await response.json();
+      } else {
+        const errorText = await response.text();
+        console.error("Error del servidor (no JSON):", errorText);
+        responseData = { message: "Error del servidor. Por favor, verifica la configuración." };
+      }
+
       if (response.ok) {
         // Construimos el querystring con los datos del vehículo
         const queryParams = new URLSearchParams({
@@ -133,8 +142,13 @@ const MainForm = ({ forceShowForm = false }) => {
     }
   };
 
+  // Clase condicional para evitar que se aplique el fondo del CSS global en modo compacto
+  const containerClass = compact
+    ? "flex flex-col items-center justify-center w-full p-6 bg-white rounded-2xl border border-gray-200 shadow-sm"
+    : "main-form flex flex-col items-center justify-center pt-8 z-10 rounded-b-2xl w-full";
+
   return (
-    <div className="main-form flex flex-col items-center justify-center pt-8 z-10 rounded-b-2xl w-full">
+    <div className={containerClass}>
       {/* 
         Si NO es forceShowForm y showForm es false, mostramos la Portada.
         Si es forceShowForm (true) o showForm (true), se muestra el <form> 
@@ -143,85 +157,92 @@ const MainForm = ({ forceShowForm = false }) => {
         <Portada onMotociclistaClick={() => setShowForm(true)} />
       ) : (
         <form
-          className="flex flex-col items-center justify-center lg:gap-y-6 sm:gap-y-0 md:gap-y-1 mx-auto max-w-[700px] w-full px-4 h-screen"
+          className={`flex flex-col items-center justify-center gap-y-3 mx-auto w-full ${compact ? "max-w-full h-auto" : "max-w-[700px] h-screen px-4"}`}
           onSubmit={handleSubmit}
         >
+          {/* Título interno opcional para el modo compacto */}
+          {compact && (
+            <h3 className="text-blue-lth font-bold text-lg mb-2 uppercase">Configura tu búsqueda</h3>
+          )}
+
           {/* Si NO es forceShowForm, entonces mostramos el botón de "Regresar" a la portada */}
           {!forceShowForm && (
             <button
               type="button"
               onClick={() => setShowForm(false)}
-              className="self-start bg-red-lth text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-300"
+              className="self-start bg-red-lth text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-300 mb-4"
             >
               Regresar
             </button>
           )}
 
-          <select
-            value={tipoVehiculo}
-            onChange={(e) => setTipoVehiculo(e.target.value)}
-            className="p-3 w-full h-14 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
-          >
-            <option value="">Tipo</option>
-            <option value="auto">Auto</option>
-            <option value="moto">Moto</option>
-          </select>
+          <div className="w-full space-y-3">
+            <select
+              value={tipoVehiculo}
+              onChange={(e) => setTipoVehiculo(e.target.value)}
+              className="p-3 w-full h-12 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 bg-white shadow-sm transition-all"
+            >
+              <option value="">Tipo de Vehículo</option>
+              <option value="auto">Auto</option>
+              <option value="moto">Moto</option>
+            </select>
 
-          <select
-            value={anoVehiculo}
-            onChange={(e) => setAnoVehiculo(e.target.value)}
-            className="p-3 w-full h-14 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
-          >
-            <option value="">Año</option>
-            {[...Array(95)].map((_, i) => (
-              <option key={i} value={2025 - i}>
-                {2025 - i}
-              </option>
-            ))}
-          </select>
+            <select
+              value={anoVehiculo}
+              onChange={(e) => setAnoVehiculo(e.target.value)}
+              className="p-3 w-full h-12 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 bg-white shadow-sm transition-all"
+            >
+              <option value="">Año</option>
+              {[...Array(95)].map((_, i) => (
+                <option key={i} value={2025 - i}>
+                  {2025 - i}
+                </option>
+              ))}
+            </select>
 
-          <select
-            value={marcaVehiculo}
-            onChange={(e) => setMarcaVehiculo(e.target.value)}
-            className="p-3 w-full h-14 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
-            disabled={!anoVehiculo}
-          >
-            <option value="">Marca</option>
-            {uniqueBrands.map((brand, index) => (
-              <option key={index} value={brand}>
-                {brand}
-              </option>
-            ))}
-          </select>
+            <select
+              value={marcaVehiculo}
+              onChange={(e) => setMarcaVehiculo(e.target.value)}
+              className="p-3 w-full h-12 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 bg-white shadow-sm transition-all disabled:bg-gray-50"
+              disabled={!anoVehiculo}
+            >
+              <option value="">Marca</option>
+              {uniqueBrands.map((brand, index) => (
+                <option key={index} value={brand}>
+                  {brand}
+                </option>
+              ))}
+            </select>
 
-          <select
-            value={modeloVehiculo}
-            onChange={(e) => setModeloVehiculo(e.target.value)}
-            className="p-3 w-full h-14 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
-            disabled={!marcaVehiculo}
-          >
-            <option value="">Modelo</option>
-            {uniqueModels.map((model, index) => (
-              <option key={index} value={model}>
-                {model}
-              </option>
-            ))}
-          </select>
+            <select
+              value={modeloVehiculo}
+              onChange={(e) => setModeloVehiculo(e.target.value)}
+              className="p-3 w-full h-12 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 bg-white shadow-sm transition-all disabled:bg-gray-50"
+              disabled={!marcaVehiculo}
+            >
+              <option value="">Modelo</option>
+              {uniqueModels.map((model, index) => (
+                <option key={index} value={model}>
+                  {model}
+                </option>
+              ))}
+            </select>
+          </div>
 
           <button
             type="submit"
-            className={`p-3 h-16 w-full text-white font-semibold rounded-xl shadow-md transform transition-all ${
+            className={`p-3 h-14 w-full text-white font-bold rounded-xl shadow-lg transform transition-all mt-2 ${
               loading || !tipoVehiculo || !anoVehiculo || !marcaVehiculo || !modeloVehiculo
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-red-lth hover:scale-105"
+                : "bg-red-lth hover:scale-105 active:scale-95"
             }`}
             disabled={loading || !tipoVehiculo || !anoVehiculo || !marcaVehiculo || !modeloVehiculo}
           >
-            {loading ? "Cargando..." : "Buscar"}
+            {loading ? "Cargando..." : "BUSCAR BATERÍA"}
           </button>
 
           {errorMessage && (
-            <p className="text-red-lth text-center">{errorMessage}</p>
+            <p className="text-red-lth text-center text-sm font-medium mt-2 bg-red-50 p-2 rounded-lg w-full">{errorMessage}</p>
           )}
         </form>
       )}
@@ -230,4 +251,3 @@ const MainForm = ({ forceShowForm = false }) => {
 };
 
 export default MainForm;
-

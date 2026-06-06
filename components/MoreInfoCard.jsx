@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const cards = [
   {
@@ -24,13 +25,13 @@ const cards = [
   },
   {
     icon: (
-      <img className="w-16 h-16" src="/card-logo.webp" alt="logo-in-card"></img>
+      <Image width={64} height={64} className="w-16 h-16" src="/card-logo.webp" alt="logo-in-card" />
     ),
     exeption: "nosotros",
   },
   {
     icon: (
-      <img className="w-16 h-16" src="/card-logo.webp" alt="logo-in-card"></img>
+      <Image width={64} height={64} className="w-16 h-16" src="/card-logo.webp" alt="logo-in-card" />
     ),
     exeption: "catalogo",
   },
@@ -83,7 +84,7 @@ export const MoreInfoCard = ({ page, text }) => {
               if (card.exeption === page) {
                 return (
                   <div
-                    key={card.icon}
+                    key={card.exeption}
                     className="w-20 h-20 bg-white rounded-full flex items-center justify-center"
                   >
                     {card.icon}

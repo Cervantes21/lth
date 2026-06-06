@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Portada = ({ onMotociclistaClick }) => {
   const [isSpecificResolution, setIsSpecificResolution] = useState(false);
@@ -38,10 +39,14 @@ const Portada = ({ onMotociclistaClick }) => {
                    cursor-pointer hover:scale-110 transition-transform flex flex-col items-center"
         onClick={onMotociclistaClick}
       >
-        <img
+        <Image
           src="/motociclista.webp"
           alt="Motociclista"
+          width={400}
+          height={400}
           className="w-auto h-auto"
+          style={{ height: "auto" }}
+          priority
         />
           <button
             className="bg-gradient-to-r from-blue-950 via-blue-600 to-blue-950
@@ -58,10 +63,13 @@ const Portada = ({ onMotociclistaClick }) => {
       {/* Contenedor del círculo de baterías */}
       <div className="circulo-baterias absolute bottom-2 md:bottom-24 right-[10%] md:right-[5%] w-auto h-auto hidden lg:block cursor-pointer hover:scale-110 transition-transform">
         <Link href="/catalogo">
-          <img
+          <Image
             src="/circulo_baterias.svg"
             alt="Círculo de Baterías"
+            width={340}
+            height={340}
             className="w-[180px] md:w-[240px] lg:w-[320px] xl:w[340px] h-auto"
+            style={{ height: "auto" }}
           />
         </Link>
       </div>

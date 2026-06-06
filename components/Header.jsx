@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "react-feather";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
@@ -38,10 +39,14 @@ const Header = () => {
     >
       <div className="flex justify-between items-center px-4 py-2">
         <Link href="/">
-          <img
+          <Image
             src="/logo.svg"
             alt="Logo"
-            className="h-[50px]"
+            width={150}
+            height={50}
+            className="h-[50px] w-auto"
+            style={{ width: "auto" }}
+            priority
           />
         </Link>
 

@@ -83,9 +83,15 @@ export const CatalogoData = ({ page }) => {
               />
             </div>
             {/* Nombre del producto */}
-            <p className="lg:text-xl font-bold text-md my-1 text-center">
+            <p className="lg:text-xl font-bold text-md my-1 text-center text-blue-lth">
               {replacePipeWithSlash(producto.BCI)}
             </p>
+            {/* Mostrar precio si existe */}
+            {producto.PRECIO && (
+              <p className="text-red-lth font-extrabold text-lg lg:text-2xl my-1">
+                {producto.PRECIO}
+              </p>
+            )}
             {/* Botones de acción: cotización y más información */}
             <div className="w-full flex flex-col gap-y-5">
               <button
@@ -94,7 +100,7 @@ export const CatalogoData = ({ page }) => {
                 }
                 className="lg:text-lg bg-red-lth text-white text-sm w-full py-1 rounded-lg"
               >
-                Cotiza Ya
+                COTIZA TU BATERÍA CON DESCUENTO ESPECIAL
               </button>
               <Link
                 href={`/${producto.BCI}`}

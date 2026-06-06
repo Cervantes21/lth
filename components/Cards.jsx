@@ -1,5 +1,6 @@
 'use client';
 import Link from "next/link";
+import Image from "next/image";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const generateCard = ({
@@ -129,7 +130,7 @@ export const Cards = ({ page }) => {
     },
     {
       key: "info-empresa",
-      icon: <img className="w-12 h-12" src="/card-logo.webp" alt="logo-in-card" />,
+      icon: <Image width={48} height={48} className="w-12 h-12" src="/card-logo.webp" alt="logo-in-card" />,
       title: <>Batería en Casa es la empresa <br /> creada para ti</>,
       button: "Ver más información",
       buttonLink: "/nosotros",
@@ -147,10 +148,10 @@ export const Cards = ({ page }) => {
         <h2 className="text-lg font-semibold text-center">
           Aceptamos todas las tarjetas <br /> de crédito
         </h2>
-        <div className="grid grid-cols-3 gap-x-2 overflow-hidden max-w-[400px]">
-          <img src="/visa-logo.webp" className="h-[70px] md:h-full" alt="Visa logo" />
-          <img src="/mastercard-logo.webp" className="h-[70px] md:h-full" alt="MasterCard logo" />
-          <img src="/meli.webp" className="h-[70px] md:h-full" alt="Mercado Libre logo" />
+        <div className="grid grid-cols-3 gap-x-2 overflow-hidden max-w-[400px] items-center">
+          <Image src="/visa-logo.webp" width={100} height={70} className="h-[70px] w-auto md:h-full" style={{ width: "auto" }} alt="Visa logo" />
+          <Image src="/mastercard-logo.webp" width={100} height={70} className="h-[70px] w-auto md:h-full" style={{ width: "auto" }} alt="MasterCard logo" />
+          <Image src="/meli.webp" width={100} height={70} className="h-[70px] w-auto md:h-full" style={{ width: "auto" }} alt="Mercado Libre logo" />
         </div>
       </div>
 

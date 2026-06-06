@@ -268,7 +268,7 @@ export default function Bateria() {
                                         <div className="bg-grey-lth flex flex-row justify-between items-center px-3 w-full"><p className="py-3">Ancho:</p> <p>{data.ancho} mm</p></div>
                                     </div>
                                     <button onClick={() => cotizar(data.bci, bateria.MARCA)} className="bg-red-lth text-white text-sm w-52 mt-10 mb-10 mx-auto flex justify-center py-2 rounded-lg lg:text-xl">
-                                        ¡Cotiza ya!
+                                        ¡COTIZA TU BATERÍA CON DESCUENTO ESPECIAL!
                                     </button>
                                     <Link href={"/garantias-y-ajustes"} className="italic text-center mt-10 mb-20 font-semibold mx-auto w-fit block hover:text-blue-700 underline transition-colors duration-150">Para términos y condiciones consulta la póliza de garantía.</Link>
 

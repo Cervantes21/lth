@@ -12,7 +12,8 @@ const productos = [
     "LARGO": 244.0,
     "ALTO": 207.0,
     "ANCHO": 174.0,
-    "IMAGEN": "HITEC/h-22f-550-front-nac.webp"
+    "IMAGEN": "HITEC/h-22f-550-front-nac.webp",
+    "PRECIO": "$3,570.00"
   },
   {
     "BCI": "H-24-600",
@@ -27,7 +28,8 @@ const productos = [
     "LARGO": 278.0,
     "ALTO": 221.0,
     "ANCHO": 174.0,
-    "IMAGEN": "HITEC/h-24-600-front.webp"
+    "IMAGEN": "HITEC/h-24-600-front.webp",
+    "PRECIO": "$4,010.00"
   },
   {
     "BCI": "H-24R-600",
@@ -42,7 +44,8 @@ const productos = [
     "LARGO": 278.0,
     "ALTO": 221.0,
     "ANCHO": 174.0,
-    "IMAGEN": "HITEC/h-24r-600-front-nac.webp"
+    "IMAGEN": "HITEC/h-24r-600-front-nac.webp",
+    "PRECIO": "$4,190.00"
   },
   {
     "BCI": "H-26R-500",
@@ -57,22 +60,8 @@ const productos = [
     "LARGO": 220.0,
     "ALTO": 200.0,
     "ANCHO": 172.0,
-    "IMAGEN": "HITEC/h-26r-500-front-nac.webp"
-  },
-  {
-    "BCI": "H-27-750",
-    "VOLTAJE": "12 Voltios",
-    "CA": "1012 Amp",
-    "CCA": "810 Amp",
-    "CR": "160 Minutes",
-    "POLARIDAD": "Postes al frente Izq / Der: (+) / (-)",
-    "MARCA": "HI-TEC",
-    "GARANTIA": 48,
-    "REEMPLAZOS_COSTO": 12,
-    "LARGO": 324.0,
-    "ALTO": 223.0,
-    "ANCHO": 174.0,
-    "IMAGEN": "HITEC/h-27-810-front-nacional.webp"
+    "IMAGEN": "HITEC/h-26r-500-front-nac.webp",
+    "PRECIO": "$3,680.00"
   },
   {
     "BCI": "H-27F-810.",
@@ -87,7 +76,8 @@ const productos = [
     "LARGO": 324.0,
     "ALTO": 223.0,
     "ANCHO": 174.0,
-    "IMAGEN": "HITEC/h-27f-810-front-nacional.webp"
+    "IMAGEN": "HITEC/h-27f-810-front-nacional.webp",
+    "PRECIO": "$4,790.00"
   },
   {
     "BCI": "H-34|78-800",
@@ -102,7 +92,8 @@ const productos = [
     "LARGO": 278.0,
     "ALTO": 203.0,
     "ANCHO": 186.0,
-    "IMAGEN": "HITEC/h-34-78-800-front-nac.webp"
+    "IMAGEN": "HITEC/h-34-78-800-front-nac.webp",
+    "PRECIO": "$4,810.00"
   },
   {
     "BCI": "H-34-650",
@@ -117,7 +108,8 @@ const productos = [
     "LARGO": 278.13,
     "ALTO": 196.95,
     "ANCHO": 174.27,
-    "IMAGEN": "HITEC/h-34-650-front-nacional.webp"
+    "IMAGEN": "HITEC/h-34-650-front-nacional.webp",
+    "PRECIO": "$4,580.00"
   },
   {
     "BCI": "H-35-585",
@@ -132,7 +124,8 @@ const productos = [
     "LARGO": 224.0,
     "ALTO": 224.0,
     "ANCHO": 174.0,
-    "IMAGEN": "HITEC/h-35-585-front-nac.webp"
+    "IMAGEN": "HITEC/h-35-585-front-nac.webp",
+    "PRECIO": "$4,070.00"
   },
   {
     "BCI": "H-41-750",
@@ -147,7 +140,8 @@ const productos = [
     "LARGO": 297.0,
     "ALTO": 174.0,
     "ANCHO": 175.0,
-    "IMAGEN": "HITEC/h-41-750-front.webp"
+    "IMAGEN": "HITEC/h-41-750-front.webp",
+    "PRECIO": "$4,580.00"
   },
   {
     "BCI": "H-42-550",
@@ -162,7 +156,8 @@ const productos = [
     "LARGO": 241.0,
     "ALTO": 175.0,
     "ANCHO": 174.0,
-    "IMAGEN": "HITEC/h-42-550-front-nac.webp"
+    "IMAGEN": "HITEC/h-42-550-front-nac.webp",
+    "PRECIO": "$4,060.00"
   },
   {
     "BCI": "H-47(LN2)-600",
@@ -177,7 +172,8 @@ const productos = [
     "LARGO": 241.0,
     "ALTO": 189.0,
     "ANCHO": 174.0,
-    "IMAGEN": "HITEC/h-47-ln2-600-front-nac.webp"
+    "IMAGEN": "HITEC/h-47-ln2-600-front-nac.webp",
+    "PRECIO": "$4,600.00"
   },
   {
     "BCI": "H-48|91(LN3)-730",
@@ -192,7 +188,8 @@ const productos = [
     "LARGO": 277.0,
     "ALTO": 190.0,
     "ANCHO": 174.0,
-    "IMAGEN": "HITEC/h-48_91ln3-730-front-nac.webp"
+    "IMAGEN": "HITEC/h-48_91ln3-730-front-nac.webp",
+    "PRECIO": "$5,170.00"
   },
   {
     "BCI": "H-49(LN5)-850",
@@ -207,7 +204,8 @@ const productos = [
     "LARGO": 352.0,
     "ALTO": 190.0,
     "ANCHO": 174.0,
-    "IMAGEN": "HITEC/h-49ln5-850-front.webp"
+    "IMAGEN": "HITEC/h-49ln5-850-front.webp",
+    "PRECIO": "$5,170.00"
   },
   {
     "BCI": "H-58-650",
@@ -222,7 +220,8 @@ const productos = [
     "LARGO": 253.0,
     "ALTO": 177.0,
     "ANCHO": 183.0,
-    "IMAGEN": "HITEC/h-58-650-front.webp"
+    "IMAGEN": "HITEC/h-58-650-front.webp",
+    "PRECIO": "$3,850.00"
   },
   {
     "BCI": "H-65-850",
@@ -237,7 +236,8 @@ const productos = [
     "LARGO": 305.0,
     "ALTO": 189.0,
     "ANCHO": 190.0,
-    "IMAGEN": "HITEC/h-65-850-front.webp"
+    "IMAGEN": "HITEC/h-65-850-front.webp",
+    "PRECIO": "$4,450.00"
   },
   {
     "BCI": "H-75|86-700",
@@ -252,7 +252,8 @@ const productos = [
     "LARGO": 245.0,
     "ALTO": 203.0,
     "ANCHO": 186.0,
-    "IMAGEN": "HITEC/h-75_86-700-front.webp"
+    "IMAGEN": "HITEC/h-75_86-700-front.webp",
+    "PRECIO": "$4,580.00"
   },
   {
     "BCI": "H-75-650",
@@ -267,7 +268,8 @@ const productos = [
     "LARGO": 245.0,
     "ALTO": 186.0,
     "ANCHO": 184.0,
-    "IMAGEN": "HITEC/h-75-650-front.webp"
+    "IMAGEN": "HITEC/h-75-650-front.webp",
+    "PRECIO": "$4,220.00"
   },
   {
     "BCI": "H-78-800",
@@ -282,7 +284,8 @@ const productos = [
     "LARGO": 278.0,
     "ALTO": 184.0,
     "ANCHO": 170.0,
-    "IMAGEN": "HITEC/h-78-800-front.webp"
+    "IMAGEN": "HITEC/h-78-800-front.webp",
+    "PRECIO": "$5,170.00"
   },
   {
     "BCI": "H-99(LBN1)-470",
@@ -297,7 +300,8 @@ const productos = [
     "LARGO": 206.0,
     "ALTO": 174.0,
     "ANCHO": 174.0,
-    "IMAGEN": "HITEC/h-99(lbn1)-470-front.webp"
+    "IMAGEN": "HITEC/h-99(lbn1)-470-front.webp",
+    "PRECIO": "$3,970.00"
   },
   {
     "BCI": "L-22F-450",
@@ -312,7 +316,8 @@ const productos = [
     "LARGO": 244.0,
     "ALTO": 207.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-22f-450-front-nac.webp"
+    "IMAGEN": "LTH/l-22f-450-front-nac.webp",
+    "PRECIO": "$3,250.00"
   },
   {
     "BCI": "L-24-420",
@@ -327,7 +332,8 @@ const productos = [
     "LARGO": 278.0,
     "ALTO": 220.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-24-420-front.webp"
+    "IMAGEN": "LTH/l-24-420-front.webp",
+    "PRECIO": "$3,600.00"
   },
   {
     "BCI": "L-24-530",
@@ -342,7 +348,8 @@ const productos = [
     "LARGO": 278.0,
     "ALTO": 220.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-24-530-front-nac.webp"
+    "IMAGEN": "LTH/l-24-530-front-nac.webp",
+    "PRECIO": "$3,650.00"
   },
   {
     "BCI": "L-24R-530",
@@ -357,7 +364,8 @@ const productos = [
     "LARGO": 278.0,
     "ALTO": 220.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-24r-530-front-nac.webp"
+    "IMAGEN": "LTH/l-24r-530-front-nac.webp",
+    "PRECIO": "$3,800.00"
   },
   {
     "BCI": "L-26R-500",
@@ -372,7 +380,8 @@ const productos = [
     "LARGO": 220.0,
     "ALTO": 200.0,
     "ANCHO": 172.0,
-    "IMAGEN": "LTH/l-26r-500-front-nac.webp"
+    "IMAGEN": "LTH/l-26r-500-front-nac.webp",
+    "PRECIO": "$3,350.00"
   },
   {
     "BCI": "L-27-700",
@@ -387,7 +396,8 @@ const productos = [
     "LARGO": 324.0,
     "ALTO": 223.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-27-700-front-nac.webp"
+    "IMAGEN": "LTH/l-27-700-front-nac.webp",
+    "PRECIO": "$4,940.00"
   },
   {
     "BCI": "L-27F-520",
@@ -402,7 +412,8 @@ const productos = [
     "LARGO": 324.0,
     "ALTO": 223.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-27f-520-front-nac.webp"
+    "IMAGEN": "LTH/l-27f-520-front-nac.webp",
+    "PRECIO": "$4,350.00"
   },
   {
     "BCI": "L-34|78-750",
@@ -417,7 +428,8 @@ const productos = [
     "LARGO": 324.0,
     "ALTO": 223.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-34-78-750-front-nac.webp"
+    "IMAGEN": "LTH/l-34-78-750-front-nac.webp",
+    "PRECIO": "$4,370.00"
   },
   {
     "BCI": "L-34-600",
@@ -432,7 +444,8 @@ const productos = [
     "LARGO": 278.0,
     "ALTO": 197.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-34-600-front-nac.webp"
+    "IMAGEN": "LTH/l-34-600-front-nac.webp",
+    "PRECIO": "$4,170.00"
   },
   {
     "BCI": "L-35-575",
@@ -447,7 +460,8 @@ const productos = [
     "LARGO": 245.0,
     "ALTO": 223.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-35-575-front-nac.webp"
+    "IMAGEN": "LTH/l-35-575-front-nac.webp",
+    "PRECIO": "$3,700.00"
   },
   {
     "BCI": "L-41-650",
@@ -462,7 +476,8 @@ const productos = [
     "LARGO": 295.0,
     "ALTO": 174.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-41-650-front-nac.webp"
+    "IMAGEN": "LTH/l-41-650-front-nac.webp",
+    "PRECIO": "$4,170.00"
   },
   {
     "BCI": "L-42-400",
@@ -477,7 +492,8 @@ const productos = [
     "LARGO": 241.0,
     "ALTO": 175.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-42-400-front-nac.webp"
+    "IMAGEN": "LTH/l-42-400-front-nac.webp",
+    "PRECIO": "$3,350.00"
   },
   {
     "BCI": "L-42-500",
@@ -492,7 +508,8 @@ const productos = [
     "LARGO": 241.0,
     "ALTO": 175.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-42-500-front-nac.webp"
+    "IMAGEN": "LTH/l-42-500-front-nac.webp",
+    "PRECIO": "$3,690.00"
   },
   {
     "BCI": "L-42R-500",
@@ -507,7 +524,8 @@ const productos = [
     "LARGO": 241.0,
     "ALTO": 175.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-42r-500-front-nac.webp"
+    "IMAGEN": "LTH/l-42r-500-front-nac.webp",
+    "PRECIO": "$3,840.00"
   },
   {
     "BCI": "L-44B19-335",
@@ -522,7 +540,8 @@ const productos = [
     "LARGO": 187.0,
     "ALTO": 221.0,
     "ANCHO": 127.0,
-    "IMAGEN": "LTH/l-44b19-335-front-nac.webp"
+    "IMAGEN": "LTH/l-44b19-335-front-nac.webp",
+    "PRECIO": "$3,510.00"
   },
   {
     "BCI": "L-47(LN2)-550",
@@ -537,7 +556,8 @@ const productos = [
     "LARGO": 241.0,
     "ALTO": 189.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-47-ln2-550-front-nac.webp"
+    "IMAGEN": "LTH/l-47-ln2-550-front-nac.webp",
+    "PRECIO": "$4,190.00"
   },
   {
     "BCI": "L-51-500",
@@ -552,7 +572,8 @@ const productos = [
     "LARGO": 236.0,
     "ALTO": 220.0,
     "ANCHO": 127.0,
-    "IMAGEN": "LTH/l-51-500-front-nac.webp"
+    "IMAGEN": "LTH/l-51-500-front-nac.webp",
+    "PRECIO": "$4,030.00"
   },
   {
     "BCI": "L-51R-500",
@@ -567,7 +588,8 @@ const productos = [
     "LARGO": 236.0,
     "ALTO": 220.0,
     "ANCHO": 127.0,
-    "IMAGEN": "LTH/l-51r-500-front-nac.webp"
+    "IMAGEN": "LTH/l-51r-500-front-nac.webp",
+    "PRECIO": "$3,840.00"
   },
   {
     "BCI": "L-58-575",
@@ -582,7 +604,8 @@ const productos = [
     "LARGO": 254.0,
     "ALTO": 173.0,
     "ANCHO": 183.0,
-    "IMAGEN": "LTH/l-58-575-front-nac.webp"
+    "IMAGEN": "LTH/l-58-575-front-nac.webp",
+    "PRECIO": "$3,500.00"
   },
   {
     "BCI": "L-58R-575",
@@ -597,7 +620,8 @@ const productos = [
     "LARGO": 253.0,
     "ALTO": 177.0,
     "ANCHO": 183.0,
-    "IMAGEN": "LTH/l-58r-575-front.webp"
+    "IMAGEN": "LTH/l-58r-575-front.webp",
+    "PRECIO": "$4,290.00"
   },
   {
     "BCI": "L-65-800",
@@ -612,7 +636,8 @@ const productos = [
     "LARGO": 305.0,
     "ALTO": 189.0,
     "ANCHO": 190.0,
-    "IMAGEN": "LTH/l-65-800-front.webp"
+    "IMAGEN": "LTH/l-65-800-front.webp",
+    "PRECIO": "$4,040.00"
   },
   {
     "BCI": "L-75|86-650",
@@ -627,7 +652,8 @@ const productos = [
     "LARGO": 245.0,
     "ALTO": 203.0,
     "ANCHO": 186.0,
-    "IMAGEN": "LTH/l-75_86-650-front.webp"
+    "IMAGEN": "LTH/l-75_86-650-front.webp",
+    "PRECIO": "$4,170.00"
   },
   {
     "BCI": "L-75-575",
@@ -642,7 +668,8 @@ const productos = [
     "LARGO": 245.0,
     "ALTO": 185.0,
     "ANCHO": 185.0,
-    "IMAGEN": "LTH/l-75-575-front-nac.webp"
+    "IMAGEN": "LTH/l-75-575-front-nac.webp",
+    "PRECIO": "$3,830.00"
   },
   {
     "BCI": "L-94R-800",
@@ -657,7 +684,8 @@ const productos = [
     "LARGO": 314.0,
     "ALTO": 190.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-94r-800-front.webp"
+    "IMAGEN": "LTH/l-94r-800-front.webp",
+    "PRECIO": "$4,940.00"
   },
   {
     "BCI": "L-99(LBN1)-400",
@@ -672,7 +700,8 @@ const productos = [
     "LARGO": 206.0,
     "ALTO": 174.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-99(lbn1)-400-front.webp"
+    "IMAGEN": "LTH/l-99(lbn1)-400-front.webp",
+    "PRECIO": "$3,610.00"
   },
   {
     "BCI": "L-NS40-320",
@@ -687,7 +716,8 @@ const productos = [
     "LARGO": 187.0,
     "ALTO": 221.0,
     "ANCHO": 140.0,
-    "IMAGEN": "LTH/l-ns40-320-front.webp"
+    "IMAGEN": "LTH/l-ns40-320-front.webp",
+    "PRECIO": "$3,510.00"
   },
   {
     "BCI": "L-NS40L-340",
@@ -702,7 +732,8 @@ const productos = [
     "LARGO": 187.0,
     "ALTO": 221.0,
     "ANCHO": 127.0,
-    "IMAGEN": "LTH/l-ns40l-340-front.webp"
+    "IMAGEN": "LTH/l-ns40l-340-front.webp",
+    "PRECIO": "$3,510.00"
   },
   {
     "BCI": "L-NS40Z-320",
@@ -717,7 +748,8 @@ const productos = [
     "LARGO": 187.0,
     "ALTO": 221.0,
     "ANCHO": 127.0,
-    "IMAGEN": "LTH/l-ns40z-320-front-nac.webp"
+    "IMAGEN": "LTH/l-ns40z-320-front-nac.webp",
+    "PRECIO": "$3,510.00"
   },
   {
     "BCI": "L-24F-710 AGM",
@@ -732,7 +764,8 @@ const productos = [
     "LARGO": 278.13,
     "ALTO": 219.26,
     "ANCHO": 173.87,
-    "IMAGEN": "EVOLUTION/lth_evolution_auto_24f-710_agm_front_mx.webp"
+    "IMAGEN": "EVOLUTION/lth_evolution_auto_24f-710_agm_front_mx.webp",
+    "PRECIO": "$6,280.00"
   },
   {
     "BCI": "L-31T-825 AGM",
@@ -747,7 +780,8 @@ const productos = [
     "LARGO": 330.0,
     "ALTO": 237.0,
     "ANCHO": 172.0,
-    "IMAGEN": "EVOLUTION/lth_evolution_sp_31t-825_agm_front_mx.webp"
+    "IMAGEN": "EVOLUTION/lth_evolution_sp_31t-825_agm_front_mx.webp",
+    "PRECIO": "$9,110.00"
   },
   {
     "BCI": "L-35-650 AGM",
@@ -762,7 +796,8 @@ const productos = [
     "LARGO": 245.0,
     "ALTO": 225.0,
     "ANCHO": 171.0,
-    "IMAGEN": "EVOLUTION/lth_evolution_auto_35-650_agm_front_mx.webp"
+    "IMAGEN": "EVOLUTION/lth_evolution_auto_35-650_agm_front_mx.webp",
+    "PRECIO": "$6,100.00"
   },
   {
     "BCI": "L-47-660 AGM",
@@ -777,7 +812,8 @@ const productos = [
     "LARGO": 241.0,
     "ALTO": 189.0,
     "ANCHO": 174.0,
-    "IMAGEN": "EVOLUTION/lth_evolution_auto_47-660_agm_front_mx.webp"
+    "IMAGEN": "EVOLUTION/lth_evolution_auto_47-660_agm_front_mx.webp",
+    "PRECIO": "$6,910.00"
   },
   {
     "BCI": "L-49-900 AGM",
@@ -792,7 +828,8 @@ const productos = [
     "LARGO": 352.5,
     "ALTO": 189.5,
     "ANCHO": 174.8,
-    "IMAGEN": "EVOLUTION/lth_evolution_auto_49-900_agm_front_mx.webp"
+    "IMAGEN": "EVOLUTION/lth_evolution_auto_49-900_agm_front_mx.webp",
+    "PRECIO": "$7,760.00"
   },
   {
     "BCI": "L-65-750 AGM",
@@ -807,7 +844,8 @@ const productos = [
     "LARGO": 305.31,
     "ALTO": 188.24,
     "ANCHO": 189.36,
-    "IMAGEN": "EVOLUTION/lth_evolution_auto_65-750_agm_front_mx.webp"
+    "IMAGEN": "EVOLUTION/lth_evolution_auto_65-750_agm_front_mx.webp",
+    "PRECIO": "$6,670.00"
   },
   {
     "BCI": "L-94R(LN4)-850 AGM",
@@ -822,7 +860,8 @@ const productos = [
     "LARGO": 315.0,
     "ALTO": 190.0,
     "ANCHO": 175.0,
-    "IMAGEN": "EVOLUTION/lth_evolution_auto_94r-850_agm_front_mx.webp"
+    "IMAGEN": "EVOLUTION/lth_evolution_auto_94r-850_agm_front_mx.webp",
+    "PRECIO": "$7,760.00"
   },
   {
     "BCI": "LTX-22F-600",
@@ -837,7 +876,8 @@ const productos = [
     "LARGO": 244.0,
     "ALTO": 207.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH TAXI/ltx-22f-600-front-nac.webp"
+    "IMAGEN": "LTH TAXI/ltx-22f-600-front-nac.webp",
+    "PRECIO": "$3,760.00"
   },
   {
     "BCI": "LTX-35-600",
@@ -852,7 +892,8 @@ const productos = [
     "LARGO": 224.0,
     "ALTO": 224.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH TAXI/ltx-35-600-front-nac.webp"
+    "IMAGEN": "LTH TAXI/ltx-35-600-front-nac.webp",
+    "PRECIO": "$4,270.00"
   },
   {
     "BCI": "LTX-47(LN2)-625",
@@ -867,7 +908,8 @@ const productos = [
     "LARGO": 241.0,
     "ALTO": 188.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH TAXI/ltx-47(ln2)-625-front-nac.webp"
+    "IMAGEN": "LTH TAXI/ltx-47(ln2)-625-front-nac.webp",
+    "PRECIO": "$4,830.00"
   },
   {
     "BCI": "L-51R(B24L)-410 XEV",
@@ -882,7 +924,8 @@ const productos = [
     "LARGO": 238.0,
     "ALTO": 223.0,
     "ANCHO": 129.0,
-    "IMAGEN": "PROTECT/179708-lth_protect_auto_51r_b24l_xev_front.webp"
+    "IMAGEN": "PROTECT/179708-lth_protect_auto_51r_b24l_xev_front.webp",
+    "PRECIO": "$6,620.00"
   },
   {
     "BCI": "L-51JIS-410 XEV",
@@ -912,7 +955,8 @@ const productos = [
     "LARGO": 242.0,
     "ALTO": 190.0,
     "ANCHO": 175.0,
-    "IMAGEN": "PROTECT/179711-lth_protect_auto_h5_xev_front.webp"
+    "IMAGEN": "PROTECT/179711-lth_protect_auto_h5_xev_front.webp",
+    "PRECIO": "$7,420.00"
   },
   {
     "BCI": "L-153R(LN0)-420 XEV",
@@ -927,7 +971,8 @@ const productos = [
     "LARGO": 175.0,
     "ALTO": 190.0,
     "ANCHO": 175.0,
-    "IMAGEN": "PROTECT/179709-lth_protect_auto_h3_xev_front.webp"
+    "IMAGEN": "PROTECT/179709-lth_protect_auto_h3_xev_front.webp",
+    "PRECIO": "$6,030.00"
   },
   {
     "BCI": "L-140R(LN1)-570 XEV",
@@ -942,7 +987,8 @@ const productos = [
     "LARGO": 207.0,
     "ALTO": 190.0,
     "ANCHO": 175.0,
-    "IMAGEN": "PROTECT/179710-lth_protect_auto_h4_xev_front.webp"
+    "IMAGEN": "PROTECT/179710-lth_protect_auto_h4_xev_front.webp",
+    "PRECIO": "$6,030.00"
   },
   {
     "BCI": "AUX14",
@@ -957,7 +1003,8 @@ const productos = [
     "LARGO": 150.0,
     "ALTO": 145.0,
     "ANCHO": 87.0,
-    "IMAGEN": "EVOLUTION AUX/179670-lth_evolution_auto_aux14_front.webp"
+    "IMAGEN": "EVOLUTION AUX/179670-lth_evolution_auto_aux14_front.webp",
+    "PRECIO": "$2,320.00"
   },
   {
     "BCI": "AUX12",
@@ -972,67 +1019,8 @@ const productos = [
     "LARGO": 150.0,
     "ALTO": 130.0,
     "ANCHO": 87.0,
-    "IMAGEN": "EVOLUTION AUX/179669-lth_evolution_auto_aux12_front.webp"
-  },
-  {
-    "BCI": "H-34|78-800",
-    "VOLTAJE": "12 Voltios",
-    "CA": "1000 Amp",
-    "CCA": "800 Amp",
-    "CR": "115 Minutes",
-    "POLARIDAD": "Postes al frente Izq / Der: (+) / (-)",
-    "MARCA": "HI-TEC",
-    "GARANTIA": 48,
-    "REEMPLAZOS_COSTO": 12,
-    "LARGO": 278.0,
-    "ALTO": 203.0,
-    "ANCHO": 186.0,
-    "IMAGEN": "HITEC/h-34-78-800-front-nac.webp"
-  },
-  {
-    "BCI": "H-48|91(LN3)-730",
-    "VOLTAJE": "12 Voltios",
-    "CA": "912 Amp",
-    "CCA": "730 Amp",
-    "CR": "115 Minutes",
-    "POLARIDAD": "Postes al frente Izq / Der: (-) / (+)",
-    "MARCA": "HI-TEC",
-    "GARANTIA": 48,
-    "REEMPLAZOS_COSTO": 12,
-    "LARGO": 277.0,
-    "ALTO": 190.0,
-    "ANCHO": 174.0,
-    "IMAGEN": "HITEC/h-48_91ln3-730-front-nac.webp"
-  },
-  {
-    "BCI": "H-75|86-700",
-    "VOLTAJE": "12 Voltios",
-    "CA": "875 Amp",
-    "CCA": "700 Amp",
-    "CR": "100 Minutes",
-    "POLARIDAD": "Postes al frente Izq / Der: (+) / (-)",
-    "MARCA": "HI-TEC",
-    "GARANTIA": 48,
-    "REEMPLAZOS_COSTO": 12,
-    "LARGO": 245.0,
-    "ALTO": 203.0,
-    "ANCHO": 186.0,
-    "IMAGEN": "HITEC/h-75_86-700-front.webp"
-  },
-  {
-    "BCI": "L-34|78-750",
-    "VOLTAJE": "12 Voltios",
-    "CA": "937 Amp",
-    "CCA": "750 Amp",
-    "CR": "115 Minutes",
-    "POLARIDAD": "Postes al frente Izq / Der: (+) / (-)",
-    "MARCA": "LTH",
-    "GARANTIA": 36,
-    "REEMPLAZOS_COSTO": 12,
-    "LARGO": 324.0,
-    "ALTO": 223.0,
-    "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-34-78-750-front-nac.webp"
+    "IMAGEN": "EVOLUTION AUX/179669-lth_evolution_auto_aux12_front.webp",
+    "PRECIO": "$2,320.00"
   },
   {
     "BCI": "L-48|91(LN3)-615",
@@ -1047,22 +1035,8 @@ const productos = [
     "LARGO": 277.0,
     "ALTO": 190.0,
     "ANCHO": 174.0,
-    "IMAGEN": "LTH/l-48-91ln3-615-front-nac.webp"
-  },
-  {
-    "BCI": "L-75|86-650",
-    "VOLTAJE": "12 Voltios",
-    "CA": "812 Amp",
-    "CCA": "650 Amp",
-    "CR": "93 Minutes",
-    "POLARIDAD": "Postes al frente Izq / Der: (+) / (-)",
-    "MARCA": "LTH",
-    "GARANTIA": 36,
-    "REEMPLAZOS_COSTO": 12,
-    "LARGO": 245.0,
-    "ALTO": 203.0,
-    "ANCHO": 186.0,
-    "IMAGEN": "LTH/l-75_86-650-front.webp"
+    "IMAGEN": "LTH/l-48-91ln3-615-front-nac.webp",
+    "PRECIO": "$4,710.00"
   },
   {
     "BCI": "L-48|91-760 AGM",
@@ -1077,7 +1051,8 @@ const productos = [
     "LARGO": 278.0,
     "ALTO": 190.0,
     "ANCHO": 175.0,
-    "IMAGEN": "EVOLUTION/lth_auto_agm_48-91-760_front.webp"
+    "IMAGEN": "EVOLUTION/lth_auto_agm_48-91-760_front.webp",
+    "PRECIO": "$7,760.00"
   },
   {
     "BCI": "9-B",
@@ -1092,7 +1067,7 @@ const productos = [
     "LARGO": 137.0,
     "ALTO": 139.0,
     "ANCHO": 76.0,
-    "IMAGEN": "MOTO-BATERIAS/lth-9-b-front-2020.webp"
+    "IMAGEN": "MOTO-BATERIAS/lth-9-b-front-2020.webp",
   },
   {
     "BCI": "TX5L-BS",
@@ -1437,7 +1412,8 @@ const productos = [
     "LARGO": "324 mm",
     "ALTO": "223 mm",
     "ANCHO": "174 mm",
-    "IMAGEN": "HITEC/h-27-810-front-nacional.webp"
+    "IMAGEN": "HITEC/h-27-810-front-nacional.webp",
+    "PRECIO": "$5,430.00"
   },
   {
     "BCI": "L-31P-900 AR",
@@ -1452,7 +1428,8 @@ const productos = [
     "LARGO": "330 mm",
     "ALTO": "239 mm",
     "ANCHO": "172 mm",
-    "IMAGEN": "LTH/l-31p-900-ar-front.webp"
+    "IMAGEN": "LTH/l-31p-900-ar-front.webp",
+    "PRECIO": "$4,440.00"
   },
   {
     "BCI": "L-31P-750 AR",
@@ -1467,22 +1444,8 @@ const productos = [
     "LARGO": "330 mm",
     "ALTO": "239 mm",
     "ANCHO": "172 mm",
-    "IMAGEN": "LTH/l-31p-750-ar-front.webp"
-  },
-  {
-    "BCI": "L-48|91(LN3)-615",
-    "VOLTAJE": "12 Voltios",
-    "CA": "768 Amp",
-    "CCA": "615 Amp",
-    "CR": "95 minutos",
-    "POLARIDAD": "(-) / (+)",
-    "MARCA": "LTH",
-    "GARANTIA": "36 meses",
-    "REEMPLAZOS_COSTO": "12 meses",
-    "LARGO": "277 mm",
-    "ALTO": "190 mm",
-    "ANCHO": "174 mm",
-    "IMAGEN": "LTH/l-48-91ln3-615-front-nac.webp"
+    "IMAGEN": "LTH/l-31p-750-ar-front.webp",
+    "PRECIO": "$4,030.00"
   },
   {
     "BCI": "L-30H-670",
@@ -1497,7 +1460,8 @@ const productos = [
     "LARGO": "330 mm",
     "ALTO": "233 mm",
     "ANCHO": "172 mm",
-    "IMAGEN": "LTH/l-30h-670-front.webp"
+    "IMAGEN": "LTH/l-30h-670-front.webp",
+    "PRECIO": "$3,890.00"
   },
   {
     "BCI": "L-47(LN2)-660 AGM",
@@ -1512,7 +1476,8 @@ const productos = [
     "LARGO": "241 mm",
     "ALTO": "189 mm",
     "ANCHO": "174 mm",
-    "IMAGEN": "EVOLUTION/lth_evolution_auto_47-660_agm_front_mx.webp"
+    "IMAGEN": "EVOLUTION/lth_evolution_auto_47-660_agm_front_mx.webp",
+    "PRECIO": "$6,910.00"
   },
   {
     "BCI": "L-31T-950 HD",
@@ -1527,7 +1492,8 @@ const productos = [
     "LARGO": "330 mm",
     "ALTO": "238 mm",
     "ANCHO": "172 mm",
-    "IMAGEN": "LTH/l-31t-950-hd-front.webp"
+    "IMAGEN": "LTH/l-31t-950-hd-front.webp",
+    "PRECIO": "$4,920.00"
   },
   {
     "BCI": "L-31T-700 HD",
@@ -1542,7 +1508,8 @@ const productos = [
     "LARGO": "330 mm",
     "ALTO": "238 mm",
     "ANCHO": "172 mm",
-    "IMAGEN": "LTH/l-31t-700-hd-sup-front-2019.webp"
+    "IMAGEN": "LTH/l-31t-700-hd-sup-front-2019.webp",
+    "PRECIO": "$4,470.00"
   },
   {
     "BCI": "L-31T-900 AR",
@@ -1557,7 +1524,8 @@ const productos = [
     "LARGO": "330 mm",
     "ALTO": "238 mm",
     "ANCHO": "172 mm",
-    "IMAGEN": "LTH/l-31t-900-ar-sup-front.webp"
+    "IMAGEN": "LTH/l-31t-900-ar-sup-front.webp",
+    "PRECIO": "$4,440.00"
   },
   {
     "BCI": "L-31T-750 AR",
@@ -1572,7 +1540,8 @@ const productos = [
     "LARGO": "330 mm",
     "ALTO": "238 mm",
     "ANCHO": "172 mm",
-    "IMAGEN": "LTH/l-31t-750-ar-sup-front.webp"
+    "IMAGEN": "LTH/l-31t-750-ar-sup-front.webp",
+    "PRECIO": "$4,030.00"
   },
   {
     "BCI": "L-51RJIS-480",
@@ -1587,7 +1556,8 @@ const productos = [
     "LARGO": "236 mm",
     "ALTO": "220 mm",
     "ANCHO": "127 mm",
-    "IMAGEN": "LTH/l-51r-jis-480-front-nac.webp"
+    "IMAGEN": "LTH/l-51r-jis-480-front-nac.webp",
+    "PRECIO": "$3,840.00"
   },
   {
     "BCI": "L-51 JIS-480",
@@ -1602,7 +1572,8 @@ const productos = [
     "LARGO": "236 mm",
     "ALTO": "220 mm",
     "ANCHO": "127 mm",
-    "IMAGEN": "LTH/l-51-jis-480-front-nac.webp"
+    "IMAGEN": "LTH/l-51-jis-480-front-nac.webp",
+    "PRECIO": "$4,030.00"
   }
 ]
 

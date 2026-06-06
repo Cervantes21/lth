@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 export const Whatsapp = () => {
   return (
@@ -21,9 +22,11 @@ export const Whatsapp = () => {
         backgroundColor: 'rgba(0, 0, 0, 0)', // Fondo transparente para mejorar la experiencia visual
       }}
     >
-      <img
+      <Image
         src="/whatsapp.svg"
         alt="WhatsApp"
+        width={60}
+        height={60}
         style={{
           width: '100%', // Ajusta la imagen al contenedor
           height: '100%', // Ajusta la imagen al contenedor

@@ -4,6 +4,7 @@ import { MoreInfoCard } from "@/components/MoreInfoCard";
 import { Whatsapp } from "@/components/Whatsapp";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutUs() {
   return (
@@ -43,10 +44,13 @@ export default function AboutUs() {
       {/* Imagen animada o logotipo */}
       <div className="flex justify-center my-6">
         <Link href="/">
-          <img
-            src="/bec-animation.webp"
+          <Image
+            src="/bec-logo.svg"
             alt="Animación de BEC Batería en Casa"
+            width={160}
+            height={160}
             className="w-40 h-auto cursor-pointer transition-transform duration-300 hover:scale-105"
+            style={{ height: "auto" }}
           />
         </Link>
       </div>
@@ -129,10 +133,12 @@ export default function AboutUs() {
           </div>
 
           {/* Columna de la imagen */}
-          <div className="image-block">
-            <img
+          <div className="image-block relative h-full min-h-[300px]">
+            <Image
               src="/nosotros.webp"
               alt="Cambio de batería"
+              fill
+              className="object-cover"
             />
           </div>
         </div>

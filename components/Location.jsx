@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export const Location = () => {
@@ -48,9 +49,11 @@ export const Location = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               {/* Logo en miniatura */}
-              <img
+              <Image
                 src={direccion.logo}
                 alt={`Logo de ${direccion.nombre}`}
+                width={48}
+                height={48}
                 className="w-12 h-12 mr-4 rounded-full object-cover"
               />
               <div>
@@ -93,4 +96,3 @@ export const Location = () => {
     </div>
   );
 };
-

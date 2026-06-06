@@ -2,10 +2,6 @@ import mongoose from "mongoose";
 
 const MONGO_URI = process.env.MONGO_URI;
 
-if (!MONGO_URI) {
-  throw new Error("Por favor, define la variable de entorno MONGO_URI en tu archivo .env.local");
-}
-
 let cached = global.mongoose;
 
 if (!cached) {
@@ -13,6 +9,12 @@ if (!cached) {
 }
 
 async function dbConnect() {
+  if (!MONGO_URI) {
+    const devMessage = "Por favor, define la variable de entorno MONGO_URI en tu archivo .env.local";
+    const prodMessage = "Error de configuración del servidor.";
+    throw new Error(process.env.NODE_ENV === 'development' ? devMessage : prodMessage);
+  }
+
   if (cached.conn) {
     return cached.conn;
   }
@@ -23,12 +25,14 @@ async function dbConnect() {
         dbName: "myDatabase",
       })
       .then((mongoose) => {
-        console.log("Conexión a MongoDB establecida");
+        if (process.env.NODE_ENV === 'development') {
+          console.log("Conexión a MongoDB establecida");
+        }
         return mongoose;
       })
       .catch((error) => {
-        console.error("Error al conectar a MongoDB:", error);
-        throw error;
+        console.error("Error al conectar a MongoDB"); // No logueamos el error completo al cliente indirectamente
+        throw new Error("Error interno del servidor");
       });
   }
 
