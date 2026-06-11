@@ -88,9 +88,20 @@ export const CatalogoData = ({ page }) => {
             </p>
             {/* Mostrar precio si existe */}
             {producto.PRECIO && (
-              <p className="text-red-lth font-extrabold text-lg lg:text-2xl my-1">
-                {producto.PRECIO}
-              </p>
+              <div className="flex flex-col items-center text-center -mt-2 mb-2">
+                <p className="text-red-lth font-extrabold text-lg lg:text-2xl">
+                  {producto.PRECIO}
+                </p>
+                <p className="text-[10px] lg:text-xs font-bold text-gray-600 leading-tight">
+                  *A cambio del acumulador usado
+                </p>
+                <p className="text-[10px] lg:text-xs font-bold text-gray-600 leading-tight">
+                  {producto.REEMPLAZOS_COSTO} meses de reemplazo sin costo
+                </p>
+                <p className="text-[10px] lg:text-xs font-bold text-gray-600 leading-tight">
+                  {producto.GARANTIA} meses de garantía
+                </p>
+              </div>
             )}
             {/* Botones de acción: cotización y más información */}
             <div className="w-full flex flex-col gap-y-5">

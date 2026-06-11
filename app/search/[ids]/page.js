@@ -7,26 +7,24 @@ import Image from "next/image";
 
 import { Cards } from "@/components/Cards";
 import { Whatsapp, cotizar } from "@/components/Whatsapp";
-import MainForm from "@/components/MainForm";  // <--- Importamos tu formulario
+import MainForm from "@/components/MainForm";
 import productos from "@/data/Catalogo";
 
 export default function SearchIds() {
-  // Para mostrar/ocultar el formulario
   const [showForm, setShowForm] = useState(false);
 
   const pathname = usePathname();
-  // Extraemos la parte /search/<opciones> (por ejemplo "LTH|24,R24-etc")
   const id = pathname.replace("/search/", "");
   const ids = id.split(",").map((id) => decodeURIComponent(id));
 
-  // Leemos los parámetros de búsqueda (tipo, ano, marca, modelo) del querystring
   const searchParams = useSearchParams();
   const tipoVehiculo = searchParams.get("tipo") || "";
   const anoVehiculo = searchParams.get("ano") || "";
   const marcaVehiculo = searchParams.get("marca") || "";
   const modeloVehiculo = searchParams.get("modelo") || "";
+  const nombre = searchParams.get("nombre") || "";
+  const telefono = searchParams.get("telefono") || "";
 
-  // Filtramos los productos según IDs (BCI) obtenidos
   const filteredProducts = productos.filter((producto) =>
     ids.includes(producto.BCI)
   );
@@ -36,7 +34,6 @@ export default function SearchIds() {
     window.location.href = `tel:${phoneNumber}`;
   };
 
-  // Útil si algunas imágenes llevan "|" en el nombre
   const replacePipeWithSlash = (str) => str.replace(/\|/g, "/");
 
   return (
@@ -68,7 +65,7 @@ export default function SearchIds() {
           Buscador
         </h1>
 
-        {/* Imagen */}
+        {/* Logo */}
         <div className="flex justify-center mb-5">
           <Image
             src="/bec-logo.svg"
@@ -80,6 +77,14 @@ export default function SearchIds() {
           />
         </div>
 
+        {/* Confirmación de contacto si dejó sus datos */}
+        {!showForm && telefono && (
+          <p className="text-center text-sm text-green-700 font-semibold mb-4 bg-green-50 border border-green-200 px-4 py-2 rounded-xl w-full">
+            ✅ ¡Gracias{nombre ? `, ${nombre}` : ""}! Te contactaremos al{" "}
+            <span className="font-bold">{telefono}</span> con tu oferta especial.
+          </p>
+        )}
+
         {/* Texto mostrando el vehículo */}
         {marcaVehiculo && (
           <h2 className="text-red-lth text-center text-lg font-bold mb-4 md:text-xl lg:text-2xl max-w-2xl leading-tight">
@@ -90,17 +95,21 @@ export default function SearchIds() {
           </h2>
         )}
 
-        {/* Botón para corregir la respuesta */}
+        {/* Botón para cambiar vehículo */}
         <div className="flex justify-center mb-6">
           <button
             onClick={() => setShowForm(!showForm)}
             className="bg-red-lth text-white p-2 px-6 rounded-xl font-bold hover:bg-red-700 transition-colors shadow-md text-sm md:text-base"
           >
-            {showForm ? "Ocultar formulario" : marcaVehiculo ? "Cambiar vehículo" : "Iniciar búsqueda"}
+            {showForm
+              ? "Ocultar formulario"
+              : marcaVehiculo
+              ? "Cambiar vehículo"
+              : "Iniciar búsqueda"}
           </button>
         </div>
 
-        {/* Al hacer clic, mostramos el formulario */}
+        {/* Formulario desplegable */}
         {showForm && (
           <div className="mb-8 w-full max-w-sm mx-auto">
             <MainForm forceShowForm={true} compact={true} />
@@ -110,8 +119,8 @@ export default function SearchIds() {
         {filteredProducts.length === 0 ? (
           <div className="flex flex-col items-center py-6">
             <h2 className="text-lg font-bold text-red-lth uppercase text-center md:text-2xl">
-              {ids.includes("default") || !marcaVehiculo 
-                ? "¡Iniciemos la búsqueda de tu batería!" 
+              {ids.includes("default") || !marcaVehiculo
+                ? "¡Iniciemos la búsqueda de tu batería!"
                 : "No se encontraron productos"}
             </h2>
             <p className="text-center font-light mt-2 text-base md:text-lg">
@@ -135,7 +144,7 @@ export default function SearchIds() {
         )}
       </div>
 
-      {/* Render de productos */}
+      {/* Grid de productos */}
       <div className="w-full px-4 grid grid-cols-2 lg:grid-cols-4 lg:px-16 gap-4 mb-40 max-w-7xl mx-auto">
         {filteredProducts.map((producto, index) => (
           <div
@@ -158,11 +167,22 @@ export default function SearchIds() {
             <p className="lg:text-xl font-bold text-md my-1 text-center">
               {producto.MARCA}
             </p>
-            {/* Mostrar precio si existe */}
+            {/* Precio */}
             {producto.PRECIO && (
-              <p className="text-red-lth font-extrabold text-lg lg:text-2xl my-1">
-                {producto.PRECIO}
-              </p>
+              <div className="flex flex-col items-center text-center -mt-2 mb-2">
+                <p className="text-red-lth font-extrabold text-lg lg:text-2xl">
+                  {producto.PRECIO}
+                </p>
+                <p className="text-[10px] lg:text-xs font-bold text-gray-600 leading-tight">
+                  *A cambio del acumulador usado
+                </p>
+                <p className="text-[10px] lg:text-xs font-bold text-gray-600 leading-tight">
+                  {producto.REEMPLAZOS_COSTO} meses de reemplazo sin costo
+                </p>
+                <p className="text-[10px] lg:text-xs font-bold text-gray-600 leading-tight">
+                  {producto.GARANTIA} meses de garantía
+                </p>
+              </div>
             )}
             <button
               onClick={() => cotizar(producto.BCI, producto.MARCA)}

@@ -4,11 +4,13 @@ import { filtros } from "@/data/filtros";
 import { motos as motoFiltros } from "@/data/motoFiltros";
 
 const MainForm = ({ forceShowForm = false, compact = false }) => {
-  const [showForm, setShowForm] = useState(false); // Para manejar la visibilidad del formulario
+  const [showForm, setShowForm] = useState(false);
   const [tipoVehiculo, setTipoVehiculo] = useState("");
   const [anoVehiculo, setAnoVehiculo] = useState("");
   const [marcaVehiculo, setMarcaVehiculo] = useState("");
   const [modeloVehiculo, setModeloVehiculo] = useState("");
+  const [nombre, setNombre] = useState("");
+  const [telefono, setTelefono] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -17,7 +19,6 @@ const MainForm = ({ forceShowForm = false, compact = false }) => {
   const [resultYears, setResultYears] = useState([]);
   const [resultBrands, setResultBrands] = useState([]);
 
-  // Seleccionamos el dataset de acuerdo al tipo de vehículo
   const dataSet = tipoVehiculo === "moto" ? motoFiltros : filtros;
 
   useEffect(() => {
@@ -35,13 +36,11 @@ const MainForm = ({ forceShowForm = false, compact = false }) => {
     }
   }, [marcaVehiculo]);
 
-  // --- NUEVO: Si se pasa forceShowForm = true, omitimos la Portada y vamos directo al formulario
   useEffect(() => {
     if (forceShowForm) {
       setShowForm(true);
     }
   }, [forceShowForm]);
-  // ---
 
   const getUniqueBrandsForYear = (year) => {
     const itemsForYear = dataSet.filter((item) => item.AÑO == year);
@@ -69,7 +68,6 @@ const MainForm = ({ forceShowForm = false, compact = false }) => {
       return;
     }
 
-    // Filtramos para validar que existan resultados
     const itemsForYearBrandAndModel = resultBrands.filter(
       (item) =>
         item.AÑO == anoVehiculo &&
@@ -89,11 +87,23 @@ const MainForm = ({ forceShowForm = false, compact = false }) => {
       opciones: [item["OPCIÓN 1"], item["OPCIÓN 2"], item["OPCIÓN 3"]].filter(Boolean),
     }));
 
+    // Validación del teléfono si se proporciona
+    if (telefono.trim() !== "") {
+      const phoneRegex = /^[0-9]{10}$/;
+      if (!phoneRegex.test(telefono.trim())) {
+        setErrorMessage("Por favor, ingresa un número de teléfono válido (10 dígitos).");
+        return;
+      }
+    }
+
+    // Todos los campos van en el body del POST, incluyendo nombre y telefono
     const dataToSend = {
       tipoVehiculo,
       anoVehiculo: parseInt(anoVehiculo),
       marcaVehiculo,
       modeloVehiculo,
+      nombre: nombre.trim(),
+      telefono: telefono.trim(),
       baterias,
     };
 
@@ -118,18 +128,18 @@ const MainForm = ({ forceShowForm = false, compact = false }) => {
       }
 
       if (response.ok) {
-        // Construimos el querystring con los datos del vehículo
+        // Solo los datos del vehículo y contacto van en el querystring para mostrarse en pantalla
         const queryParams = new URLSearchParams({
           tipo: tipoVehiculo,
           ano: anoVehiculo,
           marca: marcaVehiculo,
           modelo: modeloVehiculo,
+          ...(nombre.trim() && { nombre: nombre.trim() }),
+          ...(telefono.trim() && { telefono: telefono.trim() }),
         });
 
-        // Unimos las opciones de baterías
         const opciones = baterias.flatMap((b) => b.opciones).join(",");
 
-        // Redirigimos a: /search/<opciones>?tipo=...&ano=...&marca=...&modelo=...
         window.location.href = `/search/${opciones}?${queryParams.toString()}`;
       } else {
         setErrorMessage(responseData.message || "Error al guardar los datos.");
@@ -142,30 +152,29 @@ const MainForm = ({ forceShowForm = false, compact = false }) => {
     }
   };
 
-  // Clase condicional para evitar que se aplique el fondo del CSS global en modo compacto
   const containerClass = compact
     ? "flex flex-col items-center justify-center w-full p-6 bg-white rounded-2xl border border-gray-200 shadow-sm"
     : "main-form flex flex-col items-center justify-center pt-8 z-10 rounded-b-2xl w-full";
 
   return (
     <div className={containerClass}>
-      {/* 
-        Si NO es forceShowForm y showForm es false, mostramos la Portada.
-        Si es forceShowForm (true) o showForm (true), se muestra el <form> 
-      */}
       {!forceShowForm && !showForm ? (
         <Portada onMotociclistaClick={() => setShowForm(true)} />
       ) : (
         <form
-          className={`flex flex-col items-center justify-center gap-y-3 mx-auto w-full ${compact ? "max-w-full h-auto" : "max-w-[700px] h-screen px-4"}`}
+          className={`flex flex-col items-center justify-center gap-y-3 mx-auto w-full ${
+            compact ? "max-w-full h-auto" : "max-w-[700px] h-screen px-4"
+          }`}
           onSubmit={handleSubmit}
         >
-          {/* Título interno opcional para el modo compacto */}
+          {/* Título interno modo compacto */}
           {compact && (
-            <h3 className="text-blue-lth font-bold text-lg mb-2 uppercase">Configura tu búsqueda</h3>
+            <h3 className="text-blue-lth font-bold text-lg mb-2 uppercase">
+              Configura tu búsqueda
+            </h3>
           )}
 
-          {/* Si NO es forceShowForm, entonces mostramos el botón de "Regresar" a la portada */}
+          {/* Botón regresar (solo si no es forceShowForm) */}
           {!forceShowForm && (
             <button
               type="button"
@@ -176,6 +185,7 @@ const MainForm = ({ forceShowForm = false, compact = false }) => {
             </button>
           )}
 
+          {/* Selects del vehículo */}
           <div className="w-full space-y-3">
             <select
               value={tipoVehiculo}
@@ -229,6 +239,38 @@ const MainForm = ({ forceShowForm = false, compact = false }) => {
             </select>
           </div>
 
+          {/* Sección de contacto opcional */}
+          <div className="w-full border-t border-gray-100 pt-4 mt-1 space-y-3">
+            <p className="text-center text-sm text-red-lth font-medium leading-snug">
+              🎁{" "}
+              <span className="text-blue-lth font-semibold">
+                ¿Quieres un descuento especial?
+              </span>{" "}
+              Déjanos tus datos y te contactamos con la mejor oferta.
+            </p>
+
+            <input
+              type="text"
+              name="nombre"
+              autoComplete="name"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+              placeholder="Tu nombre (opcional)"
+              className="p-3 w-full h-12 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 bg-blue-lth shadow-sm transition-all"
+            />
+
+            <input
+              type="tel"
+              name="telefono"
+              autoComplete="tel"
+              value={telefono}
+              onChange={(e) => setTelefono(e.target.value.replace(/\D/g, "").slice(0, 10))}
+              placeholder="Tu teléfono (opcional) — te llamamos gratis"
+              className="p-3 w-full h-12 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 bg-blue-lth shadow-sm transition-all"
+            />
+          </div>
+
+          {/* Botón submit */}
           <button
             type="submit"
             className={`p-3 h-14 w-full text-white font-bold rounded-xl shadow-lg transform transition-all mt-2 ${
@@ -236,13 +278,17 @@ const MainForm = ({ forceShowForm = false, compact = false }) => {
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-red-lth hover:scale-105 active:scale-95"
             }`}
-            disabled={loading || !tipoVehiculo || !anoVehiculo || !marcaVehiculo || !modeloVehiculo}
+            disabled={
+              loading || !tipoVehiculo || !anoVehiculo || !marcaVehiculo || !modeloVehiculo
+            }
           >
             {loading ? "Cargando..." : "BUSCAR BATERÍA"}
           </button>
 
           {errorMessage && (
-            <p className="text-red-lth text-center text-sm font-medium mt-2 bg-red-50 p-2 rounded-lg w-full">{errorMessage}</p>
+            <p className="text-red-lth text-center text-sm font-medium mt-2 bg-red-50 p-2 rounded-lg w-full">
+              {errorMessage}
+            </p>
           )}
         </form>
       )}
