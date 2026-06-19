@@ -940,7 +940,8 @@ const productos = [
     "LARGO": 238.0,
     "ALTO": 223.0,
     "ANCHO": 129.0,
-    "IMAGEN": "PROTECT/179707-lth_protect_auto_51_b24pp_xev_front.webp"
+    "IMAGEN": "PROTECT/179707-lth_protect_auto_51_b24pp_xev_front.webp",
+    "PRECIO": "$6,910.00"
   },
   {
     "BCI": "L-47(LN2)-660 XEV",
