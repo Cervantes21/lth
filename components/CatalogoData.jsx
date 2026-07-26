@@ -86,8 +86,13 @@ export const CatalogoData = ({ page }) => {
             <p className="lg:text-xl font-bold text-md my-1 text-center text-blue-lth">
               {replacePipeWithSlash(producto.BCI)}
             </p>
-            {/* Mostrar precio si existe */}
-            {producto.PRECIO && (
+            {/*
+              PRECIO TEMPORALMENTE OCULTO
+              Fecha: 2026-07-25
+              Motivo: Cambios en la lógica/estructura de precios pendientes de definir.
+              No eliminar - reactivar cuando se confirme el nuevo esquema de precios.
+            */}
+            {/* {producto.PRECIO && (
               <div className="flex flex-col items-center text-center -mt-2 mb-2">
                 <p className="text-red-lth font-extrabold text-lg lg:text-2xl">
                   {producto.PRECIO}
@@ -102,7 +107,7 @@ export const CatalogoData = ({ page }) => {
                   {producto.GARANTIA} meses de garantía
                 </p>
               </div>
-            )}
+            )} */}
             {/* Botones de acción: cotización y más información */}
             <div className="w-full flex flex-col gap-y-5">
               <button
@@ -196,6 +201,3 @@ export const CatalogoData = ({ page }) => {
     </div>
   );
 };
-
-
-

@@ -167,8 +167,13 @@ export default function SearchIds() {
             <p className="lg:text-xl font-bold text-md my-1 text-center">
               {producto.MARCA}
             </p>
-            {/* Precio */}
-            {producto.PRECIO && (
+            {/*
+              PRECIO TEMPORALMENTE OCULTO
+              Fecha: 2026-07-25
+              Motivo: Cambios en la lógica/estructura de precios pendientes de definir.
+              No eliminar - reactivar cuando se confirme el nuevo esquema de precios.
+            */}
+            {/* {producto.PRECIO && (
               <div className="flex flex-col items-center text-center -mt-2 mb-2">
                 <p className="text-red-lth font-extrabold text-lg lg:text-2xl">
                   {producto.PRECIO}
@@ -183,7 +188,7 @@ export default function SearchIds() {
                   {producto.GARANTIA} meses de garantía
                 </p>
               </div>
-            )}
+            )} */}
             <button
               onClick={() => cotizar(producto.BCI, producto.MARCA)}
               className="lg:text-lg bg-red-lth text-white text-sm w-full py-1 rounded-lg"
