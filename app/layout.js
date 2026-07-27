@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
   const ogImage = "https://www.bateriaencasa.com/og-image.webp";
 
   return (
-    <html lang="en">
+    <html lang="es" suppressHydrationWarning>
       <head>
         {/* Meta Tags Generales */}
         <meta charSet="UTF-8" />

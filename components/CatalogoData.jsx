@@ -79,6 +79,8 @@ export const CatalogoData = ({ page }) => {
                 alt={replacePipeWithSlash(producto.BCI)}
                 width={600}
                 height={300}
+                priority={index < 4}
+                loading={index < 4 ? undefined : "lazy"}
                 className="w-36 transition-all duration-300 ease-in-out transform hover:scale-110 lg:w-48"
               />
             </div>
